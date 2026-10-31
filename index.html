@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#176b57">
+<meta name="description" content="A calm, simple personal habit tracker.">
+<link rel="manifest" href="manifest.json">
+<title>HabitPulse</title>
+<style>
+:root{--bg:#f4f7f5;--surface:#fff;--ink:#172b25;--muted:#718078;--line:#e5ece8;--brand:#176b57;--brand2:#e3f2ec;--gold:#e5ad45;--danger:#b94b4b;--shadow:0 8px 28px rgba(20,55,43,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+button,input,select{font:inherit}button{cursor:pointer}.app{max-width:1050px;margin:auto;padding:18px 18px 90px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 0 22px}
+.brand{display:flex;align-items:center;gap:11px}.logo{width:42px;height:42px;border-radius:14px;background:var(--brand);color:white;display:grid;place-items:center;font-size:22px;font-weight:800}.brand h1{font-size:21px;margin:0;letter-spacing:-.5px}.brand small{color:var(--muted)}
+.actions{display:flex;gap:8px}.btn{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 13px;font-weight:650}.btn.primary{background:var(--brand);border-color:var(--brand);color:white}.btn.icon{width:42px;padding:0;font-size:18px}
+.hero{background:linear-gradient(120deg,#145d4c,#24856a);color:white;border-radius:22px;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;box-shadow:var(--shadow)}
+.hero h2{margin:0 0 4px;font-size:22px}.hero p{margin:0;color:#d7eee5}.ring{width:82px;height:82px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(#f5c96c var(--progress,0%),rgba(255,255,255,.2) 0);position:relative;flex:none}.ring:before{content:"";position:absolute;inset:7px;border-radius:50%;background:#1c715b}.ring strong{position:relative;font-size:19px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:16px 0}.stat,.panel{background:var(--surface);border:1px solid var(--line);border-radius:17px;padding:16px;box-shadow:var(--shadow)}.stat small{color:var(--muted)}.stat strong{display:block;font-size:24px;margin-top:5px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:24px 0 12px}.section-head h2{font-size:18px;margin:0}.date-label{color:var(--muted);font-size:13px}
+.filters{display:flex;gap:7px;overflow:auto;padding:2px 0 12px}.chip{white-space:nowrap;border:1px solid var(--line);background:var(--surface);padding:8px 12px;border-radius:999px;color:var(--muted)}.chip.active{background:var(--brand2);border-color:#b9ddce;color:var(--brand);font-weight:700}
+.habits{display:grid;gap:10px}.habit{display:flex;align-items:center;gap:13px;background:var(--surface);border:1px solid var(--line);border-radius:15px;padding:13px 14px;box-shadow:var(--shadow)}.check{width:29px;height:29px;border-radius:10px;border:2px solid #cbd8d1;background:white;display:grid;place-items:center;color:white;flex:none;font-weight:900}.habit.done .check{background:var(--brand);border-color:var(--brand)}.habit-info{min-width:0;flex:1}.habit-title{font-weight:700}.habit-meta{font-size:12px;color:var(--muted);margin-top:2px}.habit.done .habit-title{color:#738078}.habit.done .habit-title{text-decoration:line-through;text-decoration-color:#b4c5bc}.streak{font-size:12px;color:#9b7124;background:#fff5df;border-radius:8px;padding:5px 8px;white-space:nowrap}.more{border:0;background:transparent;color:var(--muted);font-size:21px;padding:4px}
+.empty{padding:30px 18px;text-align:center;color:var(--muted);background:var(--surface);border:1px dashed #cbd8d1;border-radius:16px}
+.bottomnav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;justify-content:center;gap:clamp(12px,7vw,70px);padding:10px 12px calc(10px + env(safe-area-inset-bottom));z-index:5}.navitem{border:0;background:transparent;color:var(--muted);font-size:12px;display:grid;gap:2px;justify-items:center;min-width:54px}.navitem span{font-size:19px}.navitem.active{color:var(--brand);font-weight:750}
+.view{display:none}.view.active{display:block}.panel h3{margin:0 0 12px;font-size:16px}.week{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.day{border:1px solid var(--line);border-radius:12px;padding:9px 3px;text-align:center;font-size:11px;color:var(--muted)}.day strong{display:block;font-size:14px;color:var(--ink);margin:4px 0}.day.today{border-color:var(--brand);background:var(--brand2)}.barrow{display:flex;align-items:center;gap:10px;margin:12px 0}.barlabel{width:95px;font-size:13px}.bar{height:9px;background:#edf2ef;border-radius:20px;flex:1;overflow:hidden}.bar i{display:block;height:100%;background:var(--brand);border-radius:20px}.barpct{width:35px;text-align:right;font-size:12px;color:var(--muted)}
+form{display:grid;gap:12px}label{font-size:13px;font-weight:650;color:var(--muted)}input,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;background:#fff;color:var(--ink);margin-top:5px} .formrow{display:grid;grid-template-columns:1fr 1fr;gap:10px}.form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:4px}
+.modal{position:fixed;inset:0;background:rgba(12,28,22,.45);display:none;align-items:flex-end;justify-content:center;z-index:10;padding:14px}.modal.open{display:flex}.dialog{width:min(100%,500px);background:var(--surface);border-radius:22px;padding:20px;max-height:90vh;overflow:auto}.dialog-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.dialog-head h2{font-size:19px;margin:0}.close{border:0;background:transparent;font-size:23px;color:var(--muted)}
+.setting-row{display:flex;align-items:center;justify-content:space-between;padding:13px 0;border-bottom:1px solid var(--line);gap:12px}.muted{color:var(--muted);font-size:13px}.danger{color:var(--danger)}.toast{position:fixed;bottom:85px;left:50%;transform:translateX(-50%);background:#183d32;color:white;padding:10px 15px;border-radius:12px;opacity:0;pointer-events:none;transition:.2s;z-index:20}.toast.show{opacity:1}
+@media(min-width:700px){.modal{align-items:center}.hero{padding:27px 30px}.habit{padding:15px 17px}}
+@media(max-width:440px){.app{padding:13px 13px 90px}.hero{padding:18px}.hero h2{font-size:19px}.ring{width:72px;height:72px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}.streak{display:none}.actions .btn:not(.icon){padding:9px 10px}}
+</style>
+</head>
+<body>
+<div class="app">
+<header><div class="brand"><div class="logo">H</div><div><h1>HabitPulse</h1><small>Small steps. Steady growth.</small></div></div><div class="actions"><button class="btn icon" id="themeBtn" aria-label="Toggle theme">☾</button><button class="btn primary" id="addBtn">＋ Add habit</button></div></header>
+<main>
+<section class="view active" id="homeView">
+<div class="hero"><div><h2 id="greeting">Make today count.</h2><p id="heroSub">A little progress is still progress.</p></div><div class="ring" id="ring"><strong id="progressText">0%</strong></div></div>
+<div class="stats"><div class="stat"><small>Completed today</small><strong id="doneStat">0 / 0</strong></div><div class="stat"><small>Current best streak</small><strong id="streakStat">0 days</strong></div><div class="stat"><small>Active habits</small><strong id="activeStat">0</strong></div></div>
+<div class="section-head"><h2>Today's habits</h2><span class="date-label" id="todayDate"></span></div>
+<div class="filters" id="filters"></div><div class="habits" id="habitList"></div>
+</section>
+<section class="view" id="insightsView">
+<div class="section-head"><h2>Your progress</h2><span class="date-label">Last 7 days</span></div>
+<div class="panel"><h3>Daily completion</h3><div class="week" id="weekGrid"></div></div>
+<div class="panel" style="margin-top:12px"><h3>By category</h3><div id="categoryBars"></div></div>
+<div class="panel" style="margin-top:12px"><h3>Consistency tip</h3><p class="muted">Aim for a routine you can repeat. Missing a day is information, not failure. Restart with the next small step.</p></div>
+</section>
+<section class="view" id="manageView">
+<div class="section-head"><h2>Manage habits</h2><button class="btn primary" id="manageAdd">＋ Add</button></div>
+<div class="habits" id="manageList"></div>
+<div class="panel" style="margin-top:16px"><h3>Starter ideas</h3><p class="muted">Choose habits that matter to you. These are optional ideas, not targets you need to complete all at once.</p><div id="suggestions" class="filters" style="flex-wrap:wrap"></div></div>
+</section>
+<section class="view" id="settingsView">
+<div class="section-head"><h2>Settings & data</h2></div>
+<div class="panel">
+<div class="setting-row"><div><strong>Export backup</strong><div class="muted">Download your habits and history as JSON.</div></div><button class="btn" id="exportBtn">Export</button></div>
+<div class="setting-row"><div><strong>Restore backup</strong><div class="muted">Import a previous HabitPulse JSON backup.</div></div><button class="btn" id="importBtn">Import</button><input id="importFile" type="file" accept="application/json" hidden></div>
+<div class="setting-row"><div><strong>Storage</strong><div class="muted">Data stays in this browser on this device.</div></div><span class="muted">Local</span></div>
+<div class="setting-row"><div><strong>Reset all data</strong><div class="muted">Permanently clear habits and history from this browser.</div></div><button class="btn danger" id="resetBtn">Reset</button></div>
+</div>
+<p class="muted" style="text-align:center;margin-top:18px">HabitPulse · Version 1.0 · Works offline after first load</p>
+</section>
+</main>
+</div>
+<nav class="bottomnav"><button class="navitem active" data-view="homeView"><span>⌂</span>Today</button><button class="navitem" data-view="insightsView"><span>▥</span>Insights</button><button class="navitem" data-view="manageView"><span>☷</span>Habits</button><button class="navitem" data-view="settingsView"><span>⚙</span>Settings</button></nav>
+<div class="modal" id="habitModal"><div class="dialog"><div class="dialog-head"><h2 id="modalTitle">Add a habit</h2><button class="close" id="closeModal">×</button></div><form id="habitForm">
+<input type="hidden" id="habitId"><label>Habit name<input id="habitName" maxlength="60" placeholder="e.g. Read for 10 minutes" required></label>
+<div class="formrow"><label>Category<select id="habitCategory"><option>Islamic</option><option>Health</option><option>Productivity</option><option>Personal</option><option>Learning</option></select></label><label>Frequency<select id="habitFrequency"><option value="daily">Every day</option><option value="weekdays">Weekdays</option><option value="weekly">Flexible / any day</option></select></label></div>
+<label>Small reminder (optional)<input id="habitNote" maxlength="80" placeholder="e.g. After Fajr"></label>
+<div class="form-actions"><button type="button" class="btn" id="cancelModal">Cancel</button><button class="btn primary" type="submit">Save habit</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='habitpulse_v1';
+const today=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const shift=(date,n)=>{const d=new Date(date+'T12:00:00');d.setDate(d.getDate()+n);return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`};
+const fmt=(s)=>new Date(s+'T12:00:00').toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'});
+const uid=()=>Math.random().toString(36).slice(2,10);
+let data=load(),filter='All';
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||{habits:[],logs:{},dark:false}}catch{return {habits:[],logs:{},dark:false}}}
+function save(){localStorage.setItem(KEY,JSON.stringify(data))}
+function completed(id,date=today()){return !!(data.logs[date]||[]).includes(id)}
+function streak(id){let n=0,d=today();while(completed(id,d)){n++;d=shift(d,-1)}return n}
+function bestStreak(id){let dates=Object.keys(data.logs).sort();let best=0,run=0,last=null;for(const d of dates){if(!(data.logs[d]||[]).includes(id)){run=0;last=d;continue}run=last&&shift(last,1)===d?run+1:1;best=Math.max(best,run);last=d}return best}
+function eligible(h,d=today()){const day=new Date(d+'T12:00:00').getDay();return h.frequency!=='weekdays'||(day>=1&&day<=5)}
+function toggle(id){const d=today();data.logs[d]??=[];data.logs[d]=completed(id,d)?data.logs[d].filter(x=>x!==id):[...data.logs[d],id];save();render()}
+function showToast(s){const t=document.getElementById('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)}
+function render(){
+ document.body.classList.toggle('dark',!!data.dark);applyTheme();
+ const active=data.habits.filter(h=>h.active!==false),done=active.filter(h=>completed(h.id)).length,pct=active.length?Math.round(done/active.length*100):0;
+ document.getElementById('todayDate').textContent=fmt(today());document.getElementById('doneStat').textContent=`${done} / ${active.length}`;document.getElementById('activeStat').textContent=active.length;document.getElementById('streakStat').textContent=`${Math.max(0,...active.map(h=>bestStreak(h.id)))} days`;
+ document.getElementById('progressText').textContent=pct+'%';document.getElementById('ring').style.setProperty('--progress',pct+'%');
+ document.getElementById('heroSub').textContent=active.length?(pct===100?'All done for today. Well done!':`${done} of ${active.length} habits completed. Keep going at your own pace.`):'Add one small habit to begin.';
+ const cats=['All',...new Set(active.map(h=>h.category))];document.getElementById('filters').innerHTML=cats.map(c=>`<button class="chip ${filter===c?'active':''}" data-filter="${esc(c)}">${esc(c)}</button>`).join('');
+ document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;render()});
+ const shown=active.filter(h=>filter==='All'||h.category===filter);
+ document.getElementById('habitList').innerHTML=shown.length?shown.map(h=>habitCard(h)).join(''):'<div class="empty">No habits here yet.<br><span class="muted">Add a habit or choose another category.</span></div>';
+ document.querySelectorAll('[data-check]').forEach(b=>b.onclick=()=>toggle(b.dataset.check));
+ document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>openModal(b.dataset.edit));
+ document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>removeHabit(b.dataset.delete));
+ document.getElementById('manageList').innerHTML=active.length?active.map(h=>`<div class="habit"><div class="habit-info"><div class="habit-title">${esc(h.name)}</div><div class="habit-meta">${esc(h.category)} · ${h.frequency==='daily'?'Every day':h.frequency==='weekdays'?'Weekdays':'Flexible'}${h.note?' · '+esc(h.note):''}</div></div><button class="btn" data-edit="${h.id}">Edit</button><button class="more" data-delete="${h.id}" aria-label="Delete">⋯</button></div>`).join(''):'<div class="empty">No habits yet. Add your first one.</div>';
+ document.querySelectorAll('[data-edit]').forEach(b=>b.onclick=()=>openModal(b.dataset.edit));document.querySelectorAll('[data-delete]').forEach(b=>b.onclick=()=>removeHabit(b.dataset.delete));
+ renderInsights();
+}
+function habitCard(h){const done=completed(h.id);return `<div class="habit ${done?'done':''}"><button class="check" data-check="${h.id}" aria-label="Mark ${esc(h.name)} ${done?'incomplete':'complete'}">${done?'✓':''}</button><div class="habit-info"><div class="habit-title">${esc(h.name)}</div><div class="habit-meta">${esc(h.category)}${h.note?' · '+esc(h.note):''}</div></div><span class="streak">🔥 ${streak(h.id)} day${streak(h.id)===1?'':'s'}</span><button class="more" data-edit="${h.id}" aria-label="Edit">⋯</button></div>`}
+function renderInsights(){
+ const days=Array.from({length:7},(_,i)=>shift(today(),i-6));document.getElementById('weekGrid').innerHTML=days.map(d=>{const due=data.habits.filter(h=>h.active!==false&&eligible(h,d)),n=due.filter(h=>completed(h.id,d)).length,p=due.length?Math.round(n/due.length*100):0;return `<div class="day ${d===today()?'today':''}">${new Date(d+'T12:00:00').toLocaleDateString(undefined,{weekday:'short'})}<strong>${n}/${due.length}</strong>${p}%</div>`}).join('');
+ const cats=[...new Set(data.habits.filter(h=>h.active!==false).map(h=>h.category))];document.getElementById('categoryBars').innerHTML=cats.length?cats.map(c=>{const hs=data.habits.filter(h=>h.active!==false&&h.category===c);let possible=0,done=0;days.forEach(d=>hs.filter(h=>eligible(h,d)).forEach(h=>{possible++;if(completed(h.id,d))done++}));const p=possible?Math.round(done/possible*100):0;return `<div class="barrow"><span class="barlabel">${esc(c)}</span><div class="bar"><i style="width:${p}%"></i></div><span class="barpct">${p}%</span></div>`}).join(''):'<p class="muted">Your category insights will appear after you add habits.</p>';
+}
+function openModal(id){const h=data.habits.find(x=>x.id===id);document.getElementById('habitForm').reset();document.getElementById('habitId').value=h?.id||'';document.getElementById('habitName').value=h?.name||'';document.getElementById('habitCategory').value=h?.category||'Personal';document.getElementById('habitFrequency').value=h?.frequency||'daily';document.getElementById('habitNote').value=h?.note||'';document.getElementById('modalTitle').textContent=h?'Edit habit':'Add a habit';document.getElementById('habitModal').classList.add('open');setTimeout(()=>document.getElementById('habitName').focus(),100)}
+function closeModal(){document.getElementById('habitModal').classList.remove('open')}
+document.getElementById('habitForm').onsubmit=e=>{e.preventDefault();const id=document.getElementById('habitId').value;const h={id:id||uid(),name:document.getElementById('habitName').value.trim(),category:document.getElementById('habitCategory').value,frequency:document.getElementById('habitFrequency').value,note:document.getElementById('habitNote').value.trim(),active:true};if(!h.name)return;if(id)data.habits=data.habits.map(x=>x.id===id?h:x);else data.habits.push(h);save();closeModal();render();showToast(id?'Habit updated':'Habit added')};
+function removeHabit(id){if(!confirm('Delete this habit and its completion history?'))return;data.habits=data.habits.filter(h=>h.id!==id);Object.keys(data.logs).forEach(d=>data.logs[d]=data.logs[d].filter(x=>x!==id));save();render();showToast('Habit deleted')}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('addBtn').onclick=()=>openModal();document.getElementById('manageAdd').onclick=()=>openModal();document.getElementById('closeModal').onclick=closeModal;document.getElementById('cancelModal').onclick=closeModal;document.getElementById('habitModal').onclick=e=>{if(e.target.id==='habitModal')closeModal()};
+document.querySelectorAll('.navitem').forEach(b=>b.onclick=()=>{document.querySelectorAll('.navitem').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id===b.dataset.view))});
+document.getElementById('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='habitpulse-backup-'+today()+'.json';a.click();URL.revokeObjectURL(a.href)};
+document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();
+document.getElementById('importFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const x=JSON.parse(await f.text());if(!Array.isArray(x.habits)||typeof x.logs!=='object')throw Error();if(!confirm('Replace current HabitPulse data with this backup?'))return;data={habits:x.habits,logs:x.logs,dark:!!x.dark};save();render();showToast('Backup restored')}catch{alert('This file does not look like a valid HabitPulse backup.')}e.target.value=''};
+document.getElementById('resetBtn').onclick=()=>{if(confirm('Clear all HabitPulse data from this browser? This cannot be undone.')){data={habits:[],logs:{},dark:false};save();render();showToast('All data cleared')}};
+document.getElementById('themeBtn').onclick=()=>{data.dark=!data.dark;save();applyTheme()};
+function applyTheme(){const dark=!!data.dark;document.documentElement.style.setProperty('--bg',dark?'#101a17':'#f4f7f5');document.documentElement.style.setProperty('--surface',dark?'#1b2923':'#fff');document.documentElement.style.setProperty('--ink',dark?'#e7f0eb':'#172b25');document.documentElement.style.setProperty('--muted',dark?'#a3b5aa':'#718078');document.documentElement.style.setProperty('--line',dark?'#31443a':'#e5ece8');document.getElementById('themeBtn').textContent=dark?'☀':'☾'}
+const ideas=['Pray on time','Qur’an reading','Morning adhkar','Evening adhkar','Walk','Stretch','Drink water','Read','Study','Plan tomorrow','Sleep routine','Journal'];
+document.getElementById('suggestions').innerHTML=ideas.map(x=>`<button class="chip" data-idea="${esc(x)}">＋ ${esc(x)}</button>`).join('');
+document.querySelectorAll('[data-idea]').forEach(b=>b.onclick=()=>{if(data.habits.some(h=>h.name.toLowerCase()===b.dataset.idea.toLowerCase()))return showToast('This habit already exists');data.habits.push({id:uid(),name:b.dataset.idea,category:['Pray on time','Qur’an reading','Morning adhkar','Evening adhkar'].includes(b.dataset.idea)?'Islamic':['Walk','Stretch','Drink water'].includes(b.dataset.idea)?'Health':'Personal',frequency:'daily',note:'',active:true});save();render();showToast('Starter habit added')});
+render();
+if('serviceWorker' in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body></html>
