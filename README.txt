@@ -1,28 +1,38 @@
-HabitPulse v1.0
-===============
+HabitPulse V8.0 — Routine-First Redesign
 
-A lightweight, offline-first habit tracker PWA.
+Base
+- Built from the user's supplied HabitPulse V7.6 — Loop Inspired Tracking ZIP.
+- Preserves the existing V7.x localStorage key and habit/log record model.
+- Adds a backward-compatible routines collection and schema normalization (schema version 21).
 
-Included:
-- Daily habit check-ins
-- Islamic, Health, Productivity, Personal and Learning categories
-- Daily / weekdays / flexible frequencies
-- Streaks and 7-day insights
-- Add, edit and delete habits
-- Dark and light themes
-- JSON backup and restore
-- Local browser storage
-- Service worker offline cache
+Product changes
+- Reworked the app's information architecture around a Home dashboard, Today tracker, Routines, Insights and More.
+- Home dashboard gives a concise daily completion summary, quick actions, routine progress, upcoming habits and weekly-goal progress.
+- Daily completion is separated from weekly-target habits so weekly goals are not incorrectly presented as daily due items.
+- Routines group existing habits; a habit may belong to multiple routines without duplicating its tracking history.
+- Added a dedicated routine create/edit form, preset starting points, member assignment, progress display and safe routine deletion.
+- Routine deletion never deletes habits or their logs.
+- Insights includes 14-day and monthly trends, annual activity map, 30-day history, habit scores and streaks.
+- Nested Habit Library and Life Review routes correctly highlight More in the bottom navigation.
+- Updated service-worker cache to V8.0 so installed PWAs refresh the app shell.
 
-Run locally:
-1. Extract the ZIP.
-2. Serve the folder from a local web server (service workers require localhost or HTTPS).
-3. Open index.html. For offline PWA installation, use localhost or deploy to an HTTPS host.
+Data safety
+- Existing V7.x storage key retained.
+- Existing habit IDs, schedules, logs, notes, reviews, categories and settings are normalized and retained.
+- Older data without routines migrates to an empty routines list.
+- JSON backup/restore includes routines through the existing state export mechanism.
 
-Deployment:
-Upload index.html, manifest.json and sw.js to the root of a static HTTPS host (GitHub Pages, Netlify, Cloudflare Pages, etc.).
+Validation performed
+- JavaScript syntax checked with Node.js.
+- Service-worker syntax checked with Node.js.
+- Manifest JSON validated.
+- HTML parsed; duplicate element IDs checked (none found).
+- ZIP integrity checked after packaging.
+- Headless Chromium interaction checks performed for habit creation, completion entry, routine creation/editing, habit assignment, weekly-goal display, Insights activity map, theme switching, backup action and routine deletion preserving habits.
+- Simulated V7.6-compatible stored data migration checked: existing habit and log retained, routines initialized, theme retained.
+- Real Android-device testing and testing against the user's actual installed local database were not performed.
 
-Important:
-- Data is stored in this browser's localStorage. Clearing browser/site data can erase it.
-- Export backups regularly, especially before changing devices or browsers.
-- Notifications and cloud sync are not included in this first MVP.
+Before installing
+- Export a JSON backup from the current HabitPulse app first.
+- Replace/redeploy the PWA files together (index.html, manifest.webmanifest, sw.js and icons).
+- Open the app online once so the V8.0 service worker can refresh its cache.
