@@ -1,12 +1,12 @@
 {
-  "name": "HabitPulse - Personal Habit & Routine Tracker",
+  "name": "HabitPulse V8.0",
   "short_name": "HabitPulse",
-  "description": "A private-first habit and routine tracker with flexible schedules, progress insights and offline support.",
+  "description": "A minimal, private-first habit tracker with detailed habit insights and flexible tracking.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f5f8fb",
-  "theme_color": "#087f68",
+  "background_color": "#f3f7fa",
+  "theme_color": "#087f62",
   "icons": [
     {
       "src": "icon-192.png",
