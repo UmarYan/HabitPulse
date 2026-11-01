@@ -100,7 +100,7 @@ body,.app-shell {background:var(--bg)!important;color:var(--text)!important;}
 .calendar-cell.full,.detail-day.complete,.year-cell {background:var(--green)!important;color:#062b20!important;}
 .calendar-cell.partial,.detail-day.partial {background:color-mix(in srgb,var(--orange) 24%,var(--card))!important;color:var(--text)!important;}
 .detail-day.skipped {background:repeating-linear-gradient(135deg,var(--card),var(--card) 3px,var(--line) 3px,var(--line) 6px)!important;color:var(--muted)!important;}
-.bottom-nav {grid-template-columns:repeat(3,1fr)!important;background:color-mix(in srgb,var(--card) 96%,transparent)!important;border-color:var(--line)!important;box-shadow:0 -5px 20px var(--shadow)!important;backdrop-filter:blur(18px);}
+.bottom-nav {background:color-mix(in srgb,var(--card) 96%,transparent)!important;border-color:var(--line)!important;box-shadow:0 -5px 20px var(--shadow)!important;backdrop-filter:blur(18px);}
 .nav-item {background:transparent!important;color:var(--muted)!important;}
 .nav-item.active {color:var(--green)!important;}
 .modal-backdrop {background:rgba(5,12,9,.48)!important;}
@@ -180,24 +180,6 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
 :root[data-theme="light"] .bottom-nav{background:rgba(255,255,255,.94);border-color:var(--line)}:root[data-theme="dark"] .bottom-nav{background:rgba(16,23,21,.95);border-color:var(--line)}
 :root[data-theme="light"] .modal{background:var(--card);color:var(--text);border-color:var(--line)}:root[data-theme="light"] .modal-head h2{color:var(--text)}
 
-
-/* V7.8 — habit actions live on each habit; no separate Manage area */
-.track-habit-name{padding-right:28px;position:sticky}
-.track-row.is-paused .track-habit-title{opacity:.58}
-.track-row.is-paused .track-habit-name:after{content:"PAUSED";font-size:8px;letter-spacing:.08em;color:var(--orange)}
-.track-row.is-archived .track-habit-title{opacity:.58;text-decoration:line-through}
-.track-actions-trigger{position:absolute;right:2px;top:50%;transform:translateY(-50%);width:27px;height:30px;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:20px;cursor:pointer}
-.track-actions-trigger:active{background:var(--mint)}
-#habitActionsBackdrop{z-index:40;align-items:flex-end;padding:10px}
-#habitActionsBackdrop .action-sheet{width:min(100%,520px);max-height:82dvh;overflow:auto;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:22px 22px 16px 16px;padding:15px 15px calc(15px + env(safe-area-inset-bottom));}
-.action-sheet-grip{width:38px;height:4px;border-radius:9px;background:var(--muted);opacity:.45;margin:0 auto 14px}
-.action-sheet-title{font-size:16px;font-weight:800;margin:0 0 3px}.action-sheet-sub{font-size:11px;color:var(--muted);margin:0 0 13px}
-.action-sheet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.action-sheet-grid button{min-height:66px;border:1px solid var(--line);border-radius:13px;background:var(--bg);color:var(--text);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:19px;cursor:pointer}
-.action-sheet-grid button small{font-size:10px;color:var(--muted);font-weight:650}
-.action-sheet-grid button.danger{color:#e16d72}.action-sheet-grid button:active{background:var(--mint)}
-.track-habit-title{cursor:pointer;touch-action:pan-y}
-
 </style>
 </head>
 <body>
@@ -224,6 +206,8 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
 
     <nav class="bottom-nav" aria-label="Main navigation">
       <button class="nav-item active" data-view="home"><span>▦</span><small>Track</small></button>
+      <button class="nav-item" data-view="habits"><span>☷</span><small>Manage</small></button>
+      <button class="nav-item" data-view="stats"><span>▥</span><small>Stats</small></button>
       <button class="nav-item" data-view="review"><span>✎</span><small>Review</small></button>
       <button class="nav-item" data-view="more"><span>•••</span><small>More</small></button>
     </nav>
@@ -258,7 +242,7 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
       <div class="modal-head"><div><p class="eyebrow">YOUR APP</p><h2 id="settingsTitle">Settings & backup</h2></div><button class="icon-btn close-btn" data-close="settingsModalBackdrop" aria-label="Close">×</button></div>
       <div class="settings-block"><h3>Appearance</h3><label class="toggle-row"><span><strong>App theme</strong><small>Light is the default. Choose the vibrant dark theme anytime.</small></span><select id="themeSelect" aria-label="App theme" style="max-width:132px;min-height:38px"><option value="light">Light</option><option value="dark">Dark</option></select></label></div><div class="settings-block"><h3>Notifications</h3><label class="toggle-row"><span><strong>Daily summary</strong><small>Show a summary when you open the app for the first time each day.</small></span><input type="checkbox" id="dailySummaryToggle"></label><button class="secondary-btn full-btn" id="enableNotificationsBtn">Enable browser notifications</button><p class="field-help" id="notificationStatus">Browser notifications are optional.</p></div>
       <div class="settings-block"><h3>Protect your data</h3><p class="field-help">JSON backup preserves your app data. CSV exports habit logs for spreadsheets. Restore validates the file and creates a safety backup first.</p><div class="settings-actions"><button class="secondary-btn" id="exportBtn">Export JSON backup</button><button class="secondary-btn" id="csvBtn">Export CSV</button><button class="secondary-btn" id="importBtn">Restore backup</button><input type="file" id="importFile" accept="application/json,.json" class="hidden"></div></div>
-      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V7.8 · Habit-centred actions · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
+      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V7.6 · Loop-inspired tracking · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
     </section>
   </div>
 
@@ -280,13 +264,6 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
       </div>
       <label class="quick-note-label">Notes <textarea id="quickEntryNote" rows="2" maxlength="300" placeholder="Optional note for this day"></textarea></label>
       <p class="field-help">Choose a status to save. Clear removes the entry for this date.</p>
-    </section>
-  </div>
-
-  <div class="modal-backdrop hidden" id="habitActionsBackdrop">
-    <section class="action-sheet" role="dialog" aria-modal="true" aria-labelledby="habitActionsTitle">
-      <div class="action-sheet-grip"></div><h2 class="action-sheet-title" id="habitActionsTitle">Habit actions</h2><p class="action-sheet-sub" id="habitActionsSubtitle">Choose an action</p>
-      <div class="action-sheet-grid" id="habitActionsGrid"></div>
     </section>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -392,49 +369,50 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
   function formatDate(d=new Date()) { return new Intl.DateTimeFormat(undefined,{weekday:'long',month:'short',day:'numeric'}).format(d); }
   function render() {
     if (activeView === 'home') { renderTrackingGrid(); updateNav(); return; }
+    if (activeView === 'habits') { renderAllHabits(); updateNav(); return; }
     if (activeView === 'stats') { renderStats(); updateNav(); return; }
     if (activeView === 'review') { renderReview(); updateNav(); return; }
     if (activeView === 'more') { renderMore(); updateNav(); return; }
   }
   function renderTrackingGrid(){
     const main=$('mainContent');
-    const today=todayKey();
-    const filter=state.settings.trackFilter||'1';
-    let trackHabits=state.habits.filter(h=>filter==='5'?Boolean(h.archived):!h.archived);
-    if(filter==='2')trackHabits=trackHabits.filter(h=>h.isCore);
-    if(filter==='3')trackHabits=trackHabits.filter(h=>!h.paused&&isScheduled(h,today));
-    if(filter==='4')trackHabits=trackHabits.filter(h=>h.paused);
     const active=activeHabits();
+    const today=todayKey();
     const days=Array.from({length:7},(_,i)=>{const d=parseDate(today);d.setDate(d.getDate()-(6-i));return todayKey(d);});
     const doneToday=active.filter(h=>isDone(h.id,today)).length;
     const dueToday=active.filter(h=>isScheduled(h,today)).length;
     const pct=dueToday?Math.round(doneToday/dueToday*100):0;
     const dayHead=days.map(k=>{const d=parseDate(k);return `<div class="track-day-head ${k===today?'is-today':''}"><b>${d.toLocaleDateString(undefined,{weekday:'short'}).slice(0,3)}</b><small>${d.getDate()}</small></div>`;}).join('');
     const groups=new Map();
-    trackHabits.forEach(h=>{const group=h.isCore?'Core habits':(h.category||'Other');if(!groups.has(group))groups.set(group,[]);groups.get(group).push(h);});
+    active.forEach(h=>{const group=h.isCore?'Core habits':(h.category||'Other');if(!groups.has(group))groups.set(group,[]);groups.get(group).push(h);});
     let rows='';
     groups.forEach((items,group)=>{
       rows+=`<div class="track-group-title">${escapeHTML(group)} <small>${items.length}</small></div>`;
       items.forEach(h=>{
         const cells=days.map(k=>{
           const log=((state.logs[k]||{})[h.id])||{};const scheduled=isScheduled(h,k);let cls='not-due',symbol='·',sub='';
-          if(log.skipped){cls='skipped';symbol='−';}else if(log.failed){cls='failed';symbol='×';}else if(log.done){cls='done';symbol='✓';}else if((h.trackingType==='numeric'||h.trackingType==='atMost')&&log.value!=null){cls='partial';symbol=String(log.value);sub=h.numericUnit||'';}else if(scheduled){cls='pending';symbol='○';}
+          if(log.skipped){cls='skipped';symbol='−';}
+          else if(log.failed){cls='failed';symbol='×';}
+          else if(log.done){cls='done';symbol='✓';}
+          else if((h.trackingType==='numeric'||h.trackingType==='atMost')&&log.value!=null){cls='partial';symbol=String(log.value);sub=h.numericUnit||'';}
+          else if(scheduled){cls='pending';symbol='○';}
           return `<button type="button" class="track-cell ${cls}" data-quick-habit="${h.id}" data-quick-date="${k}" aria-label="${escapeHTML(h.name)} ${k}: ${cls}" title="${k}"><b>${symbol}</b>${sub?`<small>${escapeHTML(sub)}</small>`:''}</button>`;
         }).join('');
-        rows+=`<div class="track-row${h.paused?' is-paused':''}${h.archived?' is-archived':''}"><div class="track-habit-name" data-habit-press="${h.id}"><span class="track-habit-title">${escapeHTML(h.name)}</span><small>${escapeHTML(h.category)}${h.trackingType==='weekly'?` · ${weeklyProgress(h)}/${h.weeklyTarget} this week`:''}</small><button type="button" class="track-detail-link" data-track-detail="${h.id}" aria-label="Statistics for ${escapeHTML(h.name)}">▥</button><button type="button" class="track-actions-trigger" data-habit-actions="${h.id}" aria-label="Actions for ${escapeHTML(h.name)}" title="Habit actions">⋯</button></div>${cells}</div>`;
+        rows+=`<div class="track-row"><div class="track-habit-name"><span class="track-habit-title">${escapeHTML(h.name)}</span><small>${escapeHTML(h.category)}${h.trackingType==='weekly'?` · ${weeklyProgress(h)}/${h.weeklyTarget} this week`:''}</small><button type="button" class="track-detail-link" data-track-detail="${h.id}" aria-label="Statistics for ${escapeHTML(h.name)}">▥</button></div>${cells}</div>`;
       });
     });
-    const filterLabel={'1':'All habits','2':'Core habits','3':'Scheduled today','4':'Paused habits','5':'Archived habits'}[filter]||'All habits';
-    main.innerHTML=`<section class="track-toolbar"><div><h2>Track</h2><p>${formatDate()} · ${doneToday}/${dueToday} completed · ${pct}% · ${filterLabel}</p></div><div class="track-toolbar-actions"><button class="icon-btn" id="trackAdd" aria-label="Add habit" title="Add habit">＋</button><button class="icon-btn" id="trackStats" aria-label="Overall statistics" title="Statistics">▥</button><button class="icon-btn" id="trackFilter" aria-label="Filter habits" title="Filter">≡</button></div></section>
+    main.innerHTML=`<section class="track-toolbar"><div><h2>Habits</h2><p>${formatDate()} · ${doneToday}/${dueToday} completed · ${pct}%</p></div><div class="track-toolbar-actions"><button class="icon-btn" id="trackAdd" aria-label="Add habit" title="Add habit">＋</button><button class="icon-btn" id="trackManage" aria-label="Manage habits" title="Manage habits">☷</button><button class="icon-btn" id="trackFilter" aria-label="Filter habits" title="Filter">≡</button></div></section>
       <div class="track-legend"><span><i class="legend-dot done"></i>Done</span><span><i class="legend-dot skipped"></i>Skipped</span><span><i class="legend-dot failed"></i>Missed</span><span><i class="legend-dot pending"></i>Pending</span></div>
-      ${trackHabits.length?`<div class="track-grid-scroll"><div class="track-grid"><div class="track-grid-head"><div class="track-name-head">Habit</div>${dayHead}</div>${rows}</div></div>`:`<div class="empty-state card"><div class="empty-icon">✦</div><h3>${filter==='5'?'No archived habits':filter==='4'?'No paused habits':'A fresh start'}</h3><p>${filter==='5'?'Archived habits will appear here.':filter==='4'?'Paused habits will appear here so you can resume them.':'Add your first habit. Keep it small enough to repeat.'}</p>${filter==='1'?'<button class="primary-btn" id="trackEmptyAdd">＋ Create a habit</button>':''}</div>`}
-      <p class="track-footnote">Tap a day to record or edit its status. Tap ⋯ or long-press a habit name for its actions. Swipe horizontally to view the week.</p>`;
-    const add=()=>openHabitModal();$('trackAdd')?.addEventListener('click',add);$('trackEmptyAdd')?.addEventListener('click',add);$('trackStats')?.addEventListener('click',()=>goView('stats'));
-    $('trackFilter')?.addEventListener('click',()=>{const choice=prompt('Show habits:\n1 All · 2 Core · 3 Scheduled today · 4 Paused · 5 Archived',String(filter));if(choice===null)return;state.settings.trackFilter=['1','2','3','4','5'].includes(choice)?choice:'1';saveState();render();});
+      ${active.length?`<div class="track-grid-scroll"><div class="track-grid"><div class="track-grid-head"><div class="track-name-head">Habit</div>${dayHead}</div>${rows}</div></div>`:`<div class="empty-state card"><div class="empty-icon">✦</div><h3>A fresh start</h3><p>Add your first habit. Keep it small enough to repeat.</p><button class="primary-btn" id="trackEmptyAdd">＋ Create a habit</button></div>`}
+      <p class="track-footnote">Tap any day to record or edit its status and note. Swipe horizontally to view all seven days.</p>`;
+    const add=()=>openHabitModal();$('trackAdd')?.addEventListener('click',add);$('trackEmptyAdd')?.addEventListener('click',add);$('trackManage')?.addEventListener('click',()=>goView('habits'));
+    $('trackFilter')?.addEventListener('click',()=>{const choices=['All habits','Core habits only','Today scheduled only'];const choice=prompt('Show: 1 All habits, 2 Core habits only, 3 Today scheduled only','1');if(choice===null)return;state.settings.trackFilter=['1','2','3'].includes(choice)?choice:'1';saveState();render();});
+    if(state.settings.trackFilter==='2'||state.settings.trackFilter==='3'){
+      const filter=state.settings.trackFilter;main.querySelectorAll('.track-row').forEach(row=>{const id=row.querySelector('[data-track-detail]')?.dataset.trackDetail;const h=active.find(x=>x.id===id);if(h&&((filter==='2'&&!h.isCore)||(filter==='3'&&!isScheduled(h,today))))row.remove();});
+      main.querySelectorAll('.track-group-title').forEach(g=>{if(!g.nextElementSibling||!g.nextElementSibling.classList.contains('track-row'))g.remove();});
+    }
     main.querySelectorAll('[data-quick-habit]').forEach(b=>b.addEventListener('click',()=>openQuickEntry(b.dataset.quickHabit,b.dataset.quickDate)));
-    main.querySelectorAll('[data-track-detail]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();openHabitDetails(b.dataset.trackDetail);}));
-    main.querySelectorAll('[data-habit-actions]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const h=state.habits.find(x=>x.id===b.dataset.habitActions);if(h)showHabitActions(h);}));
-    main.querySelectorAll('[data-habit-press]').forEach(el=>{let timer=null,moved=false;const id=el.dataset.habitPress;el.addEventListener('pointerdown',()=>{moved=false;timer=setTimeout(()=>{timer=null;const h=state.habits.find(x=>x.id===id);if(h)showHabitActions(h);},520);});el.addEventListener('pointermove',()=>{moved=true;if(timer){clearTimeout(timer);timer=null;}});['pointerup','pointerleave','pointercancel'].forEach(ev=>el.addEventListener(ev,()=>{if(timer){clearTimeout(timer);timer=null;}}));});
+    main.querySelectorAll('[data-track-detail]').forEach(b=>b.addEventListener('click',()=>openHabitDetails(b.dataset.trackDetail)));
   }
   function openQuickEntry(habitId,dateKey){
     const h=state.habits.find(x=>x.id===habitId);if(!h)return;const log=((state.logs[dateKey]||{})[habitId])||{};
@@ -506,30 +484,7 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
     root.querySelectorAll('[data-edit-date]').forEach(btn=>btn.addEventListener('click',()=>editHistoricalLog(h.id,btn.dataset.editDate)));
     $('habitDetailBackdrop').classList.remove('hidden');const modal=$('habitDetailBackdrop').querySelector('.detail-modal');modal.scrollTop=0;
   }
-  function showHabitActions(h) {
-    const backdrop=$('habitActionsBackdrop'),grid=$('habitActionsGrid');if(!backdrop||!grid)return;
-    $('habitActionsTitle').textContent=h.name;$('habitActionsSubtitle').textContent=`${h.category} · ${scheduleText(h)}${h.paused?' · Paused':''}${h.archived?' · Archived':''}`;
-    const items=[
-      ['▥','Statistics','stats'],['✎','Edit','edit'],['⧉','Duplicate','duplicate'],
-      [h.paused?'▶':'Ⅱ',h.paused?'Resume':'Pause','pause'],[h.archived?'↶':'▣',h.archived?'Restore':'Archive','archive'],
-      ['↕','Move order','move'],['−','Skip today','skip'],['×','Delete','delete']
-    ];
-    grid.innerHTML=items.map(([icon,label,key])=>`<button type="button" data-habit-action="${key}" class="${key==='delete'?'danger':''}"><b>${icon}</b><small>${label}</small></button>`).join('');
-    backdrop.classList.remove('hidden');
-    const close=()=>backdrop.classList.add('hidden');
-    backdrop.onclick=e=>{if(e.target===backdrop)close();};
-    grid.querySelectorAll('[data-habit-action]').forEach(btn=>btn.onclick=()=>{
-      const action=btn.dataset.habitAction;close();
-      if(action==='stats'){openHabitDetails(h.id);return;}
-      if(action==='edit'){openHabitModal(h.id);return;}
-      if(action==='skip'){skipToday(h.id);return;}
-      if(action==='pause'){h.paused=!h.paused;saveState();render();showToast(h.paused?'Habit paused.':'Habit resumed.');return;}
-      if(action==='archive'){if(h.archived){h.archived=false;h.archivedAt=null;h.paused=false;saveState();render();showToast('Habit restored. History kept.');}else if(confirm(`Archive “${h.name}”? Its history will be kept.`)){h.archived=true;h.archivedAt=new Date().toISOString();saveState();render();showToast('Habit archived; history kept.');}return;}
-      if(action==='duplicate'){const copy={...h,id:uid(),name:(h.name+' (copy)').slice(0,70),createdAt:new Date().toISOString(),archived:false,archivedAt:null,paused:false};state.habits.push(copy);saveState();render();showToast('Habit duplicated; history starts fresh.');return;}
-      if(action==='move'){const direction=prompt('Move habit:\n1 Move up\n2 Move down','1');if(!direction)return;const i=state.habits.findIndex(x=>x.id===h.id),j=direction==='1'?i-1:i+1;if(j>=0&&j<state.habits.length){[state.habits[i],state.habits[j]]=[state.habits[j],state.habits[i]];saveState();render();showToast('Habit order updated.');}return;}
-      if(action==='delete'&&confirm(`Permanently delete “${h.name}” and its history? Export a backup first if needed.`)){state.habits=state.habits.filter(x=>x.id!==h.id);Object.keys(state.logs).forEach(k=>{if(state.logs[k])delete state.logs[k][h.id];});saveState();render();showToast('Habit and its history deleted.');}
-    });
-  }
+  function showHabitActions(h) { const action=prompt(`Habit: ${h.name}\nE = edit · S = skip today · P = ${h.paused?'resume':'pause'} · A = archive · D = delete · C = duplicate · U = move up · W = move down`,'E'); if(!action)return; if(action.toUpperCase()==='E')openHabitModal(h.id); else if(action.toUpperCase()==='S')skipToday(h.id); else if(action.toUpperCase()==='P'){h.paused=!h.paused;saveState();render();showToast(h.paused?'Habit paused.':'Habit resumed.');} else if(action.toUpperCase()==='A'){ if(confirm(`Archive “${h.name}”? Its history will be kept.`)){h.archived=true;h.archivedAt=new Date().toISOString();saveState();render();showToast('Habit archived; history kept.');}} else if(action.toUpperCase()==='C'){const copy={...h,id:uid(),name:(h.name+' (copy)').slice(0,70),createdAt:new Date().toISOString(),archived:false,archivedAt:null,paused:false};state.habits.push(copy);saveState();render();showToast('Habit duplicated; history starts fresh.');} else if(action.toUpperCase()==='U'||action.toUpperCase()==='W'){const i=state.habits.findIndex(x=>x.id===h.id),j=action.toUpperCase()==='U'?i-1:i+1;if(j>=0&&j<state.habits.length){[state.habits[i],state.habits[j]]=[state.habits[j],state.habits[i]];saveState();render();showToast('Habit order updated.');}} else if(action.toUpperCase()==='D'){ if(confirm(`Permanently delete “${h.name}” and its history? Export a backup first if needed.`)){state.habits=state.habits.filter(x=>x.id!==h.id);Object.keys(state.logs).forEach(k=>{if(state.logs[k])delete state.logs[k][h.id]});saveState();render();showToast('Habit deleted.');}} }
   function toggleHabit(id) { const k=todayKey(); if(!state.logs[k])state.logs[k]={}; const old=state.logs[k][id]; state.logs[k][id]={...(old||{}),done:!Boolean(old&&old.done),updatedAt:new Date().toISOString()}; saveState();render(); }
   function saveNumericValue(id, value) { const h=state.habits.find(x=>x.id===id); if(!h)return; const n=Number(value); if(!Number.isFinite(n)||n<0){showToast('Enter a valid non-negative number.');return;} const k=todayKey(); if(!state.logs[k])state.logs[k]={}; const old=state.logs[k][id]||{}; state.logs[k][id]={...old,value:n,done:h.trackingType==='atMost'?n<=h.numericTarget:n>=h.numericTarget,updatedAt:new Date().toISOString()}; saveState();render(); }
   function weeklyProgress(h, endDate=new Date()) {
@@ -628,6 +583,7 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
   function closeModal(id) { $(id).classList.add('hidden'); }
   function saveHabit(e) { e.preventDefault(); const name=$('habitName').value.trim(); if(!name){showToast('Enter a habit name.');return;} const schedule=$('habitSchedule').value; const customDays=[...document.querySelectorAll('#customDays input:checked')].map(c=>Number(c.value)); if($('trackingType').value!=='weekly'&&schedule==='custom'&&!customDays.length){showToast('Choose at least one day.');return;} const intervalDays=Number($('intervalDays').value||2),monthlyDay=Number($('monthlyDay').value||1); if(schedule==='interval'&&(!Number.isInteger(intervalDays)||intervalDays<2||intervalDays>365)){showToast('Repeat interval must be 2–365 days.');return;} if(schedule==='monthly'&&(!Number.isInteger(monthlyDay)||monthlyDay<1||monthlyDay>31)){showToast('Choose a day from 1 to 31.');return;} const id=$('habitId').value; const existing=id?state.habits.find(h=>h.id===id):null; const trackingType=$('trackingType').value; const effectiveSchedule=trackingType==='weekly'?'daily':schedule; const numericTarget=Number($('numericTarget').value||1); const weeklyTarget=Number($('weeklyTarget').value||3); if((trackingType==='numeric'||trackingType==='atMost')&&(!Number.isFinite(numericTarget)||numericTarget<=0)){showToast('Enter a target greater than zero.');return;} if(trackingType==='weekly'&&(!Number.isInteger(weeklyTarget)||weeklyTarget<1||weeklyTarget>7)){showToast('Weekly target must be 1–7 days.');return;} const reminderTimes=$('habitReminder').value.split(',').map(t=>t.trim()).filter(Boolean); if(reminderTimes.length>5||reminderTimes.some(t=>!/^([01]\d|2[0-3]):[0-5]\d$/.test(t))){showToast('Use up to 5 valid times, e.g. 07:00, 20:30.');return;} const h={id:id||uid(),name,description:$('habitDescription').value.trim(),notes:$('habitNotes').value.trim(),isCore:$('habitCore').checked,category:$('habitCategory').value,trackingType,numericTarget,numericUnit:$('numericUnit').value.trim(),weeklyTarget,schedule:effectiveSchedule,customDays,intervalDays,monthlyDay,scheduleAnchor:existing&&existing.schedule===effectiveSchedule&&Number(existing.intervalDays||2)===intervalDays? (existing.scheduleAnchor||String(existing.createdAt).slice(0,10)):todayKey(),reminders:[...new Set($('habitReminder').value.split(',').map(t=>t.trim()).filter(Boolean))],createdAt:existing?existing.createdAt:new Date().toISOString(),archived:false,archivedAt:null,paused:existing?Boolean(existing.paused):false}; if(existing)Object.assign(existing,h);else state.habits.push(h); saveState();closeModal('habitModalBackdrop');render();showToast(existing?'Habit updated.':'Habit added.'); }
   function weeklyRate() { const result=periodHabitRate('week'); return result.due?`${result.rate}%`:'—'; }
+  function renderAllHabits() { const main=$('mainContent'); main.innerHTML=`<section class="section-head"><div><h2>All habits</h2><p>Manage your habits and schedules</p></div><button class="primary-btn" id="viewAddHabit">＋ Add</button></section><section class="view-panel card"><h3>Quick-start templates</h3><p>Start with a suggested habit, then customise its schedule and target.</p><div class="template-grid"><button class="secondary-btn" data-template="quran">📖 Qur'an reading</button><button class="secondary-btn" data-template="adhkar">☀ Morning adhkar</button><button class="secondary-btn" data-template="exercise">🏃 Exercise</button><button class="secondary-btn" data-template="study">📚 Islamic learning</button><button class="secondary-btn" data-template="reading">📘 General reading</button></div></section><div id="allHabitList" class="habit-list"></div><section class="view-panel card"><h3>Archived habits</h3><div id="archivedList"></div></section>`; $('viewAddHabit').onclick=()=>openHabitModal(); main.querySelectorAll('[data-template]').forEach(b=>b.onclick=()=>addTemplate(b.dataset.template)); const list=$('allHabitList'); const act=activeHabits(); const paused=state.habits.filter(h=>h.paused&&!h.archived); if(!act.length){list.innerHTML='<div class="empty-state card"><p>No active habits yet.</p></div>';} act.forEach(h=>list.appendChild(createHabitCard(h))); paused.forEach(h=>{const row=document.createElement('div');row.className='history-row';const name=document.createElement('span');name.textContent=h.name+' · Paused';const btn=document.createElement('button');btn.className='text-btn';btn.textContent='Resume';btn.onclick=()=>{h.paused=false;saveState();render();};row.append(name,btn);list.append(row);}); const archived=state.habits.filter(h=>h.archived); const a=$('archivedList'); if(!archived.length)a.innerHTML='<p>No archived habits.</p>'; archived.forEach(h=>{const row=document.createElement('div');row.className='history-row';const name=document.createElement('span');name.textContent=h.name;const btn=document.createElement('button');btn.className='text-btn';btn.textContent='Restore';btn.onclick=()=>{h.archived=false;h.archivedAt=null;saveState();render();showToast('Habit restored.');};row.append(name,btn);a.append(row);}); }
   function renderStats(){
     const main=$('mainContent');const week=periodHabitRate('week'),month=periodHabitRate('month'),year=periodHabitRate('year');
     let rows='';for(let i=29;i>=0;i--){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-i);const k=todayKey(d);let due=0,earned=0;activeHabits().forEach(h=>{if(h.trackingType==='weekly'||!isScheduled(h,k)||isSkipped(h.id,k))return;due++;const log=(state.logs[k]||{})[h.id]||{};earned+=h.trackingType==='numeric'?Math.min(1,Math.max(0,Number(log.value||0))/Math.max(1,Number(h.numericTarget||1))):h.trackingType==='atMost'?(log.done?1:0):(log.done?1:0);});const rate=due?Math.round(earned/due*100):null;rows+=`<div class="history-row"><span>${formatDate(d)}</span><strong>${rate===null?'—':`${rate}%`}</strong></div>`;}
@@ -648,8 +604,8 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
   function renderCustomCategories(){const box=$('customCategoryList');if(!box)return;box.innerHTML='';if(!state.customCategories.length){box.innerHTML='<p class="field-help">No custom categories yet.</p>';return;}state.customCategories.forEach(cat=>{const row=document.createElement('div');row.className='history-row';const name=document.createElement('span');name.textContent=cat;const del=document.createElement('button');del.className='text-btn';del.textContent='Remove';del.onclick=()=>{if(state.habits.some(h=>h.category===cat)&&!confirm(`“${cat}” is used by existing habits. Remove it from the category list? Existing habits will keep their category.`))return;state.customCategories=state.customCategories.filter(x=>x!==cat);saveState();renderCustomCategories();showToast('Category removed from your list.');};row.append(name,del);box.append(row);});}
   function addCategory(){const name=prompt('New category name (up to 30 characters):');if(!name)return;const clean=name.trim().slice(0,30);if(!clean)return;if(BUILTIN_CATEGORIES.some(x=>x.toLowerCase()===clean.toLowerCase())||state.customCategories.some(x=>x.toLowerCase()===clean.toLowerCase())){showToast('That category already exists.');return;}state.customCategories.push(clean);saveState();renderCustomCategories();showToast('Category added.');}
   function addTemplate(type){const templates={quran:{name:"Qur'an reading",category:"Qur'an",trackingType:'numeric',numericTarget:2,numericUnit:'pages',schedule:'daily',isCore:false},adhkar:{name:'Morning adhkar',category:'Dhikr',trackingType:'check',schedule:'daily',isCore:false},exercise:{name:'Exercise',category:'Exercise',trackingType:'weekly',weeklyTarget:3,schedule:'daily',isCore:false},study:{name:'Islamic learning',category:'Islamic learning',trackingType:'weekly',weeklyTarget:2,schedule:'daily',isCore:false},reading:{name:'General reading',category:'Learning',trackingType:'numeric',numericTarget:10,numericUnit:'pages',schedule:'daily',isCore:false}};const t=templates[type];if(!t)return;if(state.habits.some(h=>!h.archived&&h.name.toLowerCase()===t.name.toLowerCase())){showToast('A habit with that name already exists.');return;}state.habits.push({id:uid(),...t,description:'',customDays:[],reminders:[],createdAt:new Date().toISOString(),archived:false,archivedAt:null});saveState();render();showToast('Template added. You can edit its target and schedule.');}
-  function renderMore() { const main=$('mainContent');main.innerHTML=`<section class="section-head"><div><h2>More</h2><p>Personalise HabitPulse</p></div></section><button class="secondary-btn full-btn" id="moreSettings">⚙ Settings & backup</button><section class="view-panel card"><h3>Habit templates</h3><p>Start a new habit from a ready-made template.</p><div class="template-grid"><button class="secondary-btn" data-template="quran">📖 Qur'an reading</button><button class="secondary-btn" data-template="adhkar">☀ Morning adhkar</button><button class="secondary-btn" data-template="exercise">🏃 Exercise</button><button class="secondary-btn" data-template="study">📚 Islamic learning</button><button class="secondary-btn" data-template="reading">📘 General reading</button></div></section><section class="view-panel card"><h3>Habit categories</h3><p>Built-in categories include Salah, Qur'an, Dhikr, Islamic learning, Health, Family and more. Add your own categories below.</p><div id="customCategoryList"></div><button class="primary-btn full-btn" id="addCategoryBtn">＋ Add custom category</button></section><section class="view-panel card"><h3>Quick access</h3><p>Add HabitPulse to your Android home screen from your browser menu. This creates an app shortcut; a true live Android home-screen widget requires a native Android build and is not included in this PWA.</p><button class="secondary-btn full-btn" id="installHelpBtn">How to add to home screen</button></section><section class="view-panel card"><h3>Built for real life</h3><p>Use templates as starting points, not rules. Adapt every habit to your own routine.</p></section>`;$('moreSettings').onclick=()=>$('settingsModalBackdrop').classList.remove('hidden');main.querySelectorAll('[data-template]').forEach(b=>b.onclick=()=>addTemplate(b.dataset.template));renderCustomCategories();$('addCategoryBtn').onclick=addCategory;const ih=$('installHelpBtn');if(ih)ih.onclick=()=>alert('In Chrome on Android: open the browser menu (⋮), then choose Install app or Add to Home screen. The exact wording depends on your browser.'); }
-  function updateNav(){const selected=activeView==='stats'?'home':activeView;document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===selected));}
+  function renderMore() { const main=$('mainContent');main.innerHTML=`<section class="section-head"><div><h2>More</h2><p>Personalise HabitPulse</p></div></section><button class="secondary-btn full-btn" id="moreSettings">⚙ Settings & backup</button><section class="view-panel card"><h3>Habit categories</h3><p>Built-in categories include Salah, Qur'an, Dhikr, Islamic learning, Health, Family and more. Add your own categories below.</p><div id="customCategoryList"></div><button class="primary-btn full-btn" id="addCategoryBtn">＋ Add custom category</button></section><section class="view-panel card"><h3>Quick access</h3><p>Add HabitPulse to your Android home screen from your browser menu. This creates an app shortcut; a true live Android home-screen widget requires a native Android build and is not included in this PWA.</p><button class="secondary-btn full-btn" id="installHelpBtn">How to add to home screen</button></section><section class="view-panel card"><h3>Built for real life</h3><p>Use templates as starting points, not rules. Adapt every habit to your own routine.</p></section>`;$('moreSettings').onclick=()=>$('settingsModalBackdrop').classList.remove('hidden');renderCustomCategories();$('addCategoryBtn').onclick=addCategory;const ih=$('installHelpBtn');if(ih)ih.onclick=()=>alert('In Chrome on Android: open the browser menu (⋮), then choose Install app or Add to Home screen. The exact wording depends on your browser.'); }
+  function updateNav(){document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===activeView));}
   function goView(view){activeView=view;render();if(view==='home')window.scrollTo({top:0,behavior:'smooth'});}
   function downloadBlob(blob, filename){const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
   function exportBackup(){
