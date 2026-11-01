@@ -124,7 +124,22 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
 :root[data-theme="light"] .modal-backdrop {background:rgba(20,35,45,.32)!important;}
 @media(prefers-reduced-motion:no-preference){.card,.habit-card,.icon-action,.primary-btn,.nav-item{transition:background .18s,border-color .18s,color .18s,transform .18s;}}
 
-  </style>
+  
+
+/* HabitPulse V7.4 — compact numeric rows and brighter completion states. */
+:root[data-theme="light"] .progress-ring:before { background:#e7f5ef !important; }
+:root[data-theme="dark"] .progress-ring:before { background:#17221d !important; }
+:root[data-theme="light"] .done .check-btn { background:#35d6a4 !important; border-color:#35d6a4 !important; color:#073b2d !important; }
+:root[data-theme="dark"] .done .check-btn { background:#4be7b2 !important; border-color:#4be7b2 !important; color:#073b2d !important; }
+.numeric-habit { align-items:center; }
+.numeric-habit .habit-main { min-width:0; }
+.numeric-habit .habit-meta { align-items:center; }
+.numeric-entry { display:inline-flex; align-items:center; gap:4px; margin:0 0 0 3px; vertical-align:middle; }
+.numeric-entry input { width:58px !important; max-width:58px !important; min-width:0; min-height:27px !important; height:27px; padding:3px 6px !important; border-radius:8px !important; font-size:11px !important; }
+.numeric-entry .tiny-btn { width:27px; min-width:27px; min-height:27px; height:27px; padding:0; border-radius:8px; display:grid; place-items:center; font-size:14px; font-weight:800; }
+@media(max-width:420px){ .numeric-habit { gap:7px; padding:8px 8px; } .numeric-entry { margin-left:2px; } .numeric-entry input { width:52px !important; max-width:52px !important; } .numeric-entry .tiny-btn { width:26px; min-width:26px; height:26px; min-height:26px; } }
+
+</style>
 </head>
 <body>
   <div class="app-shell">
@@ -318,14 +333,14 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
     updateNav();
   }
   function createHabitCard(h) {
-    const done=isDone(h.id); const skipped=isSkipped(h.id); const card=document.createElement('article'); card.className=`habit-card${done?' done':''}`;
+    const done=isDone(h.id); const skipped=isSkipped(h.id); const card=document.createElement('article'); card.className=`habit-card${done?' done':''}${h.trackingType==='numeric'||h.trackingType==='atMost'?' numeric-habit':''}`;
     const check=document.createElement('button'); check.className='check-btn'; check.textContent=done?'✓':''; check.setAttribute('aria-label',done?'Mark incomplete':`Complete ${h.name}`); if(h.trackingType==='numeric'||h.trackingType==='atMost'){check.disabled=true;check.style.visibility='hidden';}else check.addEventListener('click',()=>toggleHabit(h.id));
     const main=document.createElement('div'); main.className='habit-main';
     const title=document.createElement('div'); title.className='habit-title'; title.textContent=h.name+(skipped?' · Skipped':'');
     const meta=document.createElement('div'); meta.className='habit-meta';
     const cat=document.createElement('span'); cat.className='category-pill'; cat.textContent=h.category;
     const sched=document.createElement('span'); sched.textContent=scheduleText(h)+((h.reminders|| (h.reminder?[h.reminder]:[])).length?` · ${(h.reminders||[h.reminder]).join(', ')}`:'');
-    meta.append(cat,sched); if(h.notes){const note=document.createElement('div');note.className='habit-meta';note.textContent=h.notes;main.append(note);} if(h.isCore){const core=document.createElement('span');core.className='core-badge';core.textContent='CORE';meta.append(core);} main.append(title,meta); if(h.trackingType==='numeric'||h.trackingType==='atMost'){const entry=document.createElement('div');entry.className='numeric-entry';const input=document.createElement('input');input.type='number';input.min='0';input.step='any';input.inputMode='decimal';input.placeholder=`Target ${h.numericTarget} ${h.numericUnit}`;input.value=(state.logs[todayKey()]&&state.logs[todayKey()][h.id]&&state.logs[todayKey()][h.id].value!=null)?state.logs[todayKey()][h.id].value:'';input.setAttribute('aria-label',`Today's ${h.name} amount`);const save=document.createElement('button');save.className='tiny-btn';save.textContent='Save';save.onclick=()=>saveNumericValue(h.id,input.value);entry.append(input,save);main.append(entry);} else if(h.trackingType==='weekly'){const progress=document.createElement('div');progress.className='habit-meta';progress.textContent=`This week: ${weeklyProgress(h)}/${h.weeklyTarget} days`;main.append(progress);}
+    meta.append(cat,sched); if(h.notes){const note=document.createElement('div');note.className='habit-meta';note.textContent=h.notes;main.append(note);} if(h.isCore){const core=document.createElement('span');core.className='core-badge';core.textContent='CORE';meta.append(core);} main.append(title,meta); if(h.trackingType==='numeric'||h.trackingType==='atMost'){const entry=document.createElement('div');entry.className='numeric-entry';const input=document.createElement('input');input.type='number';input.min='0';input.step='any';input.inputMode='decimal';input.placeholder='Value';input.title=`Target ${h.numericTarget} ${h.numericUnit}`;input.value=(state.logs[todayKey()]&&state.logs[todayKey()][h.id]&&state.logs[todayKey()][h.id].value!=null)?state.logs[todayKey()][h.id].value:'';input.setAttribute('aria-label',`Today's ${h.name} amount`);const save=document.createElement('button');save.className='tiny-btn';save.textContent='✓';save.title='Save value';save.setAttribute('aria-label',`Save ${h.name} value`);save.onclick=()=>saveNumericValue(h.id,input.value);entry.append(input,save);meta.append(entry);} else if(h.trackingType==='weekly'){const progress=document.createElement('div');progress.className='habit-meta';progress.textContent=`This week: ${weeklyProgress(h)}/${h.weeklyTarget} days`;main.append(progress);}
     const actions=document.createElement('div'); actions.className='habit-actions';
     const details=document.createElement('button'); details.className='icon-action'; details.textContent='▥'; details.title='Habit statistics'; details.setAttribute('aria-label',`Statistics for ${h.name}`); details.addEventListener('click',()=>openHabitDetails(h.id));
     const edit=document.createElement('button'); edit.className='icon-action'; edit.textContent='✎'; edit.title='Edit habit'; edit.setAttribute('aria-label',`Edit ${h.name}`); edit.addEventListener('click',()=>openHabitModal(h.id));
