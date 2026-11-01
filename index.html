@@ -8,7 +8,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon-192.png" type="image/png">
   <link rel="apple-touch-icon" href="icon-192.png">
-  <title>HabitPulse V7.9</title>
+  <title>HabitPulse</title>
   <style>
 :root{color-scheme:dark;--green:#61e6b1;--green-dark:#24bd8a;--mint:#153e35;--bg:#111514;--card:#202624;--text:#f1f7f4;--muted:#9aa9a2;--line:#343f3a;--orange:#ffb45e;--blue:#62b9ff;--violet:#b69aff;--shadow:0 5px 18px rgba(0,0,0,.20)}*{box-sizing:border-box}button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #8abda4;outline-offset:2px}body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}.app-shell{max-width:760px;margin:0 auto;min-height:100dvh;padding:0 18px 104px}.topbar{display:flex;align-items:center;justify-content:space-between;padding:22px 0 18px}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:44px;height:44px;border-radius:15px;background:var(--green);color:#fff;display:grid;place-items:center;font-size:24px;font-weight:800;box-shadow:0 5px 12px #176b5730}.brand h1{font-size:21px;letter-spacing:-.6px;margin:0}.brand p{font-size:12px;color:var(--muted);margin:3px 0 0}.icon-btn{border:1px solid var(--line);background:#fff;border-radius:13px;width:42px;height:42px;font-size:20px;color:var(--green);cursor:pointer}.card{background:var(--card);border:1px solid #eaf0ec;border-radius:22px;box-shadow:var(--shadow)}.hero{background:linear-gradient(125deg,#e9f6ef,#f8fbf8);padding:22px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:28px}.eyebrow{font-size:10px;letter-spacing:1.5px;font-weight:800;color:var(--green);margin:0 0 8px}.hero h2{font-size:23px;letter-spacing:-.7px;margin:0 0 7px;max-width:230px}.hero-copy>p:last-child{font-size:13px;color:var(--muted);margin:0;line-height:1.5}.progress-ring{width:100px;height:100px;flex:0 0 100px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--green) 0deg,#d4e8de 0deg);position:relative}.progress-ring:before{content:"";position:absolute;inset:8px;border-radius:50%;background:#f0f8f3}.progress-ring>div{z-index:1;display:flex;flex-direction:column;align-items:center}.progress-ring strong{font-size:22px;color:var(--green);letter-spacing:-.7px}.progress-ring span{font-size:10px;color:var(--muted)}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 13px}.section-head h2{font-size:18px;margin:0;letter-spacing:-.4px}.section-head p{font-size:12px;color:var(--muted);margin:4px 0 0}.primary-btn,.secondary-btn{border:0;border-radius:13px;padding:12px 15px;min-height:44px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}.primary-btn{background:var(--green);color:white;box-shadow:0 4px 10px #176b5725}.primary-btn:active{transform:scale(.98)}.secondary-btn{background:#edf4f0;color:var(--green);border:1px solid #e0ebe4}.text-btn{border:0;background:transparent;color:var(--green);font-size:12px;font-weight:750;padding:8px;cursor:pointer}.habit-list{display:grid;gap:10px}.habit-card{display:flex;align-items:center;gap:12px;padding:16px 15px;background:#fff;border:1px solid var(--line);border-radius:18px;transition:border-color .2s}.habit-card.done{background:#f4faf6;border-color:#cfe7d8}.check-btn{width:29px;height:29px;flex:0 0 29px;border-radius:10px;border:1.7px solid #c9d7cf;background:#fff;color:#fff;font-size:16px;display:grid;place-items:center;cursor:pointer}.done .check-btn{background:var(--green);border-color:var(--green)}.habit-main{min-width:0;flex:1}.habit-title{font-size:14px;font-weight:750;overflow-wrap:anywhere}.done .habit-title{color:#71847a}.habit-meta{font-size:11px;color:var(--muted);margin-top:4px;display:flex;gap:7px;flex-wrap:wrap}.category-pill{background:#edf5f0;color:var(--green);padding:3px 7px;border-radius:7px;font-size:10px;font-weight:700}.habit-menu{position:relative}.small-menu-btn{border:0;background:transparent;color:#8a9991;font-size:20px;padding:5px 7px;cursor:pointer}.habit-actions{display:flex;gap:6px}.tiny-btn{font-size:11px;padding:8px 10px;min-height:34px;border-radius:9px;border:1px solid var(--line);background:#fff;color:var(--muted);cursor:pointer}.calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center}.calendar-cell,.calendar-day{padding:8px 0;border-radius:9px;font-size:11px}.calendar-day{color:var(--muted);font-weight:800}.calendar-cell{background:#f3f6f4}.calendar-cell.full{background:#cce9d8;color:#14563e;font-weight:800}.calendar-cell.partial{background:#e7f3eb;color:#286b4d}.calendar-cell.blank{background:transparent}.numeric-entry{display:flex;gap:7px;margin-top:9px;align-items:center}.numeric-entry input{min-height:36px;max-width:145px;padding:7px 9px;font-size:12px}.empty-state{text-align:center;padding:28px 20px;margin:10px 0 26px}.empty-icon{font-size:28px;color:var(--green);background:var(--mint);width:55px;height:55px;border-radius:18px;display:grid;place-items:center;margin:0 auto 12px}.empty-state h3{margin:0 0 7px}.empty-state p{font-size:13px;color:var(--muted);line-height:1.5;margin:0 auto 18px;max-width:260px}.stats-head{margin-top:28px}.mini-stats{display:grid;grid-template-columns:1fr 1fr;gap:10px}.mini-stat{display:flex;align-items:center;gap:12px;padding:16px}.stat-icon{width:37px;height:37px;border-radius:12px;display:grid;place-items:center;background:var(--mint);color:var(--green);font-size:18px}.mini-stat div{display:flex;flex-direction:column;gap:3px}.mini-stat strong{font-size:21px;letter-spacing:-.6px}.mini-stat div span{font-size:11px;color:var(--muted)}.privacy-note{text-align:center;color:#8a9991;font-size:11px;margin:20px 0 0}.bottom-nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(100%,760px);padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(18px);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(5,1fr);z-index:10}.nav-item{min-height:44px;border:0;background:transparent;color:#93a098;display:flex;align-items:center;flex-direction:column;gap:4px;padding:3px;cursor:pointer}.nav-item span{font-size:21px;line-height:1.1}.nav-item small{font-size:10px;font-weight:700}.nav-item.active{color:var(--green)}.modal-backdrop{position:fixed;inset:0;background:#10251dcc;z-index:30;display:flex;align-items:flex-end;justify-content:center;padding:12px}.modal{width:min(100%,560px);max-height:92dvh;overflow:auto;background:#fff;border-radius:24px;padding:22px 19px calc(20px + env(safe-area-inset-bottom));box-shadow:0 20px 70px #10251d40}.modal-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px}.modal-head h2{margin:0;font-size:22px;letter-spacing:-.5px}.close-btn{font-size:25px;line-height:1}form{display:grid;gap:15px}form>label,.modal label:not(.toggle-row):not(.day-choice){display:grid;gap:7px;font-size:12px;font-weight:750;color:#40564b}input:not([type=checkbox]),select,textarea{width:100%;min-height:45px;border:1px solid #dce7e0;border-radius:12px;padding:11px 12px;background:#fbfdfb;color:var(--text);font:inherit;font-size:14px;outline:none}input:focus,select:focus,textarea:focus{border-color:#69a58b;box-shadow:0 0 0 3px #176b5710}.weekday-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:7px}.day-choice{display:flex;align-items:center;gap:5px;padding:9px 7px;background:#f4f8f5;border-radius:9px;font-size:11px!important}.day-choice input{accent-color:var(--green)}.field-help{font-size:11px;color:var(--muted);line-height:1.55;margin:0}.form-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:5px}.settings-block{border-top:1px solid var(--line);padding:17px 0}.settings-block h3{font-size:14px;margin:0 0 12px}.toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:13px}.toggle-row span{display:grid;gap:4px}.toggle-row strong{font-size:13px}.toggle-row small{font-size:11px;color:var(--muted);line-height:1.4}.toggle-row input{width:19px;height:19px;accent-color:var(--green)}.full-btn{width:100%;margin:4px 0 9px}.settings-actions{display:flex;gap:8px;margin:12px 0}.settings-actions button{flex:1}.danger-text{color:#b54848;padding-left:0}.toast{position:fixed;left:50%;bottom:94px;transform:translate(-50%,15px);background:#183c30;color:#fff;padding:11px 16px;border-radius:12px;font-size:12px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.22s;z-index:50;max-width:90%;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}.hidden{display:none!important}.view-panel{padding:19px;margin-bottom:12px}.view-panel h3{margin:0 0 8px;font-size:16px}.view-panel p{color:var(--muted);font-size:12px;line-height:1.6}.history-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--line);font-size:12px}.history-row:last-child{border:0}.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.review-stat{padding:14px;border:1px solid var(--line);border-radius:14px;background:#fbfdfb}.review-stat strong{display:block;font-size:21px;color:var(--green)}.review-stat span{font-size:11px;color:var(--muted)}.review-note{min-height:95px;resize:vertical}.core-badge{font-size:10px;color:#8a5a16;background:#fff3d9;padding:3px 7px;border-radius:7px;font-weight:800}.review-tabs{display:flex;gap:7px;margin:0 0 12px}.review-tabs button{flex:1}.review-tabs button.active{background:var(--green);color:#fff}.history-row strong{color:var(--green)}@media(min-width:600px){.app-shell{padding-left:26px;padding-right:26px}.hero{padding:28px}.hero h2{max-width:none}.habit-list{grid-template-columns:1fr 1fr}.habit-card{align-items:flex-start}.modal-backdrop{align-items:center}.modal{border-radius:24px}}@media(max-width:370px){.app-shell{padding-left:12px;padding-right:12px}.hero{padding:16px}.hero h2{font-size:20px}.progress-ring{width:84px;height:84px;flex-basis:84px}.progress-ring strong{font-size:19px}.primary-btn{padding:11px 10px}.mini-stat{padding:12px;gap:8px}}
 
@@ -100,7 +100,7 @@ body,.app-shell {background:var(--bg)!important;color:var(--text)!important;}
 .calendar-cell.full,.detail-day.complete,.year-cell {background:var(--green)!important;color:#062b20!important;}
 .calendar-cell.partial,.detail-day.partial {background:color-mix(in srgb,var(--orange) 24%,var(--card))!important;color:var(--text)!important;}
 .detail-day.skipped {background:repeating-linear-gradient(135deg,var(--card),var(--card) 3px,var(--line) 3px,var(--line) 6px)!important;color:var(--muted)!important;}
-.bottom-nav {grid-template-columns:repeat(3,1fr)!important;background:color-mix(in srgb,var(--card) 96%,transparent)!important;border-color:var(--line)!important;box-shadow:0 -5px 20px var(--shadow)!important;backdrop-filter:blur(18px);}
+.bottom-nav {background:color-mix(in srgb,var(--card) 96%,transparent)!important;border-color:var(--line)!important;box-shadow:0 -5px 20px var(--shadow)!important;backdrop-filter:blur(18px);}
 .nav-item {background:transparent!important;color:var(--muted)!important;}
 .nav-item.active {color:var(--green)!important;}
 .modal-backdrop {background:rgba(5,12,9,.48)!important;}
@@ -150,6 +150,8 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
 .detail-jump::-webkit-scrollbar{display:none}.detail-jump button{flex:0 0 auto;border:1px solid var(--line);border-radius:20px;background:var(--card);color:var(--muted);font-size:10px;padding:7px 10px}
 .detail-overview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding:14px 0 16px}
 .detail-overview>div{min-width:0}.detail-overview strong{display:block;color:var(--green);font-size:19px;letter-spacing:-.5px}.detail-overview span{display:block;color:var(--muted);font-size:10px;margin-top:3px}
+.recovery-panel{margin:0 0 12px;padding:13px;border:1px solid var(--line);border-radius:13px;background:var(--card)}.recovery-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:11px}.recovery-head strong{font-size:13px;color:var(--text)}.recovery-head span{font-size:10px;color:var(--muted);background:var(--soft);padding:4px 7px;border-radius:20px}.recovery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.recovery-grid>div{min-width:0}.recovery-grid strong{display:block;font-size:17px;line-height:1.25;color:var(--green);overflow-wrap:anywhere}.recovery-grid span{display:block;font-size:9px;line-height:1.35;color:var(--muted);margin-top:4px} :root[data-theme="dark"] .recovery-panel{background:var(--card)}@media(max-width:360px){.recovery-grid{gap:5px}.recovery-grid strong{font-size:15px}.recovery-grid span{font-size:8px}}
+
 .detail-section{border-top:1px solid var(--line);padding:13px 0 15px;scroll-margin-top:112px}
 .detail-section-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:0}
 .detail-section-head h3{margin:0;font-size:15px;font-weight:650;color:var(--green)}
@@ -181,56 +183,26 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
 :root[data-theme="light"] .modal{background:var(--card);color:var(--text);border-color:var(--line)}:root[data-theme="light"] .modal-head h2{color:var(--text)}
 
 
-/* V7.8 — habit actions live on each habit; no separate Manage area */
-.track-habit-name{padding-right:28px;position:sticky}
-.track-row.is-paused .track-habit-title{opacity:.58}
-.track-row.is-paused .track-habit-name:after{content:"PAUSED";font-size:8px;letter-spacing:.08em;color:var(--orange)}
-.track-row.is-archived .track-habit-title{opacity:.58;text-decoration:line-through}
-.track-actions-trigger{position:absolute;right:2px;top:50%;transform:translateY(-50%);width:27px;height:30px;border:0;border-radius:8px;background:transparent;color:var(--muted);font-size:20px;cursor:pointer}
-.track-actions-trigger:active{background:var(--mint)}
-#habitActionsBackdrop{z-index:40;align-items:flex-end;padding:10px}
-#habitActionsBackdrop .action-sheet{width:min(100%,520px);max-height:82dvh;overflow:auto;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:22px 22px 16px 16px;padding:15px 15px calc(15px + env(safe-area-inset-bottom));}
-.action-sheet-grip{width:38px;height:4px;border-radius:9px;background:var(--muted);opacity:.45;margin:0 auto 14px}
-.action-sheet-title{font-size:16px;font-weight:800;margin:0 0 3px}.action-sheet-sub{font-size:11px;color:var(--muted);margin:0 0 13px}
-.action-sheet-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
-.action-sheet-grid button{min-height:66px;border:1px solid var(--line);border-radius:13px;background:var(--bg);color:var(--text);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:19px;cursor:pointer}
-.action-sheet-grid button small{font-size:10px;color:var(--muted);font-weight:650}
-.action-sheet-grid button.danger{color:#e16d72}.action-sheet-grid button:active{background:var(--mint)}
-.track-habit-title{cursor:pointer;touch-action:pan-y}
+/* V7.9 Routine Management — additive UI */
+.routine-note{font-size:12px;color:var(--muted);line-height:1.5;margin:0 0 12px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--card)}
+.routine-card{padding:14px;margin:0 0 11px;border-radius:17px;background:var(--card);border-color:var(--line)}
+.routine-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.routine-card-head h3{font-size:15px;margin:0 0 4px}.routine-card-head p{font-size:11px;color:var(--muted);margin:0;line-height:1.4}
+.routine-actions{display:flex;gap:5px;flex-shrink:0}.routine-actions .tiny-btn{min-height:31px;padding:6px 9px;background:transparent}
+.routine-delete{color:#ff8b8b;border-color:#704747}
+.routine-progress{margin-top:13px}.routine-progress-label{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px}.routine-progress-label strong{color:var(--text)}
+.routine-progress-track{height:7px;border-radius:20px;background:var(--line);overflow:hidden}.routine-progress-track i{display:block;height:100%;border-radius:20px;background:var(--green);transition:width .2s}
+.routine-members{margin-top:12px;border-top:1px solid var(--line);padding-top:9px}.routine-members summary{cursor:pointer;font-size:12px;font-weight:700;color:var(--text);list-style:none;display:flex;justify-content:space-between}.routine-members summary::-webkit-details-marker{display:none}.routine-members summary span{color:var(--green)}
+.routine-habit-list{display:grid;gap:3px;margin-top:9px}.routine-habit-option{display:flex;align-items:center;gap:9px;padding:8px 7px;border-radius:9px;background:color-mix(in srgb,var(--card) 88%,var(--green) 12%);font-size:12px}.routine-habit-option input{width:17px;height:17px;accent-color:var(--green);flex:0 0 auto}.routine-habit-option span{flex:1;min-width:0}.routine-habit-option small{color:var(--muted);font-size:10px}
 
-
-/* V7.9 cumulative release */
-/* V7.9 interaction refinement: robust touch feedback and accessible action controls */
-.track-habit-name,[data-habit-actions],[data-track-detail]{touch-action:pan-y}
-.track-actions-trigger,.track-detail-link,.track-cell{min-width:36px;min-height:36px}
-.habit-actions-grid button{min-height:46px}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
-
-/* V7.10 cumulative release */
-/* V7.10 tracking and statistics presentation refinements */
-.track-grid-scroll{overscroll-behavior-x:contain;scrollbar-width:thin}
-.track-grid{min-width:620px}
-.track-cell{font-variant-numeric:tabular-nums}
-.track-cell:focus-visible{outline:2px solid var(--green);outline-offset:2px}
-.stats-section,.view-panel{scroll-margin-top:16px}
-.stats-section h3{display:flex;align-items:center;justify-content:space-between;gap:8px}
-
-/* V7.11 cumulative release */
-/* V7.11 data safety and recovery affordances */
-.danger{color:#d94c58!important}
-.field-help{overflow-wrap:anywhere}
-input,textarea,select{max-width:100%}
-.modal{overscroll-behavior:contain}
-.toast{padding:12px 16px;line-height:1.4}
-
-/* V8.0 cumulative release */
-/* V8.0 final compact, accessible visual polish */
-.track-group-title{padding:10px 2px 6px;font-weight:750}
-.track-row{min-height:48px}
-.track-habit-title{line-height:1.25}
-.track-footnote{font-size:11px;line-height:1.5;color:var(--muted)}
-.icon-btn,.nav-item,.track-cell,.track-actions-trigger,.track-detail-link{ -webkit-tap-highlight-color:transparent}
-@media(max-width:420px){.app-shell{padding-left:12px;padding-right:12px}.track-grid{min-width:590px}.track-day-head{font-size:10px}}
+/* V8.0 information architecture: dashboard-first, compact and consistent. */
+.dashboard-greeting{padding:5px 1px 14px}.dashboard-greeting .eyebrow{margin-bottom:5px}.dashboard-greeting h2{font-size:25px;letter-spacing:-.8px;margin:0 0 4px}.dashboard-greeting p{margin:0;color:var(--muted);font-size:12px}
+.dashboard-progress{display:grid;grid-template-columns:1fr auto;align-items:center;gap:14px;padding:16px;margin:0 0 14px}.dashboard-progress h3{font-size:14px;margin:0 0 5px}.dashboard-progress p{font-size:11px;color:var(--muted);margin:0;line-height:1.5}.dashboard-ring{width:76px;height:76px;border-radius:50%;display:grid;place-items:center;position:relative;background:conic-gradient(var(--green) var(--progress,0%),var(--line) 0)}.dashboard-ring:before{content:'';position:absolute;inset:7px;border-radius:50%;background:var(--card)}.dashboard-ring strong{position:relative;font-size:17px;color:var(--green)}
+.dashboard-shortcuts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0 0 18px}.dashboard-shortcut{border:1px solid var(--line);background:var(--card);color:var(--text);border-radius:13px;padding:11px 8px;text-align:left;min-height:68px;cursor:pointer}.dashboard-shortcut b{display:block;font-size:17px;color:var(--green);margin-bottom:3px}.dashboard-shortcut span{font-size:10px;color:var(--muted);font-weight:700}
+.dashboard-section{margin:17px 0}.dashboard-section-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 9px}.dashboard-section-head h3{font-size:15px;margin:0}.dashboard-section-head button{border:0;background:none;color:var(--green);font-size:11px;font-weight:800}.dashboard-routine{padding:12px;margin:0 0 8px;border:1px solid var(--line);border-radius:14px;background:var(--card)}.dashboard-routine-top{display:flex;justify-content:space-between;gap:8px;font-size:12px;font-weight:750}.dashboard-routine-top small{color:var(--muted);font-weight:600}.dashboard-routine-track{height:5px;background:var(--line);border-radius:9px;overflow:hidden;margin-top:9px}.dashboard-routine-track i{display:block;height:100%;background:var(--green);border-radius:9px}
+.dashboard-empty{padding:18px;text-align:center}.dashboard-empty p{font-size:12px;color:var(--muted);line-height:1.5}.bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))}.nav-item span{font-size:19px}.nav-item small{font-size:9px}.routine-card{box-shadow:none}.routine-card .routine-members{max-height:300px;overflow:auto}.manage-link{display:flex;align-items:center;justify-content:space-between;width:100%;padding:13px 14px;margin:7px 0;border:1px solid var(--line);border-radius:13px;background:var(--card);color:var(--text);font-weight:700;text-align:left}.manage-link small{color:var(--muted);font-weight:500}
+@media(max-width:360px){.app-shell{padding-left:12px;padding-right:12px}.dashboard-greeting h2{font-size:22px}.dashboard-progress{padding:13px}.dashboard-ring{width:68px;height:68px}}
+.routine-presets{display:flex;gap:7px;flex-wrap:wrap;margin:10px 0 14px}.routine-presets button{border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:var(--card);color:var(--text);font-size:11px;font-weight:700}.routine-habit-option:has(input:checked){outline:1px solid color-mix(in srgb,var(--green) 45%,transparent);background:color-mix(in srgb,var(--green) 12%,var(--card))}.routine-habit-option input:focus-visible{outline:2px solid var(--green);outline-offset:2px}.routine-empty-note{padding:12px;border:1px dashed var(--line);border-radius:12px;color:var(--muted);font-size:11px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -256,8 +228,10 @@ input,textarea,select{max-width:100%}
     </main>
 
     <nav class="bottom-nav" aria-label="Main navigation">
-      <button class="nav-item active" data-view="home"><span>▦</span><small>Track</small></button>
-      <button class="nav-item" data-view="review"><span>✎</span><small>Review</small></button>
+      <button class="nav-item active" data-view="home"><span>⌂</span><small>Home</small></button>
+      <button class="nav-item" data-view="today"><span>✓</span><small>Today</small></button>
+      <button class="nav-item" data-view="routines"><span>▦</span><small>Routines</small></button>
+      <button class="nav-item" data-view="stats"><span>▥</span><small>Insights</small></button>
       <button class="nav-item" data-view="more"><span>•••</span><small>More</small></button>
     </nav>
   </div>
@@ -291,7 +265,7 @@ input,textarea,select{max-width:100%}
       <div class="modal-head"><div><p class="eyebrow">YOUR APP</p><h2 id="settingsTitle">Settings & backup</h2></div><button class="icon-btn close-btn" data-close="settingsModalBackdrop" aria-label="Close">×</button></div>
       <div class="settings-block"><h3>Appearance</h3><label class="toggle-row"><span><strong>App theme</strong><small>Light is the default. Choose the vibrant dark theme anytime.</small></span><select id="themeSelect" aria-label="App theme" style="max-width:132px;min-height:38px"><option value="light">Light</option><option value="dark">Dark</option></select></label></div><div class="settings-block"><h3>Notifications</h3><label class="toggle-row"><span><strong>Daily summary</strong><small>Show a summary when you open the app for the first time each day.</small></span><input type="checkbox" id="dailySummaryToggle"></label><button class="secondary-btn full-btn" id="enableNotificationsBtn">Enable browser notifications</button><p class="field-help" id="notificationStatus">Browser notifications are optional.</p></div>
       <div class="settings-block"><h3>Protect your data</h3><p class="field-help">JSON backup preserves your app data. CSV exports habit logs for spreadsheets. Restore validates the file and creates a safety backup first.</p><div class="settings-actions"><button class="secondary-btn" id="exportBtn">Export JSON backup</button><button class="secondary-btn" id="csvBtn">Export CSV</button><button class="secondary-btn" id="importBtn">Restore backup</button><input type="file" id="importFile" accept="application/json,.json" class="hidden"></div></div>
-      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V8.0 · Habit-centred actions · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
+      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V8.1 · A calmer, routine-first habit system · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
     </section>
   </div>
 
@@ -315,11 +289,16 @@ input,textarea,select{max-width:100%}
       <p class="field-help">Choose a status to save. Clear removes the entry for this date.</p>
     </section>
   </div>
-
-  <div class="modal-backdrop hidden" id="habitActionsBackdrop">
-    <section class="action-sheet" role="dialog" aria-modal="true" aria-labelledby="habitActionsTitle">
-      <div class="action-sheet-grip"></div><h2 class="action-sheet-title" id="habitActionsTitle">Habit actions</h2><p class="action-sheet-sub" id="habitActionsSubtitle">Choose an action</p>
-      <div class="action-sheet-grid" id="habitActionsGrid"></div>
+  <div class="modal-backdrop hidden" id="routineModalBackdrop">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="routineModalTitle">
+      <div class="modal-head"><div><p class="eyebrow">BUILD A SIMPLE FLOW</p><h2 id="routineModalTitle">Create a routine</h2></div><button class="icon-btn close-btn" data-close="routineModalBackdrop" aria-label="Close">×</button></div>
+      <form id="routineForm">
+        <input type="hidden" id="routineId">
+        <label>Routine name<input id="routineName" maxlength="50" required placeholder="e.g. Morning routine"></label>
+        <label>Description <span class="field-help">Optional</span><textarea id="routineDescription" maxlength="120" rows="2" placeholder="A short note about this routine"></textarea></label>
+        <p class="field-help">You can add existing habits to this routine after saving. A habit keeps one tracking history even if it belongs to multiple routines.</p>
+        <div class="form-actions"><button type="button" class="secondary-btn" data-close="routineModalBackdrop">Cancel</button><button type="submit" class="primary-btn">Save routine</button></div>
+      </form>
     </section>
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -338,14 +317,14 @@ input,textarea,select{max-width:100%}
   const OLDEST_STORAGE_KEY = 'habitpulse.data.v1';
   const LAST_GOOD_KEY = 'habitpulse.data.lastgood';
   const LEGACY_STORAGE_KEY = 'habitflow.data.v1';
-  const SCHEMA_VERSION = 18;
+  const SCHEMA_VERSION = 21;
   const $ = (id) => document.getElementById(id);
   const HOME_MARKUP = $('mainContent').innerHTML;
   const todayKey = (date = new Date()) => `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2,'0')}-${String(date.getDate()).padStart(2,'0')}`;
   const parseDate = (key) => { const [y,m,d] = key.split('-').map(Number); return new Date(y,m-1,d,12); };
   const dayIndex = (key) => parseDate(key).getDay();
   const uid = () => (crypto && crypto.randomUUID) ? crypto.randomUUID() : `h${Date.now()}${Math.random().toString(36).slice(2,8)}`;
-  const defaultState = () => ({ schemaVersion: SCHEMA_VERSION, createdAt: new Date().toISOString(), habits: [], logs: {}, settings: { dailySummary: false, lastSummaryDate: null }, reviews: {}, reminderFired: {}, customCategories: [] });
+  const defaultState = () => ({ schemaVersion: SCHEMA_VERSION, createdAt: new Date().toISOString(), habits: [], logs: {}, settings: { dailySummary: false, lastSummaryDate: null }, reviews: {}, reminderFired: {}, customCategories: [], routines: [] });
   let state = loadState();
   let activeView = 'home';
   let toastTimer;
@@ -378,6 +357,12 @@ input,textarea,select{max-width:100%}
     else s.settings.theme = 'light';
     s.reviews = raw.reviews && typeof raw.reviews === 'object' && !Array.isArray(raw.reviews) ? raw.reviews : {};
     s.customCategories = Array.isArray(raw.customCategories) ? [...new Set(raw.customCategories.filter(x=>typeof x==='string').map(x=>x.trim().slice(0,30)).filter(Boolean))] : [];
+    const validHabitIds = new Set(s.habits.map(h=>h.id));
+    s.routines = Array.isArray(raw.routines) ? raw.routines.filter(r=>r&&typeof r.id==='string'&&typeof r.name==='string'&&r.name.trim()).map(r=>({
+      id:r.id, name:r.name.trim().slice(0,50), description:typeof r.description==='string'?r.description.slice(0,120):'',
+      habitIds:[...new Set((Array.isArray(r.habitIds)?r.habitIds:[]).filter(id=>typeof id==='string'&&validHabitIds.has(id)))],
+      createdAt:typeof r.createdAt==='string'?r.createdAt:new Date().toISOString()
+    })) : [];
     s.reminderFired = raw.reminderFired && typeof raw.reminderFired === 'object' ? raw.reminderFired : {};
     s.schemaVersion = SCHEMA_VERSION;
     return s;
@@ -424,50 +409,76 @@ input,textarea,select{max-width:100%}
   function scheduleText(h) { if(h.schedule==='daily')return 'Every day'; if(h.schedule==='weekdays')return 'Mon–Fri'; if(h.schedule==='weekends')return 'Weekends'; if(h.schedule==='interval')return `Every ${h.intervalDays||2} days`; if(h.schedule==='monthly')return `Monthly · day ${h.monthlyDay||1}`; const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; return h.customDays.length ? h.customDays.slice().sort((a,b)=>a-b).map(n=>names[n]).join(', ') : 'Choose days'; }
   function formatDate(d=new Date()) { return new Intl.DateTimeFormat(undefined,{weekday:'long',month:'short',day:'numeric'}).format(d); }
   function render() {
-    if (activeView === 'home') { renderTrackingGrid(); updateNav(); return; }
+    if (activeView === 'home') { renderDashboard(); updateNav(); return; }
+    if (activeView === 'today') { renderTrackingGrid(); updateNav(); return; }
+    if (activeView === 'habits') { renderAllHabits(); updateNav(); return; }
     if (activeView === 'stats') { renderStats(); updateNav(); return; }
     if (activeView === 'review') { renderReview(); updateNav(); return; }
     if (activeView === 'more') { renderMore(); updateNav(); return; }
+    if (activeView === 'routines') { renderRoutines(); updateNav(); return; }
+  }
+  function renderDashboard(){
+    const main=$('mainContent'), today=todayKey(), due=todayHabits().filter(h=>h.trackingType!=='weekly');
+    const weeklyGoals=activeHabits().filter(h=>h.trackingType==='weekly');
+    const done=due.filter(h=>isDone(h.id,today)).length, pct=due.length?Math.round(done/due.length*100):0;
+    const pending=due.filter(h=>!isDone(h.id,today));
+    const core=due.filter(h=>h.isCore);
+    const week=periodHabitRate('week');
+    const greeting=new Date().getHours()<12?'Good morning':new Date().getHours()<17?'Good afternoon':'Good evening';
+    const routines=(state.routines||[]).map(r=>{const hs=activeHabits().filter(h=>r.habitIds.includes(h.id)&&h.trackingType!=='weekly'&&isScheduled(h,today));const n=hs.filter(h=>isDone(h.id,today)).length;return {...r,due:hs.length,done:n,pct:hs.length?Math.round(n/hs.length*100):0};});
+    const routineMarkup=routines.length?routines.map(r=>`<article class="dashboard-routine"><div class="dashboard-routine-top"><span>${escapeHTML(r.name)}</span><small>${r.due?`${r.done}/${r.due} · ${r.pct}%`:'No habits due today'}</small></div><div class="dashboard-routine-track"><i style="width:${r.pct}%"></i></div></article>`).join(''):'<div class="dashboard-empty card"><p>Group your existing habits into Morning, Evening or custom routines to see your day in a clearer flow.</p><button class="secondary-btn" id="dashCreateRoutine">＋ Create a routine</button></div>';
+    const next=pending.slice(0,4).map(h=>`<button class="manage-link" data-dash-habit="${escapeHTML(h.id)}"><span>${escapeHTML(h.name)}<br><small>${escapeHTML(h.category||'Habit')}</small></span><span>›</span></button>`).join('');
+    main.innerHTML=`<section class="dashboard-greeting"><p class="eyebrow">${formatDate().toUpperCase()}</p><h2>${greeting}. Keep it steady.</h2><p>Small, consistent actions build a meaningful day.</p></section>
+      <section class="dashboard-progress card"><div><p class="eyebrow">TODAY'S MOMENTUM</p><h3>${!due.length?'No daily habits scheduled today.':done===due.length?'All planned habits complete.':`${due.length-done} habits left for today`}</h3><p>${done} of ${due.length} scheduled daily habits completed · ${week.rate}% this week</p></div><div class="dashboard-ring" style="--progress:${pct*3.6}deg"><strong>${pct}%</strong></div></section>
+      <section class="dashboard-shortcuts"><button class="dashboard-shortcut" id="dashToday"><b>✓</b><span>Today's tracking</span></button><button class="dashboard-shortcut" id="dashAdd"><b>＋</b><span>New habit</span></button><button class="dashboard-shortcut" id="dashInsights"><b>↗</b><span>View insights</span></button></section>
+      ${weeklyGoals.length?`<section class="dashboard-section"><div class="dashboard-section-head"><h3>Weekly goals</h3><button id="dashWeeklyTrack">Track →</button></div>${weeklyGoals.map(h=>{const n=weeklyProgress(h),p=Math.min(100,Math.round(n/Math.max(1,h.weeklyTarget)*100));return `<article class="dashboard-routine"><div class="dashboard-routine-top"><span>${escapeHTML(h.name)}</span><small>${n}/${h.weeklyTarget} this week</small></div><div class="dashboard-routine-track"><i style="width:${p}%"></i></div></article>`;}).join('')}</section>`:''}
+      <section class="dashboard-section"><div class="dashboard-section-head"><h3>Your routines</h3><button id="dashAllRoutines">Manage routines →</button></div>${routineMarkup}</section>
+      <section class="dashboard-section"><div class="dashboard-section-head"><h3>${pending.length?'Up next':'Today at a glance'}</h3><button id="dashAllHabits">All habits →</button></div>${next||'<div class="dashboard-empty card"><p>You are all caught up for today. You can still review your history or plan ahead.</p></div>'}</section>
+      <section class="mini-stats"><article class="mini-stat card"><span class="stat-icon">✦</span><div><strong>${activeHabits().length}</strong><span>Active habits</span></div></article><article class="mini-stat card"><span class="stat-icon">◎</span><div><strong>${core.length}</strong><span>Core due today</span></div></article></section>
+      <p class="privacy-note">🔒 Your data stays on this device unless you export a backup.</p>`;
+    $('dashWeeklyTrack')?.addEventListener('click',()=>goView('today'));$('dashToday').onclick=()=>goView('today');$('dashAdd').onclick=()=>openHabitModal();$('dashInsights').onclick=()=>goView('stats');$('dashAllRoutines').onclick=()=>goView('routines');$('dashAllHabits').onclick=()=>goView('habits');$('dashCreateRoutine')?.addEventListener('click',()=>goView('routines'));
+    main.querySelectorAll('[data-dash-habit]').forEach(b=>b.onclick=()=>openHabitDetails(b.dataset.dashHabit));
   }
   function renderTrackingGrid(){
     const main=$('mainContent');
-    const today=todayKey();
-    const filter=state.settings.trackFilter||'1';
-    let trackHabits=state.habits.filter(h=>filter==='5'?Boolean(h.archived):!h.archived);
-    if(filter==='2')trackHabits=trackHabits.filter(h=>h.isCore);
-    if(filter==='3')trackHabits=trackHabits.filter(h=>!h.paused&&isScheduled(h,today));
-    if(filter==='4')trackHabits=trackHabits.filter(h=>h.paused);
     const active=activeHabits();
+    const today=todayKey();
     const days=Array.from({length:7},(_,i)=>{const d=parseDate(today);d.setDate(d.getDate()-(6-i));return todayKey(d);});
-    const doneToday=active.filter(h=>isDone(h.id,today)).length;
-    const dueToday=active.filter(h=>isScheduled(h,today)).length;
+    const dailyActive=active.filter(h=>h.trackingType!=='weekly');
+    const doneToday=dailyActive.filter(h=>isDone(h.id,today)).length;
+    const dueToday=dailyActive.filter(h=>isScheduled(h,today)).length;
     const pct=dueToday?Math.round(doneToday/dueToday*100):0;
     const dayHead=days.map(k=>{const d=parseDate(k);return `<div class="track-day-head ${k===today?'is-today':''}"><b>${d.toLocaleDateString(undefined,{weekday:'short'}).slice(0,3)}</b><small>${d.getDate()}</small></div>`;}).join('');
     const groups=new Map();
-    trackHabits.forEach(h=>{const group=h.isCore?'Core habits':(h.category||'Other');if(!groups.has(group))groups.set(group,[]);groups.get(group).push(h);});
+    active.forEach(h=>{const group=h.isCore?'Core habits':(h.category||'Other');if(!groups.has(group))groups.set(group,[]);groups.get(group).push(h);});
     let rows='';
     groups.forEach((items,group)=>{
       rows+=`<div class="track-group-title">${escapeHTML(group)} <small>${items.length}</small></div>`;
       items.forEach(h=>{
         const cells=days.map(k=>{
           const log=((state.logs[k]||{})[h.id])||{};const scheduled=isScheduled(h,k);let cls='not-due',symbol='·',sub='';
-          if(log.skipped){cls='skipped';symbol='−';}else if(log.failed){cls='failed';symbol='×';}else if(log.done){cls='done';symbol='✓';}else if((h.trackingType==='numeric'||h.trackingType==='atMost')&&log.value!=null){cls='partial';symbol=String(log.value);sub=h.numericUnit||'';}else if(scheduled){cls='pending';symbol='○';}
+          if(log.skipped){cls='skipped';symbol='−';}
+          else if(log.failed){cls='failed';symbol='×';}
+          else if(log.done){cls='done';symbol='✓';}
+          else if((h.trackingType==='numeric'||h.trackingType==='atMost')&&log.value!=null){cls='partial';symbol=String(log.value);sub=h.numericUnit||'';}
+          else if(scheduled){cls='pending';symbol='○';}
           return `<button type="button" class="track-cell ${cls}" data-quick-habit="${h.id}" data-quick-date="${k}" aria-label="${escapeHTML(h.name)} ${k}: ${cls}" title="${k}"><b>${symbol}</b>${sub?`<small>${escapeHTML(sub)}</small>`:''}</button>`;
         }).join('');
-        rows+=`<div class="track-row${h.paused?' is-paused':''}${h.archived?' is-archived':''}"><div class="track-habit-name" data-habit-press="${h.id}"><span class="track-habit-title">${escapeHTML(h.name)}</span><small>${escapeHTML(h.category)}${h.trackingType==='weekly'?` · ${weeklyProgress(h)}/${h.weeklyTarget} this week`:''}</small><button type="button" class="track-detail-link" data-track-detail="${h.id}" aria-label="Statistics for ${escapeHTML(h.name)}">▥</button><button type="button" class="track-actions-trigger" data-habit-actions="${h.id}" aria-label="Actions for ${escapeHTML(h.name)}" title="Habit actions">⋯</button></div>${cells}</div>`;
+        rows+=`<div class="track-row"><div class="track-habit-name"><span class="track-habit-title">${escapeHTML(h.name)}</span><small>${escapeHTML(h.category)}${h.trackingType==='weekly'?` · Weekly goal ${weeklyProgress(h)}/${h.weeklyTarget}`:''}</small><button type="button" class="track-detail-link" data-track-detail="${h.id}" aria-label="Statistics for ${escapeHTML(h.name)}">▥</button></div>${cells}</div>`;
       });
     });
-    const filterLabel={'1':'All habits','2':'Core habits','3':'Scheduled today','4':'Paused habits','5':'Archived habits'}[filter]||'All habits';
-    main.innerHTML=`<section class="track-toolbar"><div><h2>Track</h2><p>${formatDate()} · ${doneToday}/${dueToday} completed · ${pct}% · ${filterLabel}</p></div><div class="track-toolbar-actions"><button class="icon-btn" id="trackAdd" aria-label="Add habit" title="Add habit">＋</button><button class="icon-btn" id="trackStats" aria-label="Overall statistics" title="Statistics">▥</button><button class="icon-btn" id="trackFilter" aria-label="Filter habits" title="Filter">≡</button></div></section>
+    main.innerHTML=`<section class="track-toolbar"><div><h2>Habits</h2><p>${formatDate()} · ${doneToday}/${dueToday} completed · ${pct}%</p></div><div class="track-toolbar-actions"><button class="icon-btn" id="trackAdd" aria-label="Add habit" title="Add habit">＋</button><button class="icon-btn" id="trackManage" aria-label="Manage habits" title="Manage habits">☷</button><button class="icon-btn" id="trackFilter" aria-label="Filter habits" title="Filter">≡</button></div></section>
       <div class="track-legend"><span><i class="legend-dot done"></i>Done</span><span><i class="legend-dot skipped"></i>Skipped</span><span><i class="legend-dot failed"></i>Missed</span><span><i class="legend-dot pending"></i>Pending</span></div>
-      ${trackHabits.length?`<div class="track-grid-scroll"><div class="track-grid"><div class="track-grid-head"><div class="track-name-head">Habit</div>${dayHead}</div>${rows}</div></div>`:`<div class="empty-state card"><div class="empty-icon">✦</div><h3>${filter==='5'?'No archived habits':filter==='4'?'No paused habits':'A fresh start'}</h3><p>${filter==='5'?'Archived habits will appear here.':filter==='4'?'Paused habits will appear here so you can resume them.':'Add your first habit. Keep it small enough to repeat.'}</p>${filter==='1'?'<button class="primary-btn" id="trackEmptyAdd">＋ Create a habit</button>':''}</div>`}
-      <p class="track-footnote">Tap a day to record or edit its status. Tap ⋯ or long-press a habit name for its actions. Swipe horizontally to view the week.</p>`;
-    const add=()=>openHabitModal();$('trackAdd')?.addEventListener('click',add);$('trackEmptyAdd')?.addEventListener('click',add);$('trackStats')?.addEventListener('click',()=>goView('stats'));
-    $('trackFilter')?.addEventListener('click',()=>{const choice=prompt('Show habits:\n1 All · 2 Core · 3 Scheduled today · 4 Paused · 5 Archived',String(filter));if(choice===null)return;state.settings.trackFilter=['1','2','3','4','5'].includes(choice)?choice:'1';saveState();render();});
+      ${active.length?`<div class="track-grid-scroll"><div class="track-grid"><div class="track-grid-head"><div class="track-name-head">Habit</div>${dayHead}</div>${rows}</div></div>`:`<div class="empty-state card"><div class="empty-icon">✦</div><h3>A fresh start</h3><p>Add your first habit. Keep it small enough to repeat.</p><button class="primary-btn" id="trackEmptyAdd">＋ Create a habit</button></div>`}
+      <p class="track-footnote">Tap any day to record or edit its status and note. Swipe horizontally to view all seven days.</p>`;
+    const add=()=>openHabitModal();$('trackAdd')?.addEventListener('click',add);$('trackEmptyAdd')?.addEventListener('click',add);$('trackManage')?.addEventListener('click',()=>goView('habits'));
+    $('trackFilter')?.addEventListener('click',()=>{const choices=['All habits','Core habits only','Today scheduled only'];const choice=prompt('Show: 1 All habits, 2 Core habits only, 3 Today scheduled only','1');if(choice===null)return;state.settings.trackFilter=['1','2','3'].includes(choice)?choice:'1';saveState();render();});
+    if(state.settings.trackFilter==='2'||state.settings.trackFilter==='3'){
+      const filter=state.settings.trackFilter;main.querySelectorAll('.track-row').forEach(row=>{const id=row.querySelector('[data-track-detail]')?.dataset.trackDetail;const h=active.find(x=>x.id===id);if(h&&((filter==='2'&&!h.isCore)||(filter==='3'&&!isScheduled(h,today))))row.remove();});
+      main.querySelectorAll('.track-group-title').forEach(g=>{if(!g.nextElementSibling||!g.nextElementSibling.classList.contains('track-row'))g.remove();});
+    }
     main.querySelectorAll('[data-quick-habit]').forEach(b=>b.addEventListener('click',()=>openQuickEntry(b.dataset.quickHabit,b.dataset.quickDate)));
-    main.querySelectorAll('[data-track-detail]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();openHabitDetails(b.dataset.trackDetail);}));
-    main.querySelectorAll('[data-habit-actions]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();const h=state.habits.find(x=>x.id===b.dataset.habitActions);if(h)showHabitActions(h);}));
-    main.querySelectorAll('[data-habit-press]').forEach(el=>{let timer=null,moved=false;const id=el.dataset.habitPress;el.addEventListener('pointerdown',()=>{moved=false;timer=setTimeout(()=>{timer=null;const h=state.habits.find(x=>x.id===id);if(h)showHabitActions(h);},520);});el.addEventListener('pointermove',()=>{moved=true;if(timer){clearTimeout(timer);timer=null;}});['pointerup','pointerleave','pointercancel'].forEach(ev=>el.addEventListener(ev,()=>{if(timer){clearTimeout(timer);timer=null;}}));});
+    main.querySelectorAll('[data-track-detail]').forEach(b=>b.addEventListener('click',()=>openHabitDetails(b.dataset.trackDetail)));
   }
   function openQuickEntry(habitId,dateKey){
     const h=state.habits.find(x=>x.id===habitId);if(!h)return;const log=((state.logs[dateKey]||{})[habitId])||{};
@@ -523,7 +534,10 @@ input,textarea,select{max-width:100%}
     const hist=[];for(let i=11;i>=0;i--){const end=new Date(today);end.setDate(end.getDate()-i*7);const start=new Date(end);start.setDate(start.getDate()-6);let count=0;for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){if(d<created||d>today)continue;if(isDone(h.id,todayKey(d)))count++;}hist.push({label:end.toLocaleDateString(undefined,{month:'short',day:'numeric'}),count});}
     const streaks=[];if(h.trackingType==='weekly'){const monday=d=>{const x=new Date(d);x.setHours(12,0,0,0);x.setDate(x.getDate()-((x.getDay()+6)%7));return x;};let runStart=null,run=0;const first=monday(created),last=monday(today);for(let ws=new Date(first);ws<=last;ws.setDate(ws.getDate()+7)){let count=0;for(let j=0;j<7;j++){const d=new Date(ws);d.setDate(d.getDate()+j);if(d>=created&&d<=today&&isDone(h.id,todayKey(d)))count++;}const met=count>=Math.max(1,Number(h.weeklyTarget)||1);if(met){if(!run)runStart=new Date(ws);run++;}else{if(run>=2){const end=new Date(ws);end.setDate(end.getDate()-1);streaks.push({start:new Date(runStart),end,days:run});}run=0;}}if(run>=2)streaks.push({start:new Date(runStart),end:new Date(last),days:run});}else{let runStart=null,run=0;for(let d=new Date(created);d<=today;d.setDate(d.getDate()+1)){const k=todayKey(d);if(isScheduled(h,k)){if(isDone(h.id,k)){if(!run)runStart=new Date(d);run++;}else{if(run>=2)streaks.push({start:new Date(runStart),end:new Date(d.getTime()-86400000),days:run});run=0;}}}if(run>=2)streaks.push({start:new Date(runStart),end:new Date(today),days:run});}streaks.sort((a,b)=>b.days-a.days);const topStreaks=streaks.slice(0,8),maxStreak=Math.max(1,...topStreaks.map(x=>x.days));
     const weekdayNames=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];const freq=weekdayNames.map((name,day)=>{let due=0,done=0;for(let d=new Date(created);d<=today;d.setDate(d.getDate()+1)){if(d.getDay()!==day)continue;const k=todayKey(d);if(isScheduled(h,k)){due++;if(isDone(h.id,k))done++;}}return {name,due,done,rate:due?Math.round(done/due*100):0};});
-    const overview=`<div class="detail-overview"><div><strong>${score}%</strong><span>Score</span></div><div><strong>${current}</strong><span>Current streak</span></div><div><strong>${best}</strong><span>Best streak</span></div><div><strong>${totalLogs}</strong><span>Total done</span></div></div>`;
+    const recovery=recoveryMetrics(h);
+    const recoveryRate=recovery.rate===null?'—':`${recovery.rate}%`;
+    const lastDoneLabel=recovery.lastDone?formatDate(parseDate(recovery.lastDone)):'No completion yet';
+    const overview=`<div class="detail-overview"><div><strong>${score}%</strong><span>Score · 90 days</span></div><div><strong>${current}</strong><span>Current streak</span></div><div><strong>${best}</strong><span>Best streak</span></div><div><strong>${totalLogs}</strong><span>Total done</span></div></div><div class="recovery-panel"><div class="recovery-head"><strong>Getting back on track</strong><span>Recovery insight</span></div><div class="recovery-grid"><div><strong>${recoveryRate}</strong><span>Next-opportunity recovery</span></div><div><strong>${recovery.recovered}/${recovery.misses}</strong><span>Recovered after a miss</span></div><div><strong>${lastDoneLabel}</strong><span>Last completed</span></div></div><p class="detail-help">This shows how often the next scheduled opportunity was completed after a missed one. Skipped days are excluded. It is an insight, not a grade.</p></div>`;
     root.innerHTML=`<div class="detail-top"><button class="icon-btn" id="detailBack" aria-label="Back">‹</button><h2 id="detailTitle">${escapeHTML(h.name)}</h2><button class="icon-btn" id="detailEditTop" aria-label="Edit habit">✎</button></div>
       <nav class="detail-jump" aria-label="Statistics sections">${['Overview','Score','History','Calendar','Best streaks','Frequency'].map((x,i)=>`<button type="button" data-jump="detail-sec-${i}">${x}</button>`).join('')}</nav>
       <section class="detail-section" id="detail-sec-0"><div class="detail-section-head"><h3>Overview</h3><span class="field-help">${doneMonth} done this month · ${skipMonth} skipped</span></div>${overview}</section>
@@ -539,30 +553,7 @@ input,textarea,select{max-width:100%}
     root.querySelectorAll('[data-edit-date]').forEach(btn=>btn.addEventListener('click',()=>editHistoricalLog(h.id,btn.dataset.editDate)));
     $('habitDetailBackdrop').classList.remove('hidden');const modal=$('habitDetailBackdrop').querySelector('.detail-modal');modal.scrollTop=0;
   }
-  function showHabitActions(h) {
-    const backdrop=$('habitActionsBackdrop'),grid=$('habitActionsGrid');if(!backdrop||!grid)return;
-    $('habitActionsTitle').textContent=h.name;$('habitActionsSubtitle').textContent=`${h.category} · ${scheduleText(h)}${h.paused?' · Paused':''}${h.archived?' · Archived':''}`;
-    const items=[
-      ['▥','Statistics','stats'],['✎','Edit','edit'],['⧉','Duplicate','duplicate'],
-      [h.paused?'▶':'Ⅱ',h.paused?'Resume':'Pause','pause'],[h.archived?'↶':'▣',h.archived?'Restore':'Archive','archive'],
-      ['↕','Move order','move'],['−','Skip today','skip'],['×','Delete','delete']
-    ];
-    grid.innerHTML=items.map(([icon,label,key])=>`<button type="button" data-habit-action="${key}" class="${key==='delete'?'danger':''}"><b>${icon}</b><small>${label}</small></button>`).join('');
-    backdrop.classList.remove('hidden');
-    const close=()=>backdrop.classList.add('hidden');
-    backdrop.onclick=e=>{if(e.target===backdrop)close();};
-    grid.querySelectorAll('[data-habit-action]').forEach(btn=>btn.onclick=()=>{
-      const action=btn.dataset.habitAction;close();
-      if(action==='stats'){openHabitDetails(h.id);return;}
-      if(action==='edit'){openHabitModal(h.id);return;}
-      if(action==='skip'){skipToday(h.id);return;}
-      if(action==='pause'){h.paused=!h.paused;saveState();render();showToast(h.paused?'Habit paused.':'Habit resumed.');return;}
-      if(action==='archive'){if(h.archived){h.archived=false;h.archivedAt=null;h.paused=false;saveState();render();showToast('Habit restored. History kept.');}else if(confirm(`Archive “${h.name}”? Its history will be kept.`)){h.archived=true;h.archivedAt=new Date().toISOString();saveState();render();showToast('Habit archived; history kept.');}return;}
-      if(action==='duplicate'){const copy={...h,id:uid(),name:(h.name+' (copy)').slice(0,70),createdAt:new Date().toISOString(),archived:false,archivedAt:null,paused:false};state.habits.push(copy);saveState();render();showToast('Habit duplicated; history starts fresh.');return;}
-      if(action==='move'){const direction=prompt('Move habit:\n1 Move up\n2 Move down','1');if(!direction)return;const i=state.habits.findIndex(x=>x.id===h.id),j=direction==='1'?i-1:i+1;if(j>=0&&j<state.habits.length){[state.habits[i],state.habits[j]]=[state.habits[j],state.habits[i]];saveState();render();showToast('Habit order updated.');}return;}
-      if(action==='delete'&&confirm(`Permanently delete “${h.name}” and its history? Export a backup first if needed.`)){state.habits=state.habits.filter(x=>x.id!==h.id);Object.keys(state.logs).forEach(k=>{if(state.logs[k])delete state.logs[k][h.id];});saveState();render();showToast('Habit and its history deleted.');}
-    });
-  }
+  function showHabitActions(h) { const action=prompt(`Habit: ${h.name}\nE = edit · S = skip today · P = ${h.paused?'resume':'pause'} · A = archive · D = delete · C = duplicate · U = move up · W = move down`,'E'); if(!action)return; if(action.toUpperCase()==='E')openHabitModal(h.id); else if(action.toUpperCase()==='S')skipToday(h.id); else if(action.toUpperCase()==='P'){h.paused=!h.paused;saveState();render();showToast(h.paused?'Habit paused.':'Habit resumed.');} else if(action.toUpperCase()==='A'){ if(confirm(`Archive “${h.name}”? Its history will be kept.`)){h.archived=true;h.archivedAt=new Date().toISOString();saveState();render();showToast('Habit archived; history kept.');}} else if(action.toUpperCase()==='C'){const copy={...h,id:uid(),name:(h.name+' (copy)').slice(0,70),createdAt:new Date().toISOString(),archived:false,archivedAt:null,paused:false};state.habits.push(copy);saveState();render();showToast('Habit duplicated; history starts fresh.');} else if(action.toUpperCase()==='U'||action.toUpperCase()==='W'){const i=state.habits.findIndex(x=>x.id===h.id),j=action.toUpperCase()==='U'?i-1:i+1;if(j>=0&&j<state.habits.length){[state.habits[i],state.habits[j]]=[state.habits[j],state.habits[i]];saveState();render();showToast('Habit order updated.');}} else if(action.toUpperCase()==='D'){ if(confirm(`Permanently delete “${h.name}” and its history? Export a backup first if needed.`)){state.habits=state.habits.filter(x=>x.id!==h.id);Object.keys(state.logs).forEach(k=>{if(state.logs[k])delete state.logs[k][h.id]});saveState();render();showToast('Habit deleted.');}} }
   function toggleHabit(id) { const k=todayKey(); if(!state.logs[k])state.logs[k]={}; const old=state.logs[k][id]; state.logs[k][id]={...(old||{}),done:!Boolean(old&&old.done),updatedAt:new Date().toISOString()}; saveState();render(); }
   function saveNumericValue(id, value) { const h=state.habits.find(x=>x.id===id); if(!h)return; const n=Number(value); if(!Number.isFinite(n)||n<0){showToast('Enter a valid non-negative number.');return;} const k=todayKey(); if(!state.logs[k])state.logs[k]={}; const old=state.logs[k][id]||{}; state.logs[k][id]={...old,value:n,done:h.trackingType==='atMost'?n<=h.numericTarget:n>=h.numericTarget,updatedAt:new Date().toISOString()}; saveState();render(); }
   function weeklyProgress(h, endDate=new Date()) {
@@ -629,6 +620,39 @@ input,textarea,select{max-width:100%}
     let possible=0,earned=0;for(let d=new Date(start);d<=end;d.setDate(d.getDate()+1)){const k=todayKey(d);if(!isScheduled(h,k)||isSkipped(h.id,k))continue;possible++;const log=(state.logs[k]||{})[h.id]||{};if(h.trackingType==='numeric'){earned+=Math.min(1,Math.max(0,Number(log.value||0))/Math.max(1,Number(h.numericTarget||1)));}else if(h.trackingType==='atMost'){earned+=(log.value!=null&&Number(log.value)<=Number(h.numericTarget||1))?1:0;}else if(log.done)earned+=1;}
     return possible?Math.round(earned/possible*100):0;
   }
+  // Recovery insight: measures whether the next eligible opportunity is completed after a miss.
+  // It is descriptive only and never changes the user's score, streak, or saved history.
+  function recoveryMetrics(h){
+    const created=String(h.createdAt||todayKey()).slice(0,10);
+    const today=new Date();today.setHours(12,0,0,0);
+    let misses=0,recovered=0,lastDone=null;
+    if(h.trackingType==='weekly'){
+      const monday=d=>{const x=new Date(d);x.setHours(12,0,0,0);x.setDate(x.getDate()-((x.getDay()+6)%7));return x;};
+      const createdDate=new Date(created+'T12:00:00');
+      const first=monday(createdDate);
+      if(first<createdDate)first.setDate(first.getDate()+7); // Ignore a partial first week: the full target was not available.
+      const current=monday(today);
+      const weeks=[];
+      for(let ws=new Date(first);ws<current;ws.setDate(ws.getDate()+7)){
+        let count=0;for(let i=0;i<7;i++){const d=new Date(ws);d.setDate(d.getDate()+i);if(d<new Date(created+'T12:00:00')||d>today)continue;if(isDone(h.id,todayKey(d)))count++;}
+        weeks.push(count>=Math.max(1,Number(h.weeklyTarget)||1));
+      }
+      for(let i=0;i<weeks.length-1;i++){if(!weeks[i]&&weeks[i+1]!==undefined){misses++;if(weeks[i+1])recovered++;}}
+    }else{
+      const opportunities=[];
+      const start=new Date(created+'T12:00:00');
+      for(let d=new Date(start);d<today;d.setDate(d.getDate()+1)){
+        const k=todayKey(d);if(!isScheduled(h,k))continue;
+        const log=(state.logs[k]||{})[h.id]||{};
+        if(log.skipped)continue;
+        opportunities.push(Boolean(log.done));
+      }
+      for(let i=0;i<opportunities.length-1;i++){if(!opportunities[i]){misses++;if(opportunities[i+1])recovered++;}}
+    }
+    Object.keys(state.logs).sort().forEach(k=>{const log=(state.logs[k]||{})[h.id];if(log&&log.done&&(!lastDone||k>lastDone))lastDone=k;});
+    return {misses,recovered,rate:misses?Math.round(recovered/misses*100):null,lastDone};
+  }
+
   function periodHabitRate(type){
     const now=new Date();now.setHours(12,0,0,0);
     let start=new Date(now),end=new Date(now);
@@ -661,6 +685,7 @@ input,textarea,select{max-width:100%}
   function closeModal(id) { $(id).classList.add('hidden'); }
   function saveHabit(e) { e.preventDefault(); const name=$('habitName').value.trim(); if(!name){showToast('Enter a habit name.');return;} const schedule=$('habitSchedule').value; const customDays=[...document.querySelectorAll('#customDays input:checked')].map(c=>Number(c.value)); if($('trackingType').value!=='weekly'&&schedule==='custom'&&!customDays.length){showToast('Choose at least one day.');return;} const intervalDays=Number($('intervalDays').value||2),monthlyDay=Number($('monthlyDay').value||1); if(schedule==='interval'&&(!Number.isInteger(intervalDays)||intervalDays<2||intervalDays>365)){showToast('Repeat interval must be 2–365 days.');return;} if(schedule==='monthly'&&(!Number.isInteger(monthlyDay)||monthlyDay<1||monthlyDay>31)){showToast('Choose a day from 1 to 31.');return;} const id=$('habitId').value; const existing=id?state.habits.find(h=>h.id===id):null; const trackingType=$('trackingType').value; const effectiveSchedule=trackingType==='weekly'?'daily':schedule; const numericTarget=Number($('numericTarget').value||1); const weeklyTarget=Number($('weeklyTarget').value||3); if((trackingType==='numeric'||trackingType==='atMost')&&(!Number.isFinite(numericTarget)||numericTarget<=0)){showToast('Enter a target greater than zero.');return;} if(trackingType==='weekly'&&(!Number.isInteger(weeklyTarget)||weeklyTarget<1||weeklyTarget>7)){showToast('Weekly target must be 1–7 days.');return;} const reminderTimes=$('habitReminder').value.split(',').map(t=>t.trim()).filter(Boolean); if(reminderTimes.length>5||reminderTimes.some(t=>!/^([01]\d|2[0-3]):[0-5]\d$/.test(t))){showToast('Use up to 5 valid times, e.g. 07:00, 20:30.');return;} const h={id:id||uid(),name,description:$('habitDescription').value.trim(),notes:$('habitNotes').value.trim(),isCore:$('habitCore').checked,category:$('habitCategory').value,trackingType,numericTarget,numericUnit:$('numericUnit').value.trim(),weeklyTarget,schedule:effectiveSchedule,customDays,intervalDays,monthlyDay,scheduleAnchor:existing&&existing.schedule===effectiveSchedule&&Number(existing.intervalDays||2)===intervalDays? (existing.scheduleAnchor||String(existing.createdAt).slice(0,10)):todayKey(),reminders:[...new Set($('habitReminder').value.split(',').map(t=>t.trim()).filter(Boolean))],createdAt:existing?existing.createdAt:new Date().toISOString(),archived:false,archivedAt:null,paused:existing?Boolean(existing.paused):false}; if(existing)Object.assign(existing,h);else state.habits.push(h); saveState();closeModal('habitModalBackdrop');render();showToast(existing?'Habit updated.':'Habit added.'); }
   function weeklyRate() { const result=periodHabitRate('week'); return result.due?`${result.rate}%`:'—'; }
+  function renderAllHabits() { const main=$('mainContent'); main.innerHTML=`<section class="section-head"><div><h2>All habits</h2><p>Manage your habits and schedules</p></div><button class="primary-btn" id="viewAddHabit">＋ Add</button></section><section class="view-panel card"><h3>Quick-start templates</h3><p>Start with a suggested habit, then customise its schedule and target.</p><div class="template-grid"><button class="secondary-btn" data-template="quran">📖 Qur'an reading</button><button class="secondary-btn" data-template="adhkar">☀ Morning adhkar</button><button class="secondary-btn" data-template="exercise">🏃 Exercise</button><button class="secondary-btn" data-template="study">📚 Islamic learning</button><button class="secondary-btn" data-template="reading">📘 General reading</button></div></section><div id="allHabitList" class="habit-list"></div><section class="view-panel card"><h3>Archived habits</h3><div id="archivedList"></div></section>`; $('viewAddHabit').onclick=()=>openHabitModal(); main.querySelectorAll('[data-template]').forEach(b=>b.onclick=()=>addTemplate(b.dataset.template)); const list=$('allHabitList'); const act=activeHabits(); const paused=state.habits.filter(h=>h.paused&&!h.archived); if(!act.length){list.innerHTML='<div class="empty-state card"><p>No active habits yet.</p></div>';} act.forEach(h=>list.appendChild(createHabitCard(h))); paused.forEach(h=>{const row=document.createElement('div');row.className='history-row';const name=document.createElement('span');name.textContent=h.name+' · Paused';const btn=document.createElement('button');btn.className='text-btn';btn.textContent='Resume';btn.onclick=()=>{h.paused=false;saveState();render();};row.append(name,btn);list.append(row);}); const archived=state.habits.filter(h=>h.archived); const a=$('archivedList'); if(!archived.length)a.innerHTML='<p>No archived habits.</p>'; archived.forEach(h=>{const row=document.createElement('div');row.className='history-row';const name=document.createElement('span');name.textContent=h.name;const btn=document.createElement('button');btn.className='text-btn';btn.textContent='Restore';btn.onclick=()=>{h.archived=false;h.archivedAt=null;saveState();render();showToast('Habit restored.');};row.append(name,btn);a.append(row);}); }
   function renderStats(){
     const main=$('mainContent');const week=periodHabitRate('week'),month=periodHabitRate('month'),year=periodHabitRate('year');
     let rows='';for(let i=29;i>=0;i--){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-i);const k=todayKey(d);let due=0,earned=0;activeHabits().forEach(h=>{if(h.trackingType==='weekly'||!isScheduled(h,k)||isSkipped(h.id,k))return;due++;const log=(state.logs[k]||{})[h.id]||{};earned+=h.trackingType==='numeric'?Math.min(1,Math.max(0,Number(log.value||0))/Math.max(1,Number(h.numericTarget||1))):h.trackingType==='atMost'?(log.done?1:0):(log.done?1:0);});const rate=due?Math.round(earned/due*100):null;rows+=`<div class="history-row"><span>${formatDate(d)}</span><strong>${rate===null?'—':`${rate}%`}</strong></div>`;}
@@ -668,7 +693,7 @@ input,textarea,select{max-width:100%}
     let habitRows='';activeHabits().forEach(h=>{const streak=streakFor(h),best=bestStreakFor(h),score=habitScore(h);const suffix=h.trackingType==='weekly'?` · ${weeklyProgress(h)}/${h.weeklyTarget} this week`:'';habitRows+=`<div class="history-row"><span>${escapeHTML(h.name)}${suffix}</span><strong>${score}% score · ${streak} current · ${best} best</strong></div>`;});
     const monthBars=[];for(let m=0;m<12;m++){const a=new Date(new Date().getFullYear(),m,1,12);if(a>new Date())break;let due=0,earned=0;const last=new Date(a.getFullYear(),a.getMonth()+1,0,12);for(let d=new Date(a);d<=last&&d<=new Date();d.setDate(d.getDate()+1)){const k=todayKey(d);activeHabits().forEach(h=>{if(h.trackingType==='weekly'||!isScheduled(h,k)||isSkipped(h.id,k))return;due++;const log=(state.logs[k]||{})[h.id]||{};earned+=h.trackingType==='numeric'?Math.min(1,Math.max(0,Number(log.value||0))/Math.max(1,Number(h.numericTarget||1))):h.trackingType==='atMost'?(log.done?1:0):(log.done?1:0);});}const pct=due?Math.round(earned/due*100):0;monthBars.push(`<div class="trend-column" title="${a.toLocaleDateString(undefined,{month:'long'})}: ${pct}%"><div class="trend-bar-wrap"><span class="trend-bar" style="height:${pct}%;"></span></div><small>${a.toLocaleDateString(undefined,{month:'short'}).slice(0,1)}</small></div>`);}
     let dailyBars='';for(let i=13;i>=0;i--){const d=new Date();d.setHours(12,0,0,0);d.setDate(d.getDate()-i);const k=todayKey(d);const due=activeHabits().filter(h=>h.trackingType!=='weekly'&&isScheduled(h,k)&&!isSkipped(h.id,k));let earned=0;due.forEach(h=>{const log=(state.logs[k]||{})[h.id]||{};earned+=h.trackingType==='numeric'?Math.min(1,Math.max(0,Number(log.value||0))/Math.max(1,Number(h.numericTarget||1))):h.trackingType==='atMost'?(log.done?1:0):(log.done?1:0);});const pct=due.length?Math.round(earned/due.length*100):0;dailyBars+=`<div class="trend-column" title="${k}: ${pct}%"><div class="trend-bar-wrap"><span class="trend-bar" style="height:${pct}%;"></span></div><small>${d.toLocaleDateString(undefined,{weekday:'short'}).slice(0,1)}</small></div>`;}
-    main.innerHTML=`<section class="section-head"><div><h2>Statistics</h2><p>Progress across weeks, months and the year</p></div></section><div class="mini-stats"><div class="mini-stat card"><div><strong>${week.rate}%</strong><span>This week</span></div></div><div class="mini-stat card"><div><strong>${month.rate}%</strong><span>This month</span></div></div><div class="mini-stat card"><div><strong>${year.rate}%</strong><span>This year</span></div></div><div class="mini-stat card"><div><strong>${activeHabits().length}</strong><span>Active habits</span></div></div></div><section class="view-panel card"><h3>14-day consistency</h3><div class="trend-chart">${dailyBars}</div><p class="field-help">Daily score includes partial numerical progress. Skipped and unscheduled habits are excluded.</p></section><section class="view-panel card"><h3>${new Date().getFullYear()} monthly trend</h3><div class="trend-chart">${monthBars.join('')}</div><p class="field-help">Each bar represents the monthly average progress of scheduled daily habits.</p></section><section class="view-panel card"><h3>How scores work</h3><p>Scores represent weighted progress across scheduled opportunities in the last 90 days. Numerical targets receive proportional credit; at-most habits earn credit when the recorded value is within the limit. Skipped entries are excluded.</p></section><section class="view-panel card"><h3>Last 30 days</h3>${rows}</section><section class="view-panel card"><h3>Habit performance</h3>${habitRows||'<p>No active habits yet.</p>'}</section><section class="view-panel card"><h3>Score explained</h3><p>Scores are based on the last 90 days. Numerical habits receive proportional credit up to their target. Skipped and unscheduled days are excluded. Weekly-target habits are scored against their weekly target.</p></section>`;
+    main.innerHTML=`<section class="section-head"><div><h2>Insights</h2><p>Understand patterns across weeks, months and the year</p></div><button class="secondary-btn" id="insightsReview">Life review</button></section><div class="mini-stats"><div class="mini-stat card"><div><strong>${week.rate}%</strong><span>This week</span></div></div><div class="mini-stat card"><div><strong>${month.rate}%</strong><span>This month</span></div></div><div class="mini-stat card"><div><strong>${year.rate}%</strong><span>This year</span></div></div><div class="mini-stat card"><div><strong>${activeHabits().length}</strong><span>Active habits</span></div></div></div><section class="view-panel card"><h3>14-day consistency</h3><div class="trend-chart">${dailyBars}</div><p class="field-help">Daily score includes partial numerical progress. Skipped and unscheduled habits are excluded.</p></section><section class="view-panel card"><h3>${new Date().getFullYear()} monthly trend</h3><div class="trend-chart">${monthBars.join('')}</div><p class="field-help">Each bar represents the monthly average progress of scheduled daily habits.</p></section>${yearGrid}<section class="view-panel card"><h3>How scores work</h3><p>Scores represent weighted progress across scheduled opportunities in the last 90 days. Numerical targets receive proportional credit; at-most habits earn credit when the recorded value is within the limit. Skipped entries are excluded.</p></section><section class="view-panel card"><h3>Last 30 days</h3>${rows}</section><section class="view-panel card"><h3>Habit performance</h3>${habitRows||'<p>No active habits yet.</p>'}</section><section class="view-panel card"><h3>Score explained</h3><p>Scores are based on the last 90 days. Numerical habits receive proportional credit up to their target. Skipped and unscheduled days are excluded. Weekly-target habits are scored against their weekly target.</p></section>`; $('insightsReview').onclick=()=>goView('review');
   }
 
   function escapeHTML(v){return String(v).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
@@ -681,9 +706,52 @@ input,textarea,select{max-width:100%}
   function renderCustomCategories(){const box=$('customCategoryList');if(!box)return;box.innerHTML='';if(!state.customCategories.length){box.innerHTML='<p class="field-help">No custom categories yet.</p>';return;}state.customCategories.forEach(cat=>{const row=document.createElement('div');row.className='history-row';const name=document.createElement('span');name.textContent=cat;const del=document.createElement('button');del.className='text-btn';del.textContent='Remove';del.onclick=()=>{if(state.habits.some(h=>h.category===cat)&&!confirm(`“${cat}” is used by existing habits. Remove it from the category list? Existing habits will keep their category.`))return;state.customCategories=state.customCategories.filter(x=>x!==cat);saveState();renderCustomCategories();showToast('Category removed from your list.');};row.append(name,del);box.append(row);});}
   function addCategory(){const name=prompt('New category name (up to 30 characters):');if(!name)return;const clean=name.trim().slice(0,30);if(!clean)return;if(BUILTIN_CATEGORIES.some(x=>x.toLowerCase()===clean.toLowerCase())||state.customCategories.some(x=>x.toLowerCase()===clean.toLowerCase())){showToast('That category already exists.');return;}state.customCategories.push(clean);saveState();renderCustomCategories();showToast('Category added.');}
   function addTemplate(type){const templates={quran:{name:"Qur'an reading",category:"Qur'an",trackingType:'numeric',numericTarget:2,numericUnit:'pages',schedule:'daily',isCore:false},adhkar:{name:'Morning adhkar',category:'Dhikr',trackingType:'check',schedule:'daily',isCore:false},exercise:{name:'Exercise',category:'Exercise',trackingType:'weekly',weeklyTarget:3,schedule:'daily',isCore:false},study:{name:'Islamic learning',category:'Islamic learning',trackingType:'weekly',weeklyTarget:2,schedule:'daily',isCore:false},reading:{name:'General reading',category:'Learning',trackingType:'numeric',numericTarget:10,numericUnit:'pages',schedule:'daily',isCore:false}};const t=templates[type];if(!t)return;if(state.habits.some(h=>!h.archived&&h.name.toLowerCase()===t.name.toLowerCase())){showToast('A habit with that name already exists.');return;}state.habits.push({id:uid(),...t,description:'',customDays:[],reminders:[],createdAt:new Date().toISOString(),archived:false,archivedAt:null});saveState();render();showToast('Template added. You can edit its target and schedule.');}
-  function renderMore() { const main=$('mainContent');main.innerHTML=`<section class="section-head"><div><h2>More</h2><p>Personalise HabitPulse</p></div></section><button class="secondary-btn full-btn" id="moreSettings">⚙ Settings & backup</button><section class="view-panel card"><h3>Habit templates</h3><p>Start a new habit from a ready-made template.</p><div class="template-grid"><button class="secondary-btn" data-template="quran">📖 Qur'an reading</button><button class="secondary-btn" data-template="adhkar">☀ Morning adhkar</button><button class="secondary-btn" data-template="exercise">🏃 Exercise</button><button class="secondary-btn" data-template="study">📚 Islamic learning</button><button class="secondary-btn" data-template="reading">📘 General reading</button></div></section><section class="view-panel card"><h3>Habit categories</h3><p>Built-in categories include Salah, Qur'an, Dhikr, Islamic learning, Health, Family and more. Add your own categories below.</p><div id="customCategoryList"></div><button class="primary-btn full-btn" id="addCategoryBtn">＋ Add custom category</button></section><section class="view-panel card"><h3>Quick access</h3><p>Add HabitPulse to your Android home screen from your browser menu. This creates an app shortcut; a true live Android home-screen widget requires a native Android build and is not included in this PWA.</p><button class="secondary-btn full-btn" id="installHelpBtn">How to add to home screen</button></section><section class="view-panel card"><h3>Built for real life</h3><p>Use templates as starting points, not rules. Adapt every habit to your own routine.</p></section>`;$('moreSettings').onclick=()=>$('settingsModalBackdrop').classList.remove('hidden');main.querySelectorAll('[data-template]').forEach(b=>b.onclick=()=>addTemplate(b.dataset.template));renderCustomCategories();$('addCategoryBtn').onclick=addCategory;const ih=$('installHelpBtn');if(ih)ih.onclick=()=>alert('In Chrome on Android: open the browser menu (⋮), then choose Install app or Add to Home screen. The exact wording depends on your browser.'); }
-  function updateNav(){const selected=activeView==='stats'?'home':activeView;document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===selected));}
-  function goView(view){activeView=view;render();if(view==='home')window.scrollTo({top:0,behavior:'smooth'});}
+  function renderMore() { const main=$('mainContent');main.innerHTML=`<section class="section-head"><div><h2>More</h2><p>Manage your system and personal settings</p></div></section><button class="manage-link" id="moreManageHabits"><span>☷ Habit library<br><small>Create, edit, pause and archive habits</small></span><span>›</span></button><button class="manage-link" id="moreReview"><span>✎ Life review<br><small>Daily, weekly and monthly reflection</small></span><span>›</span></button><button class="manage-link" id="moreSettings"><span>⚙ Settings & backup<br><small>Theme, notifications and data safety</small></span><span>›</span></button><section class="view-panel card"><h3>Habit categories</h3><p>Organise habits with built-in or custom categories.</p><div id="customCategoryList"></div><button class="secondary-btn full-btn" id="addCategoryBtn">＋ Add custom category</button></section><section class="view-panel card"><h3>Install HabitPulse</h3><p>Add HabitPulse to your Android home screen from your browser menu. A native live widget is not part of this PWA.</p><button class="secondary-btn full-btn" id="installHelpBtn">How to add to home screen</button></section><section class="view-panel card"><h3>Designed for sustainable progress</h3><p>Missed days are information, not failure. Adjust your plan when life changes; your history remains yours.</p></section>`;$('moreManageHabits').onclick=()=>goView('habits');$('moreReview').onclick=()=>goView('review');$('moreSettings').onclick=()=>$('settingsModalBackdrop').classList.remove('hidden');renderCustomCategories();$('addCategoryBtn').onclick=addCategory;const ih=$('installHelpBtn');if(ih)ih.onclick=()=>alert('In Chrome on Android: open the browser menu (⋮), then choose Install app or Add to Home screen. The exact wording depends on your browser.'); }
+
+  function openRoutineModal(id=null, preset=null){
+    const form=$('routineForm');form.reset();$('routineId').value='';$('routineModalTitle').textContent=id?'Edit routine':'Create a routine';
+    if(id){const r=state.routines.find(x=>x.id===id);if(!r)return;$('routineId').value=r.id;$('routineName').value=r.name;$('routineDescription').value=r.description||'';}
+    else if(preset){$('routineName').value=preset.name;$('routineDescription').value=preset.description||'';}
+    $('routineModalBackdrop').classList.remove('hidden');setTimeout(()=>$('routineName').focus(),80);
+  }
+  function saveRoutine(e){
+    e.preventDefault();const name=$('routineName').value.trim(),description=$('routineDescription').value.trim().slice(0,120),id=$('routineId').value;
+    if(!name){showToast('Enter a routine name.');return;}
+    if(state.routines.some(r=>r.id!==id&&r.name.toLowerCase()===name.toLowerCase())){showToast('A routine with that name already exists.');return;}
+    if(id){const r=state.routines.find(x=>x.id===id);if(!r)return;r.name=name.slice(0,50);r.description=description;}
+    else state.routines.push({id:uid(),name:name.slice(0,50),description,habitIds:[],createdAt:new Date().toISOString()});
+    if(saveState()){closeModal('routineModalBackdrop');render();showToast(id?'Routine updated.':'Routine created. Add your existing habits below.');}
+  }
+  function renderRoutines(){
+    const main=$('mainContent'),routines=state.routines||[],available=state.habits.filter(h=>!h.archived);
+    const expanded=new Set([...main.querySelectorAll('[data-routine-id] details[open]')].map(d=>d.closest('[data-routine-id]')?.dataset.routineId).filter(Boolean));
+    const cards=routines.map(r=>{
+      const members=available.filter(h=>(r.habitIds||[]).includes(h.id));
+      const due=members.filter(h=>!h.paused&&h.trackingType!=='weekly'&&isScheduled(h,todayKey()));
+      const done=due.filter(h=>isDone(h.id,todayKey())).length,pct=due.length?Math.round(done/due.length*100):0;
+      const checks=available.length?available.map(h=>`<label class="routine-habit-option"><input type="checkbox" data-routine-habit="${escapeHTML(r.id)}" value="${escapeHTML(h.id)}" ${(r.habitIds||[]).includes(h.id)?'checked':''}><span>${escapeHTML(h.name)}</span><small>${escapeHTML(h.paused?'Paused':h.category||'')}</small></label>`).join(''):'<div class="routine-empty-note">Create a habit first, then add it to this routine. Your habit history will stay in one place.</div>';
+      return `<article class="routine-card card" data-routine-id="${escapeHTML(r.id)}"><div class="routine-card-head"><div><h3>${escapeHTML(r.name)}</h3><p>${escapeHTML(r.description||'A flexible group of habits')}</p></div><div class="routine-actions"><button class="tiny-btn" data-routine-edit="${escapeHTML(r.id)}" type="button">Edit</button><button class="tiny-btn routine-delete" data-routine-delete="${escapeHTML(r.id)}" type="button">Delete</button></div></div><div class="routine-progress"><div class="routine-progress-label"><strong>${done}/${due.length} due today</strong><span>${pct}%</span></div><div class="routine-progress-track"><i style="width:${pct}%"></i></div></div><details class="routine-members"><summary>Habits in this routine <span>${members.length}</span></summary><div class="routine-habit-list">${checks}</div></details></article>`;
+    }).join('');
+    const empty=routines.length?'':`<div class="empty-state card"><div class="empty-icon">▦</div><h3>Build a routine around your day</h3><p>Start with a simple group such as Morning or Evening. Add existing habits; nothing gets duplicated.</p><div class="routine-presets"><button type="button" data-routine-preset="Morning routine">☀ Morning</button><button type="button" data-routine-preset="Evening routine">☾ Evening</button><button type="button" data-routine-preset="Work routine">▣ Work</button></div><button class="primary-btn" id="createFirstRoutine">＋ Create custom routine</button></div>`;
+    main.innerHTML=`<section class="section-head"><div><h2>Routines</h2><p>Organise existing habits into a natural daily flow.</p></div><button class="primary-btn" id="createRoutine">＋ Add</button></section><div class="routine-note">Routines group existing daily habits; weekly-target habits keep their own weekly progress on Home. A habit can belong to more than one routine, and its history remains shared.</div>${cards||empty}`;
+    $('createRoutine').onclick=()=>openRoutineModal();$('createFirstRoutine')?.addEventListener('click',()=>openRoutineModal());
+    main.querySelectorAll('[data-routine-preset]').forEach(b=>b.onclick=()=>openRoutineModal(null,{name:b.dataset.routinePreset,description:'A simple flow for this part of the day.'}));
+    main.querySelectorAll('[data-routine-habit]').forEach(input=>input.addEventListener('change',()=>{
+      const r=state.routines.find(x=>x.id===input.dataset.routineHabit);if(!r)return;const id=input.value;r.habitIds=Array.isArray(r.habitIds)?r.habitIds:[];
+      if(input.checked&&!r.habitIds.includes(id))r.habitIds.push(id);if(!input.checked)r.habitIds=r.habitIds.filter(x=>x!==id);
+      const card=input.closest('[data-routine-id]'),wasOpen=card?.querySelector('details')?.open;
+      if(saveState()){renderRoutines();const refreshed=main.querySelector(`[data-routine-id="${CSS.escape(r.id)}"] details`);if(refreshed&&wasOpen)refreshed.open=true;showToast('Routine updated.');}
+    }));
+    main.querySelectorAll('[data-routine-edit]').forEach(btn=>btn.onclick=()=>openRoutineModal(btn.dataset.routineEdit));
+    main.querySelectorAll('[data-routine-delete]').forEach(btn=>btn.onclick=()=>{
+      const r=state.routines.find(x=>x.id===btn.dataset.routineDelete);if(!r)return;
+      if(!confirm(`Delete “${r.name}”? Its habits and tracking history will remain unchanged.`))return;
+      state.routines=state.routines.filter(x=>x.id!==r.id);if(saveState()){renderRoutines();showToast('Routine deleted. Habits were kept.');}
+    });
+    expanded.forEach(id=>{const d=main.querySelector(`[data-routine-id="${CSS.escape(id)}"] details`);if(d)d.open=true;});
+  }
+  function updateNav(){const navView=['habits','review'].includes(activeView)?'more':activeView;document.querySelectorAll('.nav-item').forEach(b=>b.classList.toggle('active',b.dataset.view===navView));}
+  function goView(view){activeView=view;render();window.scrollTo({top:0,behavior:'smooth'});}
   function downloadBlob(blob, filename){const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);}
   function exportBackup(){
     const payload={app:'HabitPulse',formatVersion:1,schemaVersion:SCHEMA_VERSION,exportedAt:new Date().toISOString(),data:state};
@@ -738,7 +806,7 @@ input,textarea,select{max-width:100%}
     const picker = $('themeSelect'); if(picker && picker.value !== selected) picker.value = selected;
     if(persist && state && state.settings){ state.settings.theme = selected; saveState(); }
   }
-  function bind(){ bindHomeButtons(); $('settingsBtn').onclick=()=>$('settingsModalBackdrop').classList.remove('hidden');$('habitForm').addEventListener('submit',saveHabit);$('habitSchedule').addEventListener('change',updateTrackingFields);$('trackingType').addEventListener('change',updateTrackingFields);document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal(b.dataset.close)));document.querySelectorAll('.modal-backdrop').forEach(b=>b.addEventListener('click',e=>{if(e.target===b)b.classList.add('hidden');}));document.querySelectorAll('.nav-item').forEach(b=>b.addEventListener('click',()=>goView(b.dataset.view)));$('themeSelect').value=state.settings.theme==='dark'?'dark':'light';$('themeSelect').onchange=()=>{applyTheme($('themeSelect').value);showToast($('themeSelect').value==='dark'?'Vibrant dark theme enabled.':'Light theme enabled.');};applyTheme(state.settings.theme||'light',false);$('dailySummaryToggle').checked=state.settings.dailySummary;$('dailySummaryToggle').onchange=()=>{state.settings.dailySummary=$('dailySummaryToggle').checked;saveState();showToast('Notification preference saved.');};$('enableNotificationsBtn').onclick=enableNotifications;$('exportBtn').onclick=exportBackup;$('csvBtn').onclick=exportCSV;$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=e=>{importBackup(e.target.files&&e.target.files[0]);e.target.value='';};$('resetBtn').onclick=()=>{if(confirm('Reset ALL HabitPulse data on this device? This cannot be undone. Export a backup first if you may need it.')){localStorage.removeItem(STORAGE_KEY);localStorage.removeItem(LAST_GOOD_KEY);localStorage.removeItem(LEGACY_STORAGE_KEY);state=defaultState();saveState();closeModal('settingsModalBackdrop');goView('home');showToast('App data reset.');}}; }
+  function bind(){ bindHomeButtons(); $('settingsBtn').onclick=()=>$('settingsModalBackdrop').classList.remove('hidden');$('habitForm').addEventListener('submit',saveHabit);$('routineForm').addEventListener('submit',saveRoutine);$('habitSchedule').addEventListener('change',updateTrackingFields);$('trackingType').addEventListener('change',updateTrackingFields);document.querySelectorAll('[data-close]').forEach(b=>b.addEventListener('click',()=>closeModal(b.dataset.close)));document.querySelectorAll('.modal-backdrop').forEach(b=>b.addEventListener('click',e=>{if(e.target===b)b.classList.add('hidden');}));document.querySelectorAll('.nav-item').forEach(b=>b.addEventListener('click',()=>goView(b.dataset.view)));$('themeSelect').value=state.settings.theme==='dark'?'dark':'light';$('themeSelect').onchange=()=>{applyTheme($('themeSelect').value);showToast($('themeSelect').value==='dark'?'Vibrant dark theme enabled.':'Light theme enabled.');};applyTheme(state.settings.theme||'light',false);$('dailySummaryToggle').checked=state.settings.dailySummary;$('dailySummaryToggle').onchange=()=>{state.settings.dailySummary=$('dailySummaryToggle').checked;saveState();showToast('Notification preference saved.');};$('enableNotificationsBtn').onclick=enableNotifications;$('exportBtn').onclick=exportBackup;$('csvBtn').onclick=exportCSV;$('importBtn').onclick=()=>$('importFile').click();$('importFile').onchange=e=>{importBackup(e.target.files&&e.target.files[0]);e.target.value='';};$('resetBtn').onclick=()=>{if(confirm('Reset ALL HabitPulse data on this device? This cannot be undone. Export a backup first if you may need it.')){localStorage.removeItem(STORAGE_KEY);localStorage.removeItem(LAST_GOOD_KEY);localStorage.removeItem(LEGACY_STORAGE_KEY);state=defaultState();saveState();closeModal('settingsModalBackdrop');goView('home');showToast('App data reset.');}}; }
   function registerSW(){if('serviceWorker'in navigator&&location.protocol.startsWith('http'))navigator.serviceWorker.register('./sw.js').catch(e=>console.warn('Service worker registration failed',e));}
   window.addEventListener('pageshow',()=>{state=loadState();render();});window.addEventListener('storage',e=>{if(e.key===STORAGE_KEY){state=loadState();render();}});window.addEventListener('error',e=>{console.error('HabitPulse runtime error',e.error||e.message);});
   bind();updateTrackingFields();render();registerSW();maybeDailySummary();checkReminders();setInterval(checkReminders,20000);

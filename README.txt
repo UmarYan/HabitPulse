@@ -1,38 +1,35 @@
-HabitPulse V8.0 — Routine-First Redesign
+HabitPulse V8.1 — Habit Recovery & Consistency Insights
 
 Base
-- Built from the user's supplied HabitPulse V7.6 — Loop Inspired Tracking ZIP.
-- Preserves the existing V7.x localStorage key and habit/log record model.
-- Adds a backward-compatible routines collection and schema normalization (schema version 21).
+- Built directly on the user's latest HabitPulse V8.0 — Routine-First Redesign ZIP.
+- Retains the V8.0 storage key, schema version, habit/log records, routine records, backup/restore format, navigation, and existing score/streak calculations.
 
-Product changes
-- Reworked the app's information architecture around a Home dashboard, Today tracker, Routines, Insights and More.
-- Home dashboard gives a concise daily completion summary, quick actions, routine progress, upcoming habits and weekly-goal progress.
-- Daily completion is separated from weekly-target habits so weekly goals are not incorrectly presented as daily due items.
-- Routines group existing habits; a habit may belong to multiple routines without duplicating its tracking history.
-- Added a dedicated routine create/edit form, preset starting points, member assignment, progress display and safe routine deletion.
-- Routine deletion never deletes habits or their logs.
-- Insights includes 14-day and monthly trends, annual activity map, 30-day history, habit scores and streaks.
-- Nested Habit Library and Life Review routes correctly highlight More in the bottom navigation.
-- Updated service-worker cache to V8.0 so installed PWAs refresh the app shell.
+Changes
+- Adds a per-habit “Getting back on track” insight in Habit Details.
+- Shows next-opportunity recovery rate, recovered-after-a-miss count, and last completion date.
+- For daily/custom/interval/monthly schedules, a missed scheduled opportunity is considered recovered when the next eligible scheduled opportunity is completed.
+- For weekly-target habits, recovery is measured across completed full weeks: after a week misses its target, whether the next full week meets its target.
+- Partial first weeks are excluded for weekly-target recovery so a habit is not judged against a target it did not have a full week to achieve.
+- Skipped days are excluded from the daily missed-opportunity sequence.
+- Recovery is descriptive only: it does not change habit history, score, streak, schedule, or stored data.
+- Updates the service-worker cache version to V8.1.
 
 Data safety
-- Existing V7.x storage key retained.
-- Existing habit IDs, schedules, logs, notes, reviews, categories and settings are normalized and retained.
-- Older data without routines migrates to an empty routines list.
-- JSON backup/restore includes routines through the existing state export mechanism.
+- No schema migration or new persisted fields.
+- Existing habits, logs, routines, settings, and reviews remain in their existing structures.
+- Recovery metrics are calculated from existing history at display time.
 
 Validation performed
-- JavaScript syntax checked with Node.js.
+- Inline JavaScript syntax checked with Node.js.
 - Service-worker syntax checked with Node.js.
+- HTML parsed.
 - Manifest JSON validated.
-- HTML parsed; duplicate element IDs checked (none found).
 - ZIP integrity checked after packaging.
-- Headless Chromium interaction checks performed for habit creation, completion entry, routine creation/editing, habit assignment, weekly-goal display, Insights activity map, theme switching, backup action and routine deletion preserving habits.
-- Simulated V7.6-compatible stored data migration checked: existing habit and log retained, routines initialized, theme retained.
+- Existing duplicate static ID “detailTitle” was confirmed to already exist in V8.0 and V7.6; this update did not introduce it.
+- Browser interaction testing could not be completed in this environment.
 - Real Android-device testing and testing against the user's actual installed local database were not performed.
 
-Before installing
-- Export a JSON backup from the current HabitPulse app first.
-- Replace/redeploy the PWA files together (index.html, manifest.webmanifest, sw.js and icons).
-- Open the app online once so the V8.0 service worker can refresh its cache.
+Install
+- Export a JSON backup from the current app before replacing files.
+- Deploy index.html, manifest.webmanifest, sw.js, and both icons together.
+- Open the app online once so the V8.1 service worker can refresh its cache.

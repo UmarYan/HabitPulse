@@ -1,5 +1,5 @@
-/* HabitPulse V8.0 service worker: minimal offline app shell. */
-const CACHE_NAME = 'habitpulse-v8-0';
+/* HabitPulse V8.1 service worker: offline-first app shell with versioned cache. */
+const CACHE_NAME = 'habitpulse-v8-1';
 const APP_SHELL = ['./', './index.html', './manifest.webmanifest', './icon-192.png', './icon-512.png'];
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE_NAME).then(cache => cache.addAll(APP_SHELL)).then(() => self.skipWaiting()));
