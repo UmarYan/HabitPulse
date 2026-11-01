@@ -1,35 +1,42 @@
-HabitPulse V8.1 — Habit Recovery & Consistency Insights
+HabitPulse V9.2 — Complete App Audit
 
-Base
-- Built directly on the user's latest HabitPulse V8.0 — Routine-First Redesign ZIP.
-- Retains the V8.0 storage key, schema version, habit/log records, routine records, backup/restore format, navigation, and existing score/streak calculations.
+Built on V9.1. This is an audit and regression-check release, not a feature expansion.
 
-Changes
-- Adds a per-habit “Getting back on track” insight in Habit Details.
-- Shows next-opportunity recovery rate, recovered-after-a-miss count, and last completion date.
-- For daily/custom/interval/monthly schedules, a missed scheduled opportunity is considered recovered when the next eligible scheduled opportunity is completed.
-- For weekly-target habits, recovery is measured across completed full weeks: after a week misses its target, whether the next full week meets its target.
-- Partial first weeks are excluded for weekly-target recovery so a habit is not judged against a target it did not have a full week to achieve.
-- Skipped days are excluded from the daily missed-opportunity sequence.
-- Recovery is descriptive only: it does not change habit history, score, streak, schedule, or stored data.
-- Updates the service-worker cache version to V8.1.
+Audit coverage
+- Core date validation and calendar boundaries.
+- Daily, weekday, weekend, custom weekday, interval and monthly schedules.
+- Habit creation-date and configured schedule-window boundaries.
+- Backup validation guards for duplicate IDs, malformed dates, invalid log references and invalid numeric values.
+- Routine execution membership and shared habit-log write path.
+- Backup wrapper and validate-before-restore flow.
+- JavaScript syntax, service-worker syntax, HTML parsing, manifest JSON and ZIP integrity.
 
-Data safety
-- No schema migration or new persisted fields.
-- Existing habits, logs, routines, settings, and reviews remain in their existing structures.
-- Recovery metrics are calculated from existing history at display time.
+Regression test suite
+- Run `node audit-tests.js` from this folder.
+- The suite extracts and executes the actual date-validation and schedule functions from app.js, and checks critical backup/routine safeguards against the shipped source.
+- Eight focused regression checks pass in the release environment.
 
-Validation performed
-- Inline JavaScript syntax checked with Node.js.
-- Service-worker syntax checked with Node.js.
-- HTML parsed.
-- Manifest JSON validated.
-- ZIP integrity checked after packaging.
-- Existing duplicate static ID “detailTitle” was confirmed to already exist in V8.0 and V7.6; this update did not introduce it.
-- Browser interaction testing could not be completed in this environment.
-- Real Android-device testing and testing against the user's actual installed local database were not performed.
+Compatibility and safety
+- No LocalStorage key or schema changes.
+- No data migration and no new persistent fields.
+- Existing habit logs, routines, reminders, schedules, analytics, execution mode and backup format are retained.
+- The service-worker cache is bumped to `habitpulse-v9-2`.
 
-Install
-- Export a JSON backup from the current app before replacing files.
-- Deploy index.html, manifest.webmanifest, sw.js, and both icons together.
-- Open the app online once so the V8.1 service worker can refresh its cache.
+Validation results
+- app.js Node syntax check: PASS.
+- sw.js Node syntax check: PASS.
+- Focused regression suite: 8/8 PASS.
+- HTML parser check: PASS.
+- Manifest JSON parse: PASS.
+- Duplicate HTML ID check: PASS.
+- ZIP integrity check: PASS.
+
+Not performed
+- Real browser interaction testing.
+- Physical Android-device testing.
+- Cross-browser notification delivery testing.
+
+Update
+1. Export a backup before replacing hosted files.
+2. Extract all ZIP contents to the existing hosting location, replacing prior app files.
+3. Open online once so the V9.2 service worker installs; reopen the PWA if cached content persists.

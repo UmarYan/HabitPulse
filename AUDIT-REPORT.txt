@@ -1,0 +1,20 @@
+HABITPULSE V9.2 — RELEASE AUDIT REPORT
+
+Result: Focused regression audit passed. This does not constitute full end-to-end browser or device certification.
+
+Executed checks:
+1. Date validation: leap date accepted; non-leap February 29, April 31, month 13 and malformed keys rejected.
+2. Schedule matrix: daily, weekdays, weekends, custom weekdays, monthly and interval cadence.
+3. Date windows: before creation/start rejected; start/end boundaries included; after end rejected.
+4. Backup guards: source contains duplicate habit ID rejection, invalid schedule-end rejection, reversed schedule-window rejection, log-group limit, unknown habit-log rejection and invalid numeric-value rejection.
+5. Routine execution: scheduled active membership and shared habit-log completion path verified against shipped source.
+6. Backup path: app wrapper, validation-before-restore and prior-state rollback path verified against shipped source.
+7. Syntax/packaging: app.js and sw.js syntax checked; HTML parsed; manifest parsed; ZIP integrity checked.
+
+Automated focused regression suite: 8/8 passed.
+
+Limitations:
+- Backup safeguards beyond date/schedule logic were checked with source assertions, not by launching a full browser UI and importing real backup files.
+- No DOM-driven interaction, service-worker lifecycle, offline browser, notification, or physical Android test was run.
+
+No functional source-code changes were made to tracking, scoring, routines, or backup data structures in this audit release. Only the service-worker cache identifier, audit documentation, and test suite were added.
