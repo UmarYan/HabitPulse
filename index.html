@@ -162,6 +162,24 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
 .frequency-grid{display:grid;gap:8px}.frequency-row{display:grid;grid-template-columns:36px 1fr 28px;align-items:center;gap:8px;font-size:10px;color:var(--muted)}.frequency-track{height:8px;background:var(--card);border-radius:10px;overflow:hidden}.frequency-fill{height:100%;background:var(--green);border-radius:10px}.detail-help{font-size:10px;line-height:1.5;color:var(--muted);margin:8px 0 0}.detail-edit{position:sticky;bottom:0;padding:10px 0 calc(8px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 22%)}
 @media(min-width:600px){#habitDetailBackdrop .detail-modal{padding-left:26px;padding-right:26px}.detail-overview{gap:14px}}
 
+
+/* V7.6 — Loop-inspired day grid and quick-entry workflow */
+:root[data-theme="light"]{--bg:#f5f8fb;--card:#ffffff;--text:#1c2b34;--muted:#788993;--line:#dce6e9;--green:#087f68;--green-dark:#066a58;--mint:#dff5ed;--orange:#f0a33a;--blue:#368bd8;--violet:#8b6bd6;--shadow:0 4px 16px rgba(28,55,64,.055);color-scheme:light}
+:root[data-theme="dark"]{--bg:#101715;--card:#1c2722;--text:#effaf4;--muted:#9aada3;--line:#34463d;--green:#5df0b5;--green-dark:#26c98f;--mint:#173e32;--orange:#ffb45e;--blue:#62b9ff;--violet:#b69aff;--shadow:0 5px 18px rgba(0,0,0,.22);color-scheme:dark}
+:root[data-theme="light"] body,:root[data-theme="dark"] body{background:var(--bg);color:var(--text)}
+.track-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 0 13px}
+.track-toolbar h2{font-size:23px;letter-spacing:-.7px;margin:0;color:var(--text)}.track-toolbar p{font-size:11px;color:var(--muted);margin:4px 0 0}
+.track-toolbar-actions{display:flex;gap:7px}.track-toolbar .icon-btn{background:var(--card);color:var(--green);border-color:var(--line);width:39px;height:39px}
+.track-legend{display:flex;gap:13px;overflow-x:auto;padding:0 0 11px;color:var(--muted);font-size:10px;white-space:nowrap}.track-legend span{display:flex;align-items:center;gap:5px}.legend-dot{width:8px;height:8px;border-radius:3px;display:inline-block;background:var(--line)}.legend-dot.done{background:var(--green)}.legend-dot.skipped{background:var(--blue)}.legend-dot.failed{background:var(--orange)}.legend-dot.pending{border:1px solid var(--muted);background:transparent}
+.track-grid-scroll{overflow-x:auto;overscroll-behavior-x:contain;border-top:1px solid var(--line);border-bottom:1px solid var(--line);scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.track-grid{min-width:510px}.track-grid-head,.track-row{display:grid;grid-template-columns: minmax(142px,1fr) repeat(7,48px);align-items:stretch;border-bottom:1px solid var(--line)}.track-grid-head{position:sticky;top:0;background:var(--bg);z-index:2}.track-name-head,.track-habit-name{position:sticky;left:0;z-index:1;background:var(--card)}.track-name-head{background:var(--bg);padding:8px 8px;font-size:10px;color:var(--muted);font-weight:700}.track-day-head{display:grid;justify-items:center;align-content:center;gap:2px;padding:7px 0;color:var(--muted)}.track-day-head b{font-size:9px;text-transform:uppercase}.track-day-head small{font-size:11px}.track-day-head.is-today{color:var(--green)}
+.track-group-title{padding:11px 8px 6px;color:var(--green);font-size:11px;font-weight:800;letter-spacing:.02em;background:var(--bg);border-bottom:1px solid var(--line)}.track-group-title small{font-size:9px;color:var(--muted);margin-left:4px;font-weight:600}
+.track-habit-name{display:flex;flex-direction:column;justify-content:center;min-width:0;padding:8px 8px;gap:3px}.track-habit-title{font-size:11px;font-weight:700;overflow-wrap:anywhere}.track-habit-name>small{font-size:9px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.track-detail-link{position:absolute;right:3px;top:7px;border:0;background:transparent;color:var(--muted);font-size:13px;padding:3px}
+.track-cell{border:0;border-left:1px solid var(--line);background:transparent;min-height:47px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;color:var(--muted);cursor:pointer;padding:2px}.track-cell b{font-size:15px;font-weight:650}.track-cell small{font-size:7px;max-width:45px;overflow:hidden;text-overflow:ellipsis}.track-cell.done{background:color-mix(in srgb,var(--green) 17%,transparent);color:var(--green)}.track-cell.skipped{background:color-mix(in srgb,var(--blue) 13%,transparent);color:var(--blue)}.track-cell.failed{background:color-mix(in srgb,var(--orange) 14%,transparent);color:var(--orange)}.track-cell.partial{color:var(--violet)}.track-cell.pending{color:var(--muted)}.track-cell:active{filter:brightness(1.2)}.track-footnote{font-size:10px;color:var(--muted);line-height:1.45;margin:10px 0 0}
+.quick-entry-modal{background:var(--card);color:var(--text);border:1px solid var(--line);width:min(100%,430px);align-self:center}.quick-entry-modal .modal-head{margin-bottom:12px}.quick-entry-modal .modal-head h2{color:var(--text);font-size:18px}.quick-status-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:13px 0}.quick-status-grid button{display:grid;justify-items:center;gap:4px;padding:10px 3px;background:var(--bg);border:0;border-right:1px solid var(--line);color:var(--text)}.quick-status-grid button:last-child{border-right:0}.quick-status-grid b{font-size:21px;color:var(--green)}.quick-status-grid button[data-quick-status="skipped"] b{color:var(--blue)}.quick-status-grid button[data-quick-status="failed"] b{color:var(--orange)}.quick-status-grid small{font-size:9px;color:var(--muted)}.quick-note-label,.quick-value-label{display:grid;gap:6px;font-size:11px;font-weight:700;color:var(--muted)}.quick-entry-modal textarea,.quick-entry-modal input{background:var(--bg)!important;color:var(--text)!important;border-color:var(--line)!important}.quick-value-label{margin:7px 0}
+:root[data-theme="light"] .bottom-nav{background:rgba(255,255,255,.94);border-color:var(--line)}:root[data-theme="dark"] .bottom-nav{background:rgba(16,23,21,.95);border-color:var(--line)}
+:root[data-theme="light"] .modal{background:var(--card);color:var(--text);border-color:var(--line)}:root[data-theme="light"] .modal-head h2{color:var(--text)}
+
 </style>
 </head>
 <body>
@@ -187,8 +205,8 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
     </main>
 
     <nav class="bottom-nav" aria-label="Main navigation">
-      <button class="nav-item active" data-view="home"><span>⌂</span><small>Home</small></button>
-      <button class="nav-item" data-view="habits"><span>☷</span><small>Habits</small></button>
+      <button class="nav-item active" data-view="home"><span>▦</span><small>Track</small></button>
+      <button class="nav-item" data-view="habits"><span>☷</span><small>Manage</small></button>
       <button class="nav-item" data-view="stats"><span>▥</span><small>Stats</small></button>
       <button class="nav-item" data-view="review"><span>✎</span><small>Review</small></button>
       <button class="nav-item" data-view="more"><span>•••</span><small>More</small></button>
@@ -224,7 +242,7 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
       <div class="modal-head"><div><p class="eyebrow">YOUR APP</p><h2 id="settingsTitle">Settings & backup</h2></div><button class="icon-btn close-btn" data-close="settingsModalBackdrop" aria-label="Close">×</button></div>
       <div class="settings-block"><h3>Appearance</h3><label class="toggle-row"><span><strong>App theme</strong><small>Light is the default. Choose the vibrant dark theme anytime.</small></span><select id="themeSelect" aria-label="App theme" style="max-width:132px;min-height:38px"><option value="light">Light</option><option value="dark">Dark</option></select></label></div><div class="settings-block"><h3>Notifications</h3><label class="toggle-row"><span><strong>Daily summary</strong><small>Show a summary when you open the app for the first time each day.</small></span><input type="checkbox" id="dailySummaryToggle"></label><button class="secondary-btn full-btn" id="enableNotificationsBtn">Enable browser notifications</button><p class="field-help" id="notificationStatus">Browser notifications are optional.</p></div>
       <div class="settings-block"><h3>Protect your data</h3><p class="field-help">JSON backup preserves your app data. CSV exports habit logs for spreadsheets. Restore validates the file and creates a safety backup first.</p><div class="settings-actions"><button class="secondary-btn" id="exportBtn">Export JSON backup</button><button class="secondary-btn" id="csvBtn">Export CSV</button><button class="secondary-btn" id="importBtn">Restore backup</button><input type="file" id="importFile" accept="application/json,.json" class="hidden"></div></div>
-      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V7.5 · Habit Insights · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
+      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V7.6 · Loop-inspired tracking · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
     </section>
   </div>
 
@@ -234,11 +252,25 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
       <div id="habitDetailContent"></div>
     </section>
   </div>
+  <div class="modal-backdrop hidden" id="quickEntryBackdrop">
+    <section class="modal quick-entry-modal" role="dialog" aria-modal="true" aria-labelledby="quickEntryTitle">
+      <div class="modal-head"><div><p class="eyebrow">DAILY ENTRY</p><h2 id="quickEntryTitle">Habit entry</h2><p class="field-help" id="quickEntryDate"></p></div><button class="icon-btn close-btn" id="quickEntryClose" aria-label="Close">×</button></div>
+      <div id="quickNumericWrap" class="hidden"><label class="quick-value-label">Value <input id="quickNumericValue" type="number" min="0" step="any" inputmode="decimal"></label></div>
+      <div class="quick-status-grid" role="group" aria-label="Entry status">
+        <button type="button" data-quick-status="done" aria-label="Completed" title="Completed"><b>✓</b><small>Done</small></button>
+        <button type="button" data-quick-status="skipped" aria-label="Skipped" title="Skipped"><b>−</b><small>Skip</small></button>
+        <button type="button" data-quick-status="failed" aria-label="Not completed" title="Not completed"><b>×</b><small>Missed</small></button>
+        <button type="button" data-quick-status="clear" aria-label="Clear entry" title="Clear entry"><b>?</b><small>Clear</small></button>
+      </div>
+      <label class="quick-note-label">Notes <textarea id="quickEntryNote" rows="2" maxlength="300" placeholder="Optional note for this day"></textarea></label>
+      <p class="field-help">Choose a status to save. Clear removes the entry for this date.</p>
+    </section>
+  </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <script>
 (() => {
   'use strict';
-  const STORAGE_KEY = 'habitpulse.data.v7.0';
+  const STORAGE_KEY = 'habitpulse.data.v7.0'; // Keep existing key to preserve V7.x local data without migration.
   const PREVIOUS_STORAGE_KEY = 'habitpulse.data.v5.7';
   const SECOND_PREVIOUS_V57_KEY = 'habitpulse.data.v5.7';
   const SECOND_PREVIOUS_V55_KEY = 'habitpulse.data.v5.5';
@@ -284,7 +316,7 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
     s.logs = raw.logs && typeof raw.logs === 'object' && !Array.isArray(raw.logs) ? raw.logs : {};
     Object.keys(s.logs).forEach(date => {
       if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !s.logs[date] || typeof s.logs[date] !== 'object') delete s.logs[date];
-      else Object.keys(s.logs[date]).forEach(id => { if (!s.habits.some(h=>h.id===id) || !s.logs[date][id] || typeof s.logs[date][id] !== 'object') delete s.logs[date][id]; else s.logs[date][id] = { done: Boolean(s.logs[date][id].done), skipped: Boolean(s.logs[date][id].skipped), value: typeof s.logs[date][id].value === 'number' && Number.isFinite(s.logs[date][id].value) ? s.logs[date][id].value : null, updatedAt: s.logs[date][id].updatedAt || null, note: typeof s.logs[date][id].note==='string'?s.logs[date][id].note.slice(0,300):'' }; });
+      else Object.keys(s.logs[date]).forEach(id => { if (!s.habits.some(h=>h.id===id) || !s.logs[date][id] || typeof s.logs[date][id] !== 'object') delete s.logs[date][id]; else s.logs[date][id] = { done: Boolean(s.logs[date][id].done), skipped: Boolean(s.logs[date][id].skipped), failed: Boolean(s.logs[date][id].failed), value: typeof s.logs[date][id].value === 'number' && Number.isFinite(s.logs[date][id].value) ? s.logs[date][id].value : null, updatedAt: s.logs[date][id].updatedAt || null, note: typeof s.logs[date][id].note==='string'?s.logs[date][id].note.slice(0,300):'' }; });
     });
     if (raw.settings && typeof raw.settings === 'object') s.settings = { ...s.settings, dailySummary: Boolean(raw.settings.dailySummary), lastSummaryDate: raw.settings.lastSummaryDate || null, theme: raw.settings.theme === 'dark' ? 'dark' : 'light' };
     else s.settings.theme = 'light';
@@ -336,24 +368,71 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
   function scheduleText(h) { if(h.schedule==='daily')return 'Every day'; if(h.schedule==='weekdays')return 'Mon–Fri'; if(h.schedule==='weekends')return 'Weekends'; if(h.schedule==='interval')return `Every ${h.intervalDays||2} days`; if(h.schedule==='monthly')return `Monthly · day ${h.monthlyDay||1}`; const names=['Sun','Mon','Tue','Wed','Thu','Fri','Sat']; return h.customDays.length ? h.customDays.slice().sort((a,b)=>a-b).map(n=>names[n]).join(', ') : 'Choose days'; }
   function formatDate(d=new Date()) { return new Intl.DateTimeFormat(undefined,{weekday:'long',month:'short',day:'numeric'}).format(d); }
   function render() {
-    if (activeView === 'home' && !$('progressRing')) { $('mainContent').innerHTML = HOME_MARKUP; bindHomeButtons(); }
+    if (activeView === 'home') { renderTrackingGrid(); updateNav(); return; }
     if (activeView === 'habits') { renderAllHabits(); updateNav(); return; }
     if (activeView === 'stats') { renderStats(); updateNav(); return; }
     if (activeView === 'review') { renderReview(); updateNav(); return; }
     if (activeView === 'more') { renderMore(); updateNav(); return; }
-    $('dateLabel').textContent=formatDate();
-    const today=todayHabits(); const countedToday=today.filter(h=>!isSkipped(h.id)); const done=countedToday.filter(h=>isDone(h.id)).length; const pct=countedToday.length?Math.round(done/countedToday.length*100):0;
-    $('progressNumber').textContent=`${pct}%`; $('progressRing').style.background=`conic-gradient(var(--green) ${pct*3.6}deg,#d4e8de 0deg)`; $('progressRing').setAttribute('aria-label',`${pct} percent complete`);
-    $('progressText').textContent=today.length ? `${done} of ${countedToday.length} habits completed${today.length-countedToday.length?` · ${today.length-countedToday.length} skipped`:''}` : 'Add a habit to get started.';
-    $('greeting').textContent=pct===100&&today.length?'You showed up today.':'Small steps count.';
-    $('habitCount').textContent=today.length ? `${today.length} planned for today` : 'Your plan for today';
-    $('doneToday').textContent=done;
-    $('weekRate').textContent=weeklyRate();
-    const list=$('habitList'); list.innerHTML='';
-    today.slice().sort((a,b)=>Number(Boolean(b.isCore))-Number(Boolean(a.isCore))).forEach(h=>list.appendChild(createHabitCard(h)));
-    $('emptyState').classList.toggle('hidden',today.length>0);
-    $('habitList').classList.toggle('hidden',today.length===0);
-    updateNav();
+  }
+  function renderTrackingGrid(){
+    const main=$('mainContent');
+    const active=activeHabits();
+    const today=todayKey();
+    const days=Array.from({length:7},(_,i)=>{const d=parseDate(today);d.setDate(d.getDate()-(6-i));return todayKey(d);});
+    const doneToday=active.filter(h=>isDone(h.id,today)).length;
+    const dueToday=active.filter(h=>isScheduled(h,today)).length;
+    const pct=dueToday?Math.round(doneToday/dueToday*100):0;
+    const dayHead=days.map(k=>{const d=parseDate(k);return `<div class="track-day-head ${k===today?'is-today':''}"><b>${d.toLocaleDateString(undefined,{weekday:'short'}).slice(0,3)}</b><small>${d.getDate()}</small></div>`;}).join('');
+    const groups=new Map();
+    active.forEach(h=>{const group=h.isCore?'Core habits':(h.category||'Other');if(!groups.has(group))groups.set(group,[]);groups.get(group).push(h);});
+    let rows='';
+    groups.forEach((items,group)=>{
+      rows+=`<div class="track-group-title">${escapeHTML(group)} <small>${items.length}</small></div>`;
+      items.forEach(h=>{
+        const cells=days.map(k=>{
+          const log=((state.logs[k]||{})[h.id])||{};const scheduled=isScheduled(h,k);let cls='not-due',symbol='·',sub='';
+          if(log.skipped){cls='skipped';symbol='−';}
+          else if(log.failed){cls='failed';symbol='×';}
+          else if(log.done){cls='done';symbol='✓';}
+          else if((h.trackingType==='numeric'||h.trackingType==='atMost')&&log.value!=null){cls='partial';symbol=String(log.value);sub=h.numericUnit||'';}
+          else if(scheduled){cls='pending';symbol='○';}
+          return `<button type="button" class="track-cell ${cls}" data-quick-habit="${h.id}" data-quick-date="${k}" aria-label="${escapeHTML(h.name)} ${k}: ${cls}" title="${k}"><b>${symbol}</b>${sub?`<small>${escapeHTML(sub)}</small>`:''}</button>`;
+        }).join('');
+        rows+=`<div class="track-row"><div class="track-habit-name"><span class="track-habit-title">${escapeHTML(h.name)}</span><small>${escapeHTML(h.category)}${h.trackingType==='weekly'?` · ${weeklyProgress(h)}/${h.weeklyTarget} this week`:''}</small><button type="button" class="track-detail-link" data-track-detail="${h.id}" aria-label="Statistics for ${escapeHTML(h.name)}">▥</button></div>${cells}</div>`;
+      });
+    });
+    main.innerHTML=`<section class="track-toolbar"><div><h2>Habits</h2><p>${formatDate()} · ${doneToday}/${dueToday} completed · ${pct}%</p></div><div class="track-toolbar-actions"><button class="icon-btn" id="trackAdd" aria-label="Add habit" title="Add habit">＋</button><button class="icon-btn" id="trackManage" aria-label="Manage habits" title="Manage habits">☷</button><button class="icon-btn" id="trackFilter" aria-label="Filter habits" title="Filter">≡</button></div></section>
+      <div class="track-legend"><span><i class="legend-dot done"></i>Done</span><span><i class="legend-dot skipped"></i>Skipped</span><span><i class="legend-dot failed"></i>Missed</span><span><i class="legend-dot pending"></i>Pending</span></div>
+      ${active.length?`<div class="track-grid-scroll"><div class="track-grid"><div class="track-grid-head"><div class="track-name-head">Habit</div>${dayHead}</div>${rows}</div></div>`:`<div class="empty-state card"><div class="empty-icon">✦</div><h3>A fresh start</h3><p>Add your first habit. Keep it small enough to repeat.</p><button class="primary-btn" id="trackEmptyAdd">＋ Create a habit</button></div>`}
+      <p class="track-footnote">Tap any day to record or edit its status and note. Swipe horizontally to view all seven days.</p>`;
+    const add=()=>openHabitModal();$('trackAdd')?.addEventListener('click',add);$('trackEmptyAdd')?.addEventListener('click',add);$('trackManage')?.addEventListener('click',()=>goView('habits'));
+    $('trackFilter')?.addEventListener('click',()=>{const choices=['All habits','Core habits only','Today scheduled only'];const choice=prompt('Show: 1 All habits, 2 Core habits only, 3 Today scheduled only','1');if(choice===null)return;state.settings.trackFilter=['1','2','3'].includes(choice)?choice:'1';saveState();render();});
+    if(state.settings.trackFilter==='2'||state.settings.trackFilter==='3'){
+      const filter=state.settings.trackFilter;main.querySelectorAll('.track-row').forEach(row=>{const id=row.querySelector('[data-track-detail]')?.dataset.trackDetail;const h=active.find(x=>x.id===id);if(h&&((filter==='2'&&!h.isCore)||(filter==='3'&&!isScheduled(h,today))))row.remove();});
+      main.querySelectorAll('.track-group-title').forEach(g=>{if(!g.nextElementSibling||!g.nextElementSibling.classList.contains('track-row'))g.remove();});
+    }
+    main.querySelectorAll('[data-quick-habit]').forEach(b=>b.addEventListener('click',()=>openQuickEntry(b.dataset.quickHabit,b.dataset.quickDate)));
+    main.querySelectorAll('[data-track-detail]').forEach(b=>b.addEventListener('click',()=>openHabitDetails(b.dataset.trackDetail)));
+  }
+  function openQuickEntry(habitId,dateKey){
+    const h=state.habits.find(x=>x.id===habitId);if(!h)return;const log=((state.logs[dateKey]||{})[habitId])||{};
+    $('quickEntryTitle').textContent=h.name;$('quickEntryDate').textContent=formatDate(parseDate(dateKey));$('quickEntryNote').value=log.note||'';
+    $('quickNumericWrap').classList.toggle('hidden',!['numeric','atMost'].includes(h.trackingType));$('quickNumericValue').value=log.value??'';$('quickNumericValue').placeholder=`Target ${h.numericTarget} ${h.numericUnit||''}`;
+    $('quickEntryBackdrop').classList.remove('hidden');
+    $('quickEntryClose').onclick=()=>closeModal('quickEntryBackdrop');
+    $('quickEntryBackdrop').onclick=e=>{if(e.target===$('quickEntryBackdrop'))closeModal('quickEntryBackdrop');};
+    $('quickEntryBackdrop').querySelectorAll('[data-quick-status]').forEach(btn=>btn.onclick=()=>{
+      const status=btn.dataset.quickStatus;let next={...(log||{}),updatedAt:new Date().toISOString(),note:$('quickEntryNote').value.trim().slice(0,300)};
+      if(status==='clear'){if(state.logs[dateKey]){delete state.logs[dateKey][habitId];if(!Object.keys(state.logs[dateKey]).length)delete state.logs[dateKey];}}
+      else if(status==='done'||status==='failed'||status==='skipped'){
+        next.done=status==='done';next.failed=status==='failed';next.skipped=status==='skipped';
+        if(['numeric','atMost'].includes(h.trackingType)&&$('quickNumericValue').value!==''){
+          const n=Number($('quickNumericValue').value);if(!Number.isFinite(n)||n<0){showToast('Enter a valid non-negative number.');return;}next.value=n;if(status==='done')next.done=h.trackingType==='atMost'?n<=h.numericTarget:n>=h.numericTarget;
+        }
+        if(!state.logs[dateKey])state.logs[dateKey]={};state.logs[dateKey][habitId]=next;
+      }
+      saveState();closeModal('quickEntryBackdrop');render();showToast(status==='clear'?'Entry cleared.':'Entry saved.');
+    });
   }
   function createHabitCard(h) {
     const done=isDone(h.id); const skipped=isSkipped(h.id); const card=document.createElement('article'); card.className=`habit-card${done?' done':''}${h.trackingType==='numeric'||h.trackingType==='atMost'?' numeric-habit':''}`;
@@ -498,7 +577,7 @@ input::placeholder,textarea::placeholder {color:var(--muted)!important;}
     });
     return {due,earned:Math.round(earned*10)/10,rate:due?Math.round(earned/due*100):0};
   }
-  function editHistoricalLog(habitId,dateKey){const h=state.habits.find(x=>x.id===habitId);if(!h)return;const existing=((state.logs[dateKey]||{})[habitId])||{};let promptText=(h.trackingType==='numeric'||h.trackingType==='atMost')?`Edit ${h.name} for ${dateKey}. Enter a number, or type skip / clear.`:`Edit ${h.name} for ${dateKey}. Type done, skip, or clear.`;const answer=prompt(promptText,h.trackingType==='numeric'?(existing.value??(existing.skipped?'skip':'')):(existing.skipped?'skip':existing.done?'done':''));if(answer===null)return;const value=answer.trim().toLowerCase();if(!state.logs[dateKey])state.logs[dateKey]={};if(value==='clear'||value===''){delete state.logs[dateKey][habitId];if(!Object.keys(state.logs[dateKey]).length)delete state.logs[dateKey];}else if(value==='skip'){state.logs[dateKey][habitId]={done:false,skipped:true,value:null,updatedAt:new Date().toISOString()};}else if(h.trackingType==='numeric'||h.trackingType==='atMost'){const n=Number(value);if(!Number.isFinite(n)||n<0){showToast('Enter a non-negative number, skip, or clear.');return;}state.logs[dateKey][habitId]={done:h.trackingType==='atMost'?n<=Number(h.numericTarget||1):n>=Number(h.numericTarget||1),skipped:false,value:n,updatedAt:new Date().toISOString()};}else if(value==='done'){state.logs[dateKey][habitId]={...(existing||{}),done:true,skipped:false,updatedAt:new Date().toISOString()};}else{showToast('Use done, skip, or clear.');return;}if(saveState()){render();openHabitDetails(habitId);showToast('Historical entry updated.');if(state.logs[dateKey]&&state.logs[dateKey][habitId]){const note=prompt('Optional note for this day:',state.logs[dateKey][habitId].note||'');if(note!==null){state.logs[dateKey][habitId].note=note.trim().slice(0,300);saveState();}}}}
+  function editHistoricalLog(habitId,dateKey){const h=state.habits.find(x=>x.id===habitId);if(!h)return;const existing=((state.logs[dateKey]||{})[habitId])||{};let promptText=(h.trackingType==='numeric'||h.trackingType==='atMost')?`Edit ${h.name} for ${dateKey}. Enter a number, or type skip / clear.`:`Edit ${h.name} for ${dateKey}. Type done, skip, failed, or clear.`;const answer=prompt(promptText,h.trackingType==='numeric'?(existing.value??(existing.skipped?'skip':'')):(existing.skipped?'skip':existing.done?'done':''));if(answer===null)return;const value=answer.trim().toLowerCase();if(!state.logs[dateKey])state.logs[dateKey]={};if(value==='clear'||value===''){delete state.logs[dateKey][habitId];if(!Object.keys(state.logs[dateKey]).length)delete state.logs[dateKey];}else if(value==='skip'){state.logs[dateKey][habitId]={done:false,skipped:true,failed:false,value:null,updatedAt:new Date().toISOString()};}else if(value==='failed'||value==='missed'){state.logs[dateKey][habitId]={done:false,skipped:false,failed:true,value:null,updatedAt:new Date().toISOString()};}else if(h.trackingType==='numeric'||h.trackingType==='atMost'){const n=Number(value);if(!Number.isFinite(n)||n<0){showToast('Enter a non-negative number, skip, or clear.');return;}state.logs[dateKey][habitId]={done:h.trackingType==='atMost'?n<=Number(h.numericTarget||1):n>=Number(h.numericTarget||1),skipped:false,value:n,updatedAt:new Date().toISOString()};}else if(value==='done'){state.logs[dateKey][habitId]={...(existing||{}),done:true,skipped:false,updatedAt:new Date().toISOString()};}else{showToast('Use done, skip, failed, or clear.');return;}if(saveState()){render();openHabitDetails(habitId);showToast('Historical entry updated.');if(state.logs[dateKey]&&state.logs[dateKey][habitId]){const note=prompt('Optional note for this day:',state.logs[dateKey][habitId].note||'');if(note!==null){state.logs[dateKey][habitId].note=note.trim().slice(0,300);saveState();}}}}
 
   function openHabitModal(id=null) { $('habitForm').reset(); const catSelect=$('habitCategory');[...catSelect.options].filter(o=>!BUILTIN_CATEGORIES.includes(o.value)).forEach(o=>o.remove());state.customCategories.forEach(c=>{const o=document.createElement('option');o.value=c;o.textContent=c;catSelect.append(o);}); $('habitId').value=''; $('habitModalTitle').textContent=id?'Edit habit':'Create a habit'; if(id){const h=state.habits.find(x=>x.id===id);if(!h)return;$('habitId').value=h.id;$('habitName').value=h.name;$('habitDescription').value=h.description||'';$('habitNotes').value=h.notes||'';$('habitCategory').value=h.category;ensureCategoryOption(h.category);$('habitCore').checked=Boolean(h.isCore);$('trackingType').value=h.trackingType||'check';$('numericTarget').value=h.numericTarget||1;$('numericUnit').value=h.numericUnit||'';$('weeklyTarget').value=h.weeklyTarget||3;$('habitSchedule').value=h.schedule;$('intervalDays').value=h.intervalDays||2;$('monthlyDay').value=h.monthlyDay||1;$('habitReminder').value=(h.reminders|| (h.reminder?[h.reminder]:[])).join(', ');document.querySelectorAll('#customDays input').forEach(c=>c.checked=h.customDays.includes(Number(c.value)));} $('customDays').classList.toggle('hidden',$('habitSchedule').value!=='custom'); $('intervalFields').classList.toggle('hidden',$('habitSchedule').value!=='interval'); $('monthlyFields').classList.toggle('hidden',$('habitSchedule').value!=='monthly'); updateTrackingFields(); $('habitModalBackdrop').classList.remove('hidden'); setTimeout(()=>$('habitName').focus(),100); }
   function closeModal(id) { $(id).classList.add('hidden'); }
