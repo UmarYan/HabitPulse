@@ -64,80 +64,65 @@ input:not([type=checkbox]),select,textarea{background:#151c19;border-color:#3b49
 @media(prefers-reduced-motion:no-preference){.card,.habit-card,.icon-action,.primary-btn{transition:background .18s,border-color .18s,transform .18s}}
 
 
-/* HabitPulse V7.2 adaptive theme system: light default + complete vibrant dark surfaces. */
-:root[data-theme="light"]{color-scheme:light;--green:#087f62;--green-dark:#06694f;--mint:#d9f6ec;--bg:#f4f7fb;--card:#ffffff;--text:#18242d;--muted:#657581;--line:#e1e8ee;--orange:#bd690b;--blue:#1678c8;--violet:#7651c8;--shadow:0 4px 16px rgba(24,42,56,.07)}
-:root[data-theme="dark"]{color-scheme:dark;--green:#62efb7;--green-dark:#24c991;--mint:#173e34;--bg:#0d1412;--card:#18221e;--text:#effff7;--muted:#a0b4aa;--line:#30443a;--orange:#ffbd68;--blue:#65c3ff;--violet:#c0a0ff;--shadow:0 5px 18px rgba(0,0,0,.28)}
-:root[data-theme="light"] body{background:var(--bg);color:var(--text)}
-:root[data-theme="light"] .card,:root[data-theme="light"] .habit-card,:root[data-theme="light"] .view-panel{background:var(--card);border-color:var(--line)}
-:root[data-theme="light"] .hero{background:linear-gradient(125deg,#e2fbf1 0%,#eef4ff 100%);border:1px solid #d8eee5}
-:root[data-theme="light"] .progress-ring{background:conic-gradient(var(--green) 0deg,#dce9e5 0deg)}
-:root[data-theme="light"] .progress-ring:before{background:#fff}
-:root[data-theme="light"] .icon-btn,:root[data-theme="light"] .tiny-btn{background:#fff;color:var(--green);border-color:var(--line)}
-:root[data-theme="light"] .habit-card{background:#fff}
-:root[data-theme="light"] .habit-card.done{background:#eaf8f1;border-color:#b9e8d3}
-:root[data-theme="light"] .check-btn{background:#fff;color:#fff;border-color:#b9c9c1}
-:root[data-theme="light"] .done .check-btn{background:linear-gradient(135deg,#17c995,#07835f);border-color:#0b9b70;color:#fff}
-:root[data-theme="light"] .done .habit-title{color:#557267}
-:root[data-theme="light"] .category-pill{background:#e5f7ef;color:#087f62}
-:root[data-theme="light"] .primary-btn{background:linear-gradient(135deg,#12c995,#07815f);color:#fff}
-:root[data-theme="light"] .secondary-btn{background:#eaf5f0;color:#087454;border:1px solid #d1e9de}
-:root[data-theme="light"] .calendar-cell{background:#edf2f5;color:#4c606b}
-:root[data-theme="light"] .calendar-cell.full{background:#16c995;color:#073d30}
-:root[data-theme="light"] .calendar-cell.partial{background:#c8f0df;color:#17654b}
-:root[data-theme="light"] .bottom-nav{background:rgba(255,255,255,.96);border-color:var(--line);box-shadow:0 -5px 18px rgba(24,42,56,.06)}
-:root[data-theme="light"] .nav-item{color:#84939d}:root[data-theme="light"] .nav-item.active{color:#07815f}
-:root[data-theme="light"] .modal{background:#fff;color:var(--text);border:1px solid var(--line)}
-:root[data-theme="light"] .modal label:not(.toggle-row):not(.day-choice){color:#435660}
-:root[data-theme="light"] input:not([type=checkbox]),:root[data-theme="light"] select,:root[data-theme="light"] textarea{background:#f8fbfd;border-color:#dce6ec;color:#18242d}
-:root[data-theme="light"] .day-choice,:root[data-theme="light"] .review-stat{background:#f3f8f6;border-color:#e0ebe6;color:#263b34}
-:root[data-theme="light"] .empty-state{background:#fff;border-color:#dce8e3}
-:root[data-theme="light"] .empty-icon,:root[data-theme="light"] .stat-icon{background:#e0f7ee;color:#07815f}
-:root[data-theme="light"] .trend-bar-wrap,:root[data-theme="light"] .detail-bar-col{background:#e8f0ed}
-:root[data-theme="light"] .detail-day{background:#edf2f4;color:#52646e}
-:root[data-theme="light"] .detail-day.complete{background:#baf0d8;color:#086346}
-:root[data-theme="light"] .detail-day.partial{background:#ffebc9;color:#87510b}
-:root[data-theme="light"] .detail-day.missed{background:#e8ecee;color:#687983}
-:root[data-theme="light"] .detail-day.skipped{background:repeating-linear-gradient(135deg,#edf2ef,#edf2ef 3px,#d9e4de 3px,#d9e4de 6px);color:#52645b}
-:root[data-theme="light"] .review-stat strong,:root[data-theme="light"] .detail-metrics strong{color:var(--green)}
-:root[data-theme="light"] .core-badge{background:#fff0d5;color:#87520a}
-:root[data-theme="dark"] body{background:var(--bg);color:var(--text)}
-:root[data-theme="dark"] .card,:root[data-theme="dark"] .habit-card,:root[data-theme="dark"] .view-panel{background:var(--card);border-color:var(--line);color:var(--text)}
-:root[data-theme="dark"] .hero{background:linear-gradient(125deg,#153d32 0%,#1b3040 55%,#30244b 100%);border:1px solid #315c50}
-:root[data-theme="dark"] .progress-ring{background:conic-gradient(var(--green) 0deg,#31463d 0deg)}
-:root[data-theme="dark"] .progress-ring:before{background:#182820}
-:root[data-theme="dark"] .icon-btn,:root[data-theme="dark"] .tiny-btn,:root[data-theme="dark"] .icon-action{background:#202e28;color:var(--green);border-color:#3a5146}
-:root[data-theme="dark"] .habit-card.done{background:#15372c;border-color:#28684f}
-:root[data-theme="dark"] .check-btn{background:#202e28;color:#effff7;border-color:#587266}
-:root[data-theme="dark"] .done .check-btn{background:linear-gradient(135deg,#6af3bf,#20bd89);border-color:#55e7b0;color:#073326}
-:root[data-theme="dark"] .done .habit-title{color:#a9c8ba}
-:root[data-theme="dark"] .category-pill{background:#174438;color:#75f3c2}
-:root[data-theme="dark"] .primary-btn{background:linear-gradient(135deg,#69f3bf,#22c58e);color:#062b20}
-:root[data-theme="dark"] .secondary-btn{background:#233d32;color:#a2f5d0;border:1px solid #3c6553}
-:root[data-theme="dark"] .calendar-cell{background:#293832;color:#c5d8ce}
-:root[data-theme="dark"] .calendar-cell.full{background:#55e9b2;color:#063626}
-:root[data-theme="dark"] .calendar-cell.partial{background:#285d49;color:#dcffed}
-:root[data-theme="dark"] .bottom-nav{background:rgba(13,20,18,.97);border-color:#30443a;box-shadow:0 -5px 20px rgba(0,0,0,.35)}
-:root[data-theme="dark"] .nav-item{color:#91a79b}:root[data-theme="dark"] .nav-item.active{color:#6bf0ba}
-:root[data-theme="dark"] .modal{background:#18221e;color:var(--text);border:1px solid #3a5146}
-:root[data-theme="dark"] .modal-head h2{color:#f0fff7}
-:root[data-theme="dark"] .modal label:not(.toggle-row):not(.day-choice){color:#c5d9ce}
-:root[data-theme="dark"] input:not([type=checkbox]),:root[data-theme="dark"] select,:root[data-theme="dark"] textarea{background:#101a16;border-color:#3a5146;color:#effff7}
-:root[data-theme="dark"] .day-choice,:root[data-theme="dark"] .review-stat{background:#22332b;border-color:#3b5146;color:#dff5e9}
-:root[data-theme="dark"] .empty-state{background:#18221e;border-color:#3a5146}
-:root[data-theme="dark"] .empty-icon,:root[data-theme="dark"] .stat-icon{background:#174438;color:#6bf0ba}
-:root[data-theme="dark"] .trend-bar-wrap,:root[data-theme="dark"] .detail-bar-col{background:#26372f}
-:root[data-theme="dark"] .detail-day{background:#293a32;color:#c2d6ca}
-:root[data-theme="dark"] .detail-day.complete{background:#1b7958;color:#e2fff1}
-:root[data-theme="dark"] .detail-day.partial{background:#704b20;color:#ffdfac}
-:root[data-theme="dark"] .detail-day.missed{background:#29332e;color:#a5b2aa}
-:root[data-theme="dark"] .detail-day.skipped{background:repeating-linear-gradient(135deg,#293a32,#293a32 3px,#35483e 3px,#35483e 6px);color:#d2e1d8}
-:root[data-theme="dark"] .detail-metrics>div{background:#22332b;border-color:#3b5146}
-:root[data-theme="dark"] .core-badge{background:#4b351b;color:#ffd18a}
-:root[data-theme="dark"] .toast{background:#174b39;color:#eafff4}
-:root[data-theme="dark"] .modal-backdrop{background:rgba(2,8,5,.84)}
-:root[data-theme="dark"] .text-btn{color:#70efbd}
-:root[data-theme="light"] .modal-backdrop{background:rgba(20,35,45,.38)}
-:root[data-theme="light"] .toast{background:#174b39;color:#eafff4}
+
+/* HabitPulse V7.3 — complete, consistent theme tokens across every surface. */
+:root[data-theme="light"] {
+ color-scheme:light; --green:#087f62; --green-dark:#06694f; --mint:#d9f6ec;
+ --bg:#f3f7fa; --card:#ffffff; --text:#18242d; --muted:#657581; --line:#e1e8ee;
+ --orange:#bd690b; --blue:#1678c8; --violet:#7651c8; --shadow:0 4px 16px rgba(24,42,56,.07);
+}
+:root[data-theme="dark"] {
+ color-scheme:dark; --green:#68f2bd; --green-dark:#24c991; --mint:#173e34;
+ --bg:#0b1210; --card:#17221d; --text:#effff7; --muted:#a0b4aa; --line:#30443a;
+ --orange:#ffbd68; --blue:#65c3ff; --violet:#c0a0ff; --shadow:0 5px 18px rgba(0,0,0,.30);
+}
+html,body {background:var(--bg)!important;color:var(--text)!important;color-scheme:inherit;}
+body,.app-shell {background:var(--bg)!important;color:var(--text)!important;}
+.card,.view-panel,.habit-card,.mini-stat,.review-stat,.detail-section,.detail-summary,
+.detail-metrics>div,.detail-bar-col,.trend-bar-wrap,.template-grid,.empty-state {
+ background:var(--card)!important;color:var(--text)!important;border-color:var(--line)!important;box-shadow:var(--shadow);
+}
+.section-head h2,.hero h2,.habit-title,.brand h1,.modal-head h2,.settings-block h3,
+.view-panel h3,.history-row,.detail-section-head,.detail-summary {color:var(--text);}
+.hero {background:linear-gradient(125deg,color-mix(in srgb,var(--green) 17%,var(--card)),color-mix(in srgb,var(--blue) 13%,var(--card)))!important;border:1px solid var(--line)!important;color:var(--text)!important;}
+.eyebrow,.section-head h2,.history-row strong,.review-stat strong,.mini-stat strong,.detail-metrics strong {color:var(--green)!important;}
+.brand-mark,.stat-icon,.empty-icon {background:var(--mint)!important;color:var(--green)!important;}
+.icon-btn,.icon-action,.tiny-btn {background:var(--card)!important;color:var(--green)!important;border:1px solid var(--line)!important;}
+.primary-btn {background:linear-gradient(135deg,var(--green),var(--green-dark))!important;color:#fff!important;border:0;}
+.secondary-btn,.day-choice {background:color-mix(in srgb,var(--green) 10%,var(--card))!important;color:var(--green)!important;border:1px solid var(--line)!important;}
+.text-btn {background:transparent!important;color:var(--green)!important;}
+.habit-card.done {background:color-mix(in srgb,var(--green) 13%,var(--card))!important;border-color:color-mix(in srgb,var(--green) 45%,var(--line))!important;}
+.done .habit-title {color:var(--text)!important;}
+.check-btn {background:var(--card)!important;border-color:var(--muted)!important;color:var(--text)!important;}
+.done .check-btn {background:var(--green)!important;border-color:var(--green)!important;color:#062b20!important;}
+.category-pill {background:var(--mint)!important;color:var(--green)!important;}
+.calendar-cell,.detail-day,.detail-bar-col,.trend-bar-wrap {background:color-mix(in srgb,var(--muted) 13%,var(--card))!important;color:var(--text)!important;}
+.calendar-cell.full,.detail-day.complete,.year-cell {background:var(--green)!important;color:#062b20!important;}
+.calendar-cell.partial,.detail-day.partial {background:color-mix(in srgb,var(--orange) 24%,var(--card))!important;color:var(--text)!important;}
+.detail-day.skipped {background:repeating-linear-gradient(135deg,var(--card),var(--card) 3px,var(--line) 3px,var(--line) 6px)!important;color:var(--muted)!important;}
+.bottom-nav {background:color-mix(in srgb,var(--card) 96%,transparent)!important;border-color:var(--line)!important;box-shadow:0 -5px 20px var(--shadow)!important;backdrop-filter:blur(18px);}
+.nav-item {background:transparent!important;color:var(--muted)!important;}
+.nav-item.active {color:var(--green)!important;}
+.modal-backdrop {background:rgba(5,12,9,.48)!important;}
+.modal {background:var(--card)!important;color:var(--text)!important;border:1px solid var(--line)!important;}
+.modal-head h2,.modal label:not(.toggle-row):not(.day-choice) {color:var(--text)!important;}
+input:not([type=checkbox]),select,textarea {background:color-mix(in srgb,var(--bg) 82%,var(--card))!important;color:var(--text)!important;border-color:var(--line)!important;}
+input::placeholder,textarea::placeholder {color:var(--muted)!important;}
+.day-choice,.review-stat {background:color-mix(in srgb,var(--green) 7%,var(--card))!important;color:var(--text)!important;border-color:var(--line)!important;}
+.toggle-row,.toggle-row strong,.field-help,.toggle-row small,.privacy-note,.habit-meta {color:var(--muted);}
+.core-badge {background:color-mix(in srgb,var(--orange) 20%,var(--card))!important;color:var(--orange)!important;}
+.toast {background:var(--green-dark)!important;color:#fff!important;}
+.history-row {border-color:var(--line)!important;}
+:root[data-theme="dark"] .modal-backdrop {background:rgba(0,0,0,.78)!important;}
+:root[data-theme="dark"] .card,:root[data-theme="dark"] .view-panel,:root[data-theme="dark"] .habit-card,
+:root[data-theme="dark"] .mini-stat,:root[data-theme="dark"] .review-stat,:root[data-theme="dark"] .modal,
+:root[data-theme="dark"] .bottom-nav,:root[data-theme="dark"] .detail-section,:root[data-theme="dark"] .detail-summary {
+ background-color:var(--card)!important;
+}
+:root[data-theme="dark"] .progress-ring:before {background:var(--card)!important;}
+:root[data-theme="dark"] .progress-ring {background:conic-gradient(var(--green) 0deg,var(--line) 0deg)!important;}
+:root[data-theme="light"] .modal-backdrop {background:rgba(20,35,45,.32)!important;}
+@media(prefers-reduced-motion:no-preference){.card,.habit-card,.icon-action,.primary-btn,.nav-item{transition:background .18s,border-color .18s,color .18s,transform .18s;}}
 
   </style>
 </head>
@@ -201,7 +186,7 @@ input:not([type=checkbox]),select,textarea{background:#151c19;border-color:#3b49
       <div class="modal-head"><div><p class="eyebrow">YOUR APP</p><h2 id="settingsTitle">Settings & backup</h2></div><button class="icon-btn close-btn" data-close="settingsModalBackdrop" aria-label="Close">×</button></div>
       <div class="settings-block"><h3>Appearance</h3><label class="toggle-row"><span><strong>App theme</strong><small>Light is the default. Choose the vibrant dark theme anytime.</small></span><select id="themeSelect" aria-label="App theme" style="max-width:132px;min-height:38px"><option value="light">Light</option><option value="dark">Dark</option></select></label></div><div class="settings-block"><h3>Notifications</h3><label class="toggle-row"><span><strong>Daily summary</strong><small>Show a summary when you open the app for the first time each day.</small></span><input type="checkbox" id="dailySummaryToggle"></label><button class="secondary-btn full-btn" id="enableNotificationsBtn">Enable browser notifications</button><p class="field-help" id="notificationStatus">Browser notifications are optional.</p></div>
       <div class="settings-block"><h3>Protect your data</h3><p class="field-help">JSON backup preserves your app data. CSV exports habit logs for spreadsheets. Restore validates the file and creates a safety backup first.</p><div class="settings-actions"><button class="secondary-btn" id="exportBtn">Export JSON backup</button><button class="secondary-btn" id="csvBtn">Export CSV</button><button class="secondary-btn" id="importBtn">Restore backup</button><input type="file" id="importFile" accept="application/json,.json" class="hidden"></div></div>
-      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V7.2 · Adaptive Themes · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
+      <div class="settings-block"><h3>About</h3><p class="field-help">HabitPulse V7.3 · Adaptive Themes · Local-first.</p><button class="text-btn danger-text" id="resetBtn">Reset all app data</button></div>
     </section>
   </div>
 
