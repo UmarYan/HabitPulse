@@ -18,3 +18,12 @@ Limitations:
 - No DOM-driven interaction, service-worker lifecycle, offline browser, notification, or physical Android test was run.
 
 No functional source-code changes were made to tracking, scoring, routines, or backup data structures in this audit release. Only the service-worker cache identifier, audit documentation, and test suite were added.
+
+
+V9.3 UI refinement note:
+- Rebuilt Dashboard Up next rows with explicit component styling, readable habit/category hierarchy, and accessible quick-action controls.
+- Rebuilt Completed today entries as separated compact rows with category labels and completion indicators.
+- Added responsive small-screen adjustments and reduced-motion support.
+- No tracking calculations, LocalStorage keys/schema, logs, or backup format changed.
+- Existing 8 focused regression checks rerun successfully.
+- Browser/device interaction testing not performed.

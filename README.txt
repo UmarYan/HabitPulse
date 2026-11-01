@@ -40,3 +40,6 @@ Update
 1. Export a backup before replacing hosted files.
 2. Extract all ZIP contents to the existing hosting location, replacing prior app files.
 3. Open online once so the V9.2 service worker installs; reopen the PWA if cached content persists.
+
+
+V9.3 UI update: Dashboard Up next and Completed today sections have been restyled for clear spacing, readable labels, accessible actions, and small-screen layout. Tracking/data formats remain unchanged.
