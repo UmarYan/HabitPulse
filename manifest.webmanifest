@@ -1,7 +1,7 @@
 {
   "name": "HabitPulse - Personal Habit Tracker",
   "short_name": "HabitPulse",
-  "description": "A minimal, private-first habit tracker with flexible tracking and personal reviews.",
+  "description": "A minimal, private-first habit tracker with detailed habit insights and flexible tracking.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
