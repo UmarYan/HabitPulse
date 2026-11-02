@@ -1,1 +1,10 @@
-{"name":"HabitHarbor","short_name":"HabitHarbor","start_url":"./","display":"standalone","background_color":"#202321","theme_color":"#202321","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml"}]}
+{
+  "name": "Habit Track",
+  "short_name": "Habit Track",
+  "description": "A lightweight local-first habit tracker prototype.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
