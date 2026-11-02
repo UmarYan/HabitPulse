@@ -1,0 +1,1 @@
+{"name":"habitharbor-android","version":"1.2.0","private":true,"description":"Capacitor Android wrapper for HabitHarbor PWA","scripts":{"sync":"cap sync android","open":"cap open android","build":"cap sync android && cap open android"},"dependencies":{"@capacitor/android":"^7.0.0","@capacitor/cli":"^7.0.0","@capacitor/core":"^7.0.0"}}
