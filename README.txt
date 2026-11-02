@@ -43,3 +43,5 @@ Update
 
 
 V9.3 UI update: Dashboard Up next and Completed today sections have been restyled for clear spacing, readable labels, accessible actions, and small-screen layout. Tracking/data formats remain unchanged.
+
+V9.4 Routine launch reliability fix: Dashboard routine buttons now use delegated click handling with routine-id validation before opening Routine Execution. CTA labels distinguish Start, Continue, Review, and Open states. Tracking and stored data formats remain unchanged.

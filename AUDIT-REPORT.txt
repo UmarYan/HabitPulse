@@ -27,3 +27,12 @@ V9.3 UI refinement note:
 - No tracking calculations, LocalStorage keys/schema, logs, or backup format changed.
 - Existing 8 focused regression checks rerun successfully.
 - Browser/device interaction testing not performed.
+
+
+HABITPULSE V9.4 — ROUTINE LAUNCH FIX
+
+- Dashboard routine launch now uses one delegated click listener attached to mainContent, rather than per-render direct button handlers.
+- Launch handler validates that the selected routine id exists before assigning activeRoutineId and navigating to routineRun. Missing IDs display a toast instead of silently doing nothing.
+- CTA labels now distinguish Start routine, Continue routine, Review routine, and Open routine based on due/completed counts.
+- Routine tracking, completion logs, LocalStorage schema, and backup format unchanged.
+- Static source checks and syntax/package validation performed. Browser/device tap test remains unperformed.
