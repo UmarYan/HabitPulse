@@ -1,15 +1,18 @@
-HabitHarbor V1.3 — Minimal PWA Bundle
+# HabitHarbor — Fresh V1.0
 
-This ZIP contains one folder only, with the essential files for GitHub Pages/PWA deployment.
+A fresh, minimal local-first habit and routine tracker built from scratch.
 
-Files:
-- index.html: app entry point
-- app.js: application logic
-- style.css: UI styles
-- manifest.json: installable PWA metadata
-- sw.js: service worker/offline cache
-- icon.svg: app icon
+## Included
+- Habit creation, daily/weekly/custom schedules
+- Daily completion and history records
+- Habit strength indicator, streak display, stats overview
+- Routines with step checkboxes and Continue Routine
+- Dark/light theme
+- JSON export/import and local data clear
+- Installable PWA and offline cache
 
-GitHub Pages: extract the ZIP, open the HabitHarbor_V1.3 folder, and upload these six files directly to the repository folder that is configured for Pages. Do not upload the parent ZIP folder nesting.
+## Deploy
+Upload the contents of this folder to the root of a GitHub Pages repository. Use HTTPS to enable PWA install and service worker.
 
-Android Capacitor wrapper files are intentionally excluded because they are not needed for GitHub Pages deployment. This is a minimal web/PWA bundle, not a compiled APK.
+## Important
+This is a clean initial implementation. Reminder time is stored but notifications are not scheduled yet. Weekly/custom schedule presentation is basic; numerical habits and native Android APK packaging are not part of this initial web version. Test on target devices before relying on it.
